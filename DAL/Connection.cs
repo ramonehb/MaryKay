@@ -13,5 +13,25 @@ namespace DAL
             var db = new BaseDataContext();
             return db.GetTable<Cliente>();
         }
+
+        public bool CadastraCliente(Cliente cliente)
+        {
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    db.Clientes.InsertOnSubmit(cliente);
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch (Exception erro)
+            {
+                var msg = erro.Message;
+                return false;
+            }
+            
+        }
+
     }
 }

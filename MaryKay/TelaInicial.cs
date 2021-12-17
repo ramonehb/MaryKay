@@ -21,5 +21,12 @@ namespace MaryKay
         {
             Application.Exit();
         }
+
+        private void bClientes_Click(object sender, EventArgs e)
+        {
+            CadastroCliente cadastroCliente = new CadastroCliente();
+            cadastroCliente.ShowDialog();
+            this.Close();
+        }
     }
 }

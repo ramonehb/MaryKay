@@ -139,15 +139,19 @@ namespace DAL
 		
 		private string _Nome;
 		
+		private string _CPF;
+		
 		private string _Email;
+		
+		private System.Nullable<System.DateTime> _DT_Nascimento;
 		
 		private string _Telefone;
 		
-		private string _DS_Endereco;
+		private string _Rua;
+		
+		private int _CEP;
 		
 		private System.Nullable<int> _NR_Logradouro;
-		
-		private string _DS_Bairro;
 		
 		private EntitySet<Venda_Cliente> _Venda_Clientes;
 		
@@ -159,16 +163,20 @@ namespace DAL
     partial void OnID_ClienteChanged();
     partial void OnNomeChanging(string value);
     partial void OnNomeChanged();
+    partial void OnCPFChanging(string value);
+    partial void OnCPFChanged();
     partial void OnEmailChanging(string value);
     partial void OnEmailChanged();
+    partial void OnDT_NascimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDT_NascimentoChanged();
     partial void OnTelefoneChanging(string value);
     partial void OnTelefoneChanged();
-    partial void OnDS_EnderecoChanging(string value);
-    partial void OnDS_EnderecoChanged();
+    partial void OnRuaChanging(string value);
+    partial void OnRuaChanged();
+    partial void OnCEPChanging(int value);
+    partial void OnCEPChanged();
     partial void OnNR_LogradouroChanging(System.Nullable<int> value);
     partial void OnNR_LogradouroChanged();
-    partial void OnDS_BairroChanging(string value);
-    partial void OnDS_BairroChanged();
     #endregion
 		
 		public Cliente()
@@ -177,7 +185,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cliente", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cliente", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_Cliente
 		{
 			get
@@ -217,6 +225,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this.OnCPFChanging(value);
+					this.SendPropertyChanging();
+					this._CPF = value;
+					this.SendPropertyChanged("CPF");
+					this.OnCPFChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
 		public string Email
 		{
@@ -233,6 +261,26 @@ namespace DAL
 					this._Email = value;
 					this.SendPropertyChanged("Email");
 					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DT_Nascimento", DbType="Date")]
+		public System.Nullable<System.DateTime> DT_Nascimento
+		{
+			get
+			{
+				return this._DT_Nascimento;
+			}
+			set
+			{
+				if ((this._DT_Nascimento != value))
+				{
+					this.OnDT_NascimentoChanging(value);
+					this.SendPropertyChanging();
+					this._DT_Nascimento = value;
+					this.SendPropertyChanged("DT_Nascimento");
+					this.OnDT_NascimentoChanged();
 				}
 			}
 		}
@@ -257,22 +305,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DS_Endereco", DbType="VarChar(100)")]
-		public string DS_Endereco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rua", DbType="VarChar(100)")]
+		public string Rua
 		{
 			get
 			{
-				return this._DS_Endereco;
+				return this._Rua;
 			}
 			set
 			{
-				if ((this._DS_Endereco != value))
+				if ((this._Rua != value))
 				{
-					this.OnDS_EnderecoChanging(value);
+					this.OnRuaChanging(value);
 					this.SendPropertyChanging();
-					this._DS_Endereco = value;
-					this.SendPropertyChanged("DS_Endereco");
-					this.OnDS_EnderecoChanged();
+					this._Rua = value;
+					this.SendPropertyChanged("Rua");
+					this.OnRuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEP", DbType="Int NOT NULL")]
+		public int CEP
+		{
+			get
+			{
+				return this._CEP;
+			}
+			set
+			{
+				if ((this._CEP != value))
+				{
+					this.OnCEPChanging(value);
+					this.SendPropertyChanging();
+					this._CEP = value;
+					this.SendPropertyChanged("CEP");
+					this.OnCEPChanged();
 				}
 			}
 		}
@@ -293,26 +361,6 @@ namespace DAL
 					this._NR_Logradouro = value;
 					this.SendPropertyChanged("NR_Logradouro");
 					this.OnNR_LogradouroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DS_Bairro", DbType="VarChar(50)")]
-		public string DS_Bairro
-		{
-			get
-			{
-				return this._DS_Bairro;
-			}
-			set
-			{
-				if ((this._DS_Bairro != value))
-				{
-					this.OnDS_BairroChanging(value);
-					this.SendPropertyChanging();
-					this._DS_Bairro = value;
-					this.SendPropertyChanged("DS_Bairro");
-					this.OnDS_BairroChanged();
 				}
 			}
 		}
@@ -391,7 +439,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cor", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cor", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_Cor
 		{
 			get
@@ -509,7 +557,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Estoque", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Estoque", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_Estoque
 		{
 			get
@@ -689,7 +737,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Produto", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Produto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_Produto
 		{
 			get
@@ -1024,7 +1072,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TipoProduto", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TipoProduto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_TipoProduto
 		{
 			get
@@ -1157,7 +1205,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Venda", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Venda", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID_Venda
 		{
 			get

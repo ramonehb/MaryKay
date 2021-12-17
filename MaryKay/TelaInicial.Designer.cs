@@ -51,6 +51,7 @@ namespace MaryKay
             this.bClientes.TabIndex = 0;
             this.bClientes.Text = "Clientes";
             this.bClientes.UseVisualStyleBackColor = false;
+            this.bClientes.Click += new System.EventHandler(this.bClientes_Click);
             // 
             // bProdutos
             // 
