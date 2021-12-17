@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MaryKay" Class="BaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SCD19MS\SQLEXPRESS;Initial Catalog=MaryKay;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="MaryKayConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cliente" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="ID_Cliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DS_Endereco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NR_Logradouro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DS_Bairro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Cliente_Venda_Cliente" Member="Venda_Clientes" ThisKey="ID_Cliente" OtherKey="ID_Cliente" Type="Venda_Cliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cor" Member="Cors">
+    <Type Name="Cor">
+      <Column Name="ID_Cor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome_Cor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Cor_Produto" Member="Produtos" ThisKey="ID_Cor" OtherKey="ID_Cor" Type="Produto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estoque" Member="Estoques">
+    <Type Name="Estoque">
+      <Column Name="ID_Estoque" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTD_Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Produto_Estoque" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Produto" Member="Produtos">
+    <Type Name="Produto">
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Cor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ponto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VL_Pago" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="VL_Venda" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Produto_Estoque" Member="Estoques" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Estoque" />
+      <Association Name="Produto_Venda_Cliente" Member="Venda_Clientes" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Venda_Cliente" />
+      <Association Name="Cor_Produto" Member="Cor" ThisKey="ID_Cor" OtherKey="ID_Cor" Type="Cor" IsForeignKey="true" />
+      <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_Produto" Member="Tipo_Produtos">
+    <Type Name="Tipo_Produto">
+      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_Produto_Produto" Member="Produtos" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Produto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venda_Cliente" Member="Venda_Clientes">
+    <Type Name="Venda_Cliente">
+      <Column Name="ID_Venda" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DT_Venda" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QTD_Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VL_Total" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Venda_Cliente" Member="Cliente" ThisKey="ID_Cliente" OtherKey="ID_Cliente" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Produto_Venda_Cliente" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
