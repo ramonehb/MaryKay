@@ -28,5 +28,12 @@ namespace MaryKay
             cadastroCliente.ShowDialog();
             this.Close();
         }
+
+        private void bUsuario_Click(object sender, EventArgs e)
+        {
+            CadastroUsuario cadastroUsuario = new CadastroUsuario();
+            cadastroUsuario.ShowDialog();
+            this.Close();
+        }
     }
 }
