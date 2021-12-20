@@ -31,13 +31,11 @@ namespace MaryKay
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCliente));
             this.lblData = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mtbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lNome = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.dtNascimento = new System.Windows.Forms.DateTimePicker();
             this.checkEmail = new System.Windows.Forms.CheckBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,11 +48,13 @@ namespace MaryKay
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lNumero = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lCPF = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             this.mtbCEP = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lTelefone = new System.Windows.Forms.Label();
+            this.bFechar = new System.Windows.Forms.Button();
+            this.dtNascimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,14 +69,14 @@ namespace MaryKay
             this.lblData.Size = new System.Drawing.Size(0, 27);
             this.lblData.TabIndex = 43;
             // 
-            // txtTelefone
+            // mtbTelefone
             // 
-            this.txtTelefone.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtTelefone.Location = new System.Drawing.Point(266, 613);
-            this.txtTelefone.Mask = "(00) 00000 - 0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(278, 44);
-            this.txtTelefone.TabIndex = 32;
+            this.mtbTelefone.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.mtbTelefone.Location = new System.Drawing.Point(266, 613);
+            this.mtbTelefone.Mask = "(00) 00000 - 0000";
+            this.mtbTelefone.Name = "mtbTelefone";
+            this.mtbTelefone.Size = new System.Drawing.Size(278, 44);
+            this.mtbTelefone.TabIndex = 4;
             // 
             // lNome
             // 
@@ -99,25 +99,16 @@ namespace MaryKay
             this.lblUser.Size = new System.Drawing.Size(0, 27);
             this.lblUser.TabIndex = 39;
             // 
-            // dtNascimento
-            // 
-            this.dtNascimento.Font = new System.Drawing.Font("Arial Black", 17F, System.Drawing.FontStyle.Bold);
-            this.dtNascimento.Location = new System.Drawing.Point(1205, 613);
-            this.dtNascimento.Name = "dtNascimento";
-            this.dtNascimento.Size = new System.Drawing.Size(743, 47);
-            this.dtNascimento.TabIndex = 33;
-            this.dtNascimento.Value = new System.DateTime(2020, 1, 1, 10, 10, 10, 0);
-            // 
             // checkEmail
             // 
             this.checkEmail.AutoSize = true;
             this.checkEmail.BackColor = System.Drawing.Color.Transparent;
             this.checkEmail.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
             this.checkEmail.ForeColor = System.Drawing.Color.Black;
-            this.checkEmail.Location = new System.Drawing.Point(1213, 506);
+            this.checkEmail.Location = new System.Drawing.Point(1206, 506);
             this.checkEmail.Name = "checkEmail";
             this.checkEmail.Size = new System.Drawing.Size(744, 40);
-            this.checkEmail.TabIndex = 31;
+            this.checkEmail.TabIndex = 3;
             this.checkEmail.Text = "RECEBER E-MAILS COM PROMOÇÔES E NOVIDADES";
             this.checkEmail.UseVisualStyleBackColor = false;
             // 
@@ -126,25 +117,13 @@ namespace MaryKay
             this.btnFinalizar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(1037, 871);
+            this.btnFinalizar.Location = new System.Drawing.Point(874, 864);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(329, 104);
             this.btnFinalizar.TabIndex = 37;
             this.btnFinalizar.Text = "FINALIZAR CADASTRO";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLimpar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold);
-            this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(597, 871);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(299, 104);
-            this.btnLimpar.TabIndex = 36;
-            this.btnLimpar.Text = "LIMPAR OS CAMPOS";
-            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // txtEmail
             // 
@@ -154,7 +133,7 @@ namespace MaryKay
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(971, 44);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -164,7 +143,7 @@ namespace MaryKay
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(993, 44);
-            this.txtNome.TabIndex = 27;
+            this.txtNome.TabIndex = 0;
             // 
             // label4
             // 
@@ -172,7 +151,7 @@ namespace MaryKay
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(730, 613);
+            this.label4.Location = new System.Drawing.Point(777, 609);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(446, 48);
             this.label4.TabIndex = 34;
@@ -232,7 +211,7 @@ namespace MaryKay
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(971, 44);
-            this.txtRua.TabIndex = 45;
+            this.txtRua.TabIndex = 7;
             // 
             // lRua
             // 
@@ -254,7 +233,7 @@ namespace MaryKay
             this.txtNumero.MaxLength = 50;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(222, 44);
-            this.txtNumero.TabIndex = 49;
+            this.txtNumero.TabIndex = 8;
             // 
             // lNumero
             // 
@@ -280,17 +259,6 @@ namespace MaryKay
             this.label5.TabIndex = 56;
             this.label5.Text = "Nº";
             // 
-            // lCPF
-            // 
-            this.lCPF.AutoSize = true;
-            this.lCPF.BackColor = System.Drawing.Color.Transparent;
-            this.lCPF.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
-            this.lCPF.ForeColor = System.Drawing.Color.Red;
-            this.lCPF.Location = new System.Drawing.Point(1465, 358);
-            this.lCPF.Name = "lCPF";
-            this.lCPF.Size = new System.Drawing.Size(0, 38);
-            this.lCPF.TabIndex = 55;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -310,7 +278,7 @@ namespace MaryKay
             this.mtbCpf.Mask = "###,###,###-##";
             this.mtbCpf.Name = "mtbCpf";
             this.mtbCpf.Size = new System.Drawing.Size(325, 44);
-            this.mtbCpf.TabIndex = 57;
+            this.mtbCpf.TabIndex = 1;
             this.mtbCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mtbCEP
@@ -320,7 +288,7 @@ namespace MaryKay
             this.mtbCEP.Mask = "#####-###";
             this.mtbCEP.Name = "mtbCEP";
             this.mtbCEP.Size = new System.Drawing.Size(261, 44);
-            this.mtbCEP.TabIndex = 58;
+            this.mtbCEP.TabIndex = 6;
             this.mtbCEP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -335,30 +303,65 @@ namespace MaryKay
             this.label3.TabIndex = 59;
             this.label3.Text = "CEP";
             // 
+            // lTelefone
+            // 
+            this.lTelefone.AutoSize = true;
+            this.lTelefone.BackColor = System.Drawing.Color.Transparent;
+            this.lTelefone.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
+            this.lTelefone.ForeColor = System.Drawing.Color.Red;
+            this.lTelefone.Location = new System.Drawing.Point(247, 572);
+            this.lTelefone.Name = "lTelefone";
+            this.lTelefone.Size = new System.Drawing.Size(0, 38);
+            this.lTelefone.TabIndex = 60;
+            // 
+            // bFechar
+            // 
+            this.bFechar.BackColor = System.Drawing.Color.Red;
+            this.bFechar.Font = new System.Drawing.Font("Arial Black", 20F);
+            this.bFechar.ForeColor = System.Drawing.Color.White;
+            this.bFechar.Location = new System.Drawing.Point(1972, 3);
+            this.bFechar.Name = "bFechar";
+            this.bFechar.Size = new System.Drawing.Size(59, 60);
+            this.bFechar.TabIndex = 61;
+            this.bFechar.Text = "X";
+            this.bFechar.UseVisualStyleBackColor = false;
+            this.bFechar.Click += new System.EventHandler(this.bFechar_Click);
+            // 
+            // dtNascimento
+            // 
+            this.dtNascimento.Font = new System.Drawing.Font("Arial Black", 17F, System.Drawing.FontStyle.Bold);
+            this.dtNascimento.Location = new System.Drawing.Point(1253, 609);
+            this.dtNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtNascimento.Name = "dtNascimento";
+            this.dtNascimento.Size = new System.Drawing.Size(743, 47);
+            this.dtNascimento.TabIndex = 5;
+            this.dtNascimento.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2034, 980);
+            this.ControlBox = false;
+            this.Controls.Add(this.dtNascimento);
+            this.Controls.Add(this.bFechar);
+            this.Controls.Add(this.lTelefone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.mtbCEP);
             this.Controls.Add(this.mtbCpf);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lCPF);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lNumero);
             this.Controls.Add(this.txtRua);
             this.Controls.Add(this.lRua);
             this.Controls.Add(this.lblData);
-            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.mtbTelefone);
             this.Controls.Add(this.lNome);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.dtNascimento);
             this.Controls.Add(this.checkEmail);
             this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label4);
@@ -378,13 +381,11 @@ namespace MaryKay
         #endregion
 
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox mtbTelefone;
         private System.Windows.Forms.Label lNome;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.DateTimePicker dtNascimento;
         private System.Windows.Forms.CheckBox checkEmail;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label4;
@@ -397,10 +398,12 @@ namespace MaryKay
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lNumero;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lCPF;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox mtbCpf;
         private System.Windows.Forms.MaskedTextBox mtbCEP;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lTelefone;
+        private System.Windows.Forms.Button bFechar;
+        private System.Windows.Forms.DateTimePicker dtNascimento;
     }
 }

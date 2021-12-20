@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Connection
+    public class ClienteDAL
     {
-        public static IQueryable<Cliente> GetDadosCliente()
-        {
-            var db = new BaseDataContext();
-            return db.GetTable<Cliente>();
-        }
-
         public bool CadastraCliente(Cliente cliente)
         {
             try
@@ -30,8 +24,6 @@ namespace DAL
                 var msg = erro.Message;
                 return false;
             }
-            
         }
-
     }
 }
