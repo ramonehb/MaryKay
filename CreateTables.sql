@@ -4,13 +4,15 @@ Use MARYKAY
 
 CREATE TABLE Produto (
 	ID_Produto		INT IDENTITY,
-	ID_TipoProduto	INT,
-	ID_Cor			INT,
+	ID_TipoProduto	INT NOT NULL,
 	Nome			VARCHAR(100) NOT NULL,
-	Ponto			INT,
-	VL_Pago			DECIMAL(5,2) NULL,
+	Codigo			INT NOT NULL,
+	Ponto			INT NULL,
+	VL_Pago			DECIMAL(5,2) NOT NULL,
 	VL_Venda		DECIMAL(5,2) NOT NULL,
 	Quantidade		INT NOT NULL,
+	Lucro			DECIMAL(5,2) DEFAULT (VL_Venda - VL_Pago) NULL,
+	Sessao			INT NOT NULL,
 
 	CONSTRAINT PK_ID_Produto PRIMARY KEY (ID_Produto),
 	CONSTRAINT FK_ID_TipoProduto FOREIGN KEY (ID_TipoProduto) REFERENCES Tipo_Produto(ID_TipoProduto),
@@ -20,9 +22,9 @@ CREATE TABLE Produto (
 
 
 CREATE TABLE Estoque (
-	ID_Estoque INT IDENTITY,
-	ID_Produto INT,
-	QTD_Item INT NOT NULL,
+	ID_Estoque		INT IDENTITY,
+	ID_Produto		INT,
+	QTD_Item		INT NOT NULL,
 
 	CONSTRAINT PK_ID_Estoque PRIMARY KEY (ID_Estoque),
 	CONSTRAINT FK_ID_Produto FOREIGN KEY (ID_Produto) REFERENCES Produto(ID_Produto)
@@ -61,16 +63,20 @@ CREATE TABLE Venda_Cliente (
 )
 
 CREATE TABLE Cliente (
-	ID_Cliente INT IDENTITY,
-	Nome VARCHAR (100) NOT NULL,
-	CPF VARCHAR (11) NULL,
-	Email VARCHAR (100) NULL,
-	DT_Nascimento DATE,
-	Telefone VARCHAR (20) NOT NULL,
-	Rua VARCHAR(100) NULL,
-	CEP INT NOT NULL,
-	NR_Logradouro INT NULL,
-	FL_EnviaEmail BIT NULL,
+	ID_Ccliente		INT IDENTITY,
+	ID_Usuario		INT NOT NULL,
+	Nome			VARCHAR (100) NOT NULL,
+	CPF				VARCHAR (11) NULL,
+	Email			VARCHAR (100) NULL,
+	DT_Nascimento	DATE,
+	Telefone		VARCHAR (20) NOT NULL,
+	Rua				VARCHAR(100) NULL,
+	CEP				INT NOT NULL,
+	NR_Logradouro	INT NULL,
+	Estado			VARCHAR(50) NULL,
+	Cidade			VARCHAR(100) NULL,
+	FL_EnviaEmail	BIT NULL,
 
-	CONSTRAINT PK_ID_Cliente PRIMARY KEY (ID_Cliente)
+	CONSTRAINT PK_ID_Cliente PRIMARY KEY (ID_Cliente),
+	CONSTRAINT FK_ID_UsuarioCliente FOREIGN KEY (ID_Usuario) REFERENCES Usuario (ID_Usuario)
 )
