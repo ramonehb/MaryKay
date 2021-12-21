@@ -22,8 +22,8 @@ namespace MaryKay
         private void bFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.ShowDialog();
+            Clientes clientes = new Clientes();
+            clientes.ShowDialog();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -94,6 +94,19 @@ namespace MaryKay
             }
 
             return erro == 0;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                checkEmail.Enabled = true;
+            }
+            else
+            {
+                checkEmail.Enabled = false;
+                checkEmail.Checked = false;
+            }
         }
     }
 }

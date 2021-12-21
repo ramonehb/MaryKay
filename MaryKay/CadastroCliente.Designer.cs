@@ -103,6 +103,7 @@ namespace MaryKay
             // 
             this.checkEmail.AutoSize = true;
             this.checkEmail.BackColor = System.Drawing.Color.Transparent;
+            this.checkEmail.Enabled = false;
             this.checkEmail.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
             this.checkEmail.ForeColor = System.Drawing.Color.Black;
             this.checkEmail.Location = new System.Drawing.Point(1206, 506);
@@ -134,6 +135,7 @@ namespace MaryKay
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(971, 44);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtNome
             // 

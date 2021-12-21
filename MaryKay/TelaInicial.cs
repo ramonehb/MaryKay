@@ -24,8 +24,8 @@ namespace MaryKay
 
         private void bClientes_Click(object sender, EventArgs e)
         {
-            CadastroCliente cadastroCliente = new CadastroCliente();
-            cadastroCliente.ShowDialog();
+            Clientes cliente = new Clientes();
+            cliente.ShowDialog();
             this.Close();
         }
 
