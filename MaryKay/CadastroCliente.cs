@@ -134,6 +134,15 @@ namespace MaryKay
                     lbCpf.Text = string.Empty;
                 }
             }
+            else if (!string.IsNullOrEmpty(mtbCpf.Text.Replace(".", "").Replace("-", "").Replace(" ", "")))
+            {
+                erro++;
+                lbCpf.Text = "PREENCHA O CPF CORRETAMENTE";
+            }
+            else
+            {
+                lbCpf.Text = string.Empty;
+            }
 
             if (!string.IsNullOrEmpty(txtEmail.Text))
             {
