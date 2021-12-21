@@ -22,8 +22,8 @@ namespace MaryKay
         private void bFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.ShowDialog();
+            Clientes clientes = new Clientes();
+            clientes.ShowDialog();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
