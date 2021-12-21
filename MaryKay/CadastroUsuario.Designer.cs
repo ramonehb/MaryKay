@@ -1,7 +1,7 @@
 ﻿
 namespace MaryKay
 {
-    partial class CadastroUsuario
+    partial class fCadastroUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCadastroUsuario));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +44,9 @@ namespace MaryKay
             this.lbNome = new System.Windows.Forms.Label();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbConfirmaSenha = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@ namespace MaryKay
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(744, 37);
+            this.txtEmail.Size = new System.Drawing.Size(509, 37);
             this.txtEmail.TabIndex = 3;
             // 
             // txtNome
@@ -190,7 +193,7 @@ namespace MaryKay
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbNome.ForeColor = System.Drawing.Color.Red;
-            this.lbNome.Location = new System.Drawing.Point(291, 262);
+            this.lbNome.Location = new System.Drawing.Point(203, 262);
             this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(0, 38);
@@ -202,7 +205,7 @@ namespace MaryKay
             this.lbSenha.BackColor = System.Drawing.Color.Transparent;
             this.lbSenha.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbSenha.Location = new System.Drawing.Point(291, 361);
+            this.lbSenha.Location = new System.Drawing.Point(199, 361);
             this.lbSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(0, 38);
@@ -214,19 +217,55 @@ namespace MaryKay
             this.lbConfirmaSenha.BackColor = System.Drawing.Color.Transparent;
             this.lbConfirmaSenha.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbConfirmaSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbConfirmaSenha.Location = new System.Drawing.Point(1075, 361);
+            this.lbConfirmaSenha.Location = new System.Drawing.Point(1039, 361);
             this.lbConfirmaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbConfirmaSenha.Name = "lbConfirmaSenha";
             this.lbConfirmaSenha.Size = new System.Drawing.Size(0, 38);
             this.lbConfirmaSenha.TabIndex = 54;
             // 
-            // CadastroUsuario
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbEmail.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.lbEmail.ForeColor = System.Drawing.Color.Red;
+            this.lbEmail.Location = new System.Drawing.Point(199, 474);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(0, 38);
+            this.lbEmail.TabIndex = 55;
+            // 
+            // cbTipoUsuario
+            // 
+            this.cbTipoUsuario.FormattingEnabled = true;
+            this.cbTipoUsuario.Location = new System.Drawing.Point(952, 524);
+            this.cbTipoUsuario.Name = "cbTipoUsuario";
+            this.cbTipoUsuario.Size = new System.Drawing.Size(203, 21);
+            this.cbTipoUsuario.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(709, 514);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(238, 38);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "TIPO USÚARIO";
+            // 
+            // fCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1543, 817);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbTipoUsuario);
+            this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbConfirmaSenha);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.lbNome);
@@ -241,9 +280,9 @@ namespace MaryKay
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nm);
-            this.Name = "CadastroUsuario";
+            this.Name = "fCadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form1";
+            this.Text = "Cadastro de Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -267,5 +306,8 @@ namespace MaryKay
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbConfirmaSenha;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.ComboBox cbTipoUsuario;
+        private System.Windows.Forms.Label label4;
     }
 }

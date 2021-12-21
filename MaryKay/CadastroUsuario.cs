@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace MaryKay
 {
-    public partial class CadastroUsuario : Form
+    public partial class fCadastroUsuario : Form
     {
-        public CadastroUsuario()
+        public fCadastroUsuario()
         {
             InitializeComponent();
         }
@@ -25,6 +26,7 @@ namespace MaryKay
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             ValidaUsuario();
+
         }
 
         private bool ValidaUsuario()
@@ -62,15 +64,15 @@ namespace MaryKay
                 {
                     lbSenha.Text = "AS SENHAS DEVEM SER IGUAIS!";
                     lbConfirmaSenha.Text = "AS SENHAS DEVEM SER IGUAIS!";
-                }else
+                    txtSenha.Text = string.Empty;
+                    txtConfirmaSenha.Text = string.Empty;
+                }
+                else
                 {
                     lbSenha.Text = string.Empty;
                     lbConfirmaSenha.Text = string.Empty;
                 }
             }
-
-            
-            
 
             return erro == 0;
         }
