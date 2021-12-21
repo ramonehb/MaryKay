@@ -67,5 +67,22 @@ namespace MaryKay
             telaInicial.ShowDialog();
             this.Close();
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using(var db = new BaseDataContext())
+                {
+                    var clienteFiltro = db.Clientes.Where(cf => cf.Nome.Contains(txtNome.Text));
+                    dgvClientes.DataSource = clienteFiltro;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

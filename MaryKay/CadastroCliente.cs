@@ -121,12 +121,25 @@ namespace MaryKay
                 lTelefone.Text = string.Empty;
             }
 
+            if(mtbCpf.Text.Replace(".", "").Replace("-", "").Length == 11)
+            {
+                var cpf = mtbCpf.Text.Replace(".", "").Replace("-", "");
+                if (!Funcoes.Funcoes.VerificaCPF(cpf))
+                {
+                    erro++;
+                    lbCpf.Text = "INFORME UM CPF VALIDO";
+                }
+                else
+                {
+                    lbCpf.Text = string.Empty;
+                }
+            }
+
             if (!string.IsNullOrEmpty(txtEmail.Text))
             {
-                var validaEmail = new ValidaEmail();
-
-                if (!validaEmail.verificarEmail(txtEmail.Text))
+                if (!Funcoes.Funcoes.VerificarEmail(txtEmail.Text))
                 {
+                    erro++;
                     lbEmail.Text = "O E-MAIL PRECISA TER @ E .COM";
                 }
                 else

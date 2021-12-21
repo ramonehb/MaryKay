@@ -57,6 +57,7 @@ namespace MaryKay
             this.dtNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
+            this.lbCpf = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,9 +201,9 @@ namespace MaryKay
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(559, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(569, 86);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1080, 238);
+            this.pictureBox1.Size = new System.Drawing.Size(1014, 194);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -363,6 +364,17 @@ namespace MaryKay
             this.lbEmail.Size = new System.Drawing.Size(0, 38);
             this.lbEmail.TabIndex = 63;
             // 
+            // lbCpf
+            // 
+            this.lbCpf.AutoSize = true;
+            this.lbCpf.BackColor = System.Drawing.Color.Transparent;
+            this.lbCpf.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
+            this.lbCpf.ForeColor = System.Drawing.Color.Red;
+            this.lbCpf.Location = new System.Drawing.Point(1374, 339);
+            this.lbCpf.Name = "lbCpf";
+            this.lbCpf.Size = new System.Drawing.Size(0, 38);
+            this.lbCpf.TabIndex = 64;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -370,6 +382,7 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2034, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.lbCpf);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.dtNascimento);
@@ -435,5 +448,6 @@ namespace MaryKay
         private System.Windows.Forms.DateTimePicker dtNascimento;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbCpf;
     }
 }

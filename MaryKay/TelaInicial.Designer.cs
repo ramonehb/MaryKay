@@ -46,10 +46,10 @@ namespace MaryKay
             this.bClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bClientes.FlatAppearance.BorderSize = 0;
             this.bClientes.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bClientes.Location = new System.Drawing.Point(324, 583);
-            this.bClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bClientes.Location = new System.Drawing.Point(432, 718);
+            this.bClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bClientes.Name = "bClientes";
-            this.bClientes.Size = new System.Drawing.Size(271, 86);
+            this.bClientes.Size = new System.Drawing.Size(361, 106);
             this.bClientes.TabIndex = 0;
             this.bClientes.Text = "Clientes";
             this.bClientes.UseVisualStyleBackColor = false;
@@ -61,10 +61,10 @@ namespace MaryKay
             this.bProdutos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bProdutos.FlatAppearance.BorderSize = 0;
             this.bProdutos.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bProdutos.Location = new System.Drawing.Point(11, 583);
-            this.bProdutos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bProdutos.Location = new System.Drawing.Point(15, 718);
+            this.bProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bProdutos.Name = "bProdutos";
-            this.bProdutos.Size = new System.Drawing.Size(271, 86);
+            this.bProdutos.Size = new System.Drawing.Size(361, 106);
             this.bProdutos.TabIndex = 1;
             this.bProdutos.Text = "Produtos";
             this.bProdutos.UseVisualStyleBackColor = false;
@@ -75,10 +75,10 @@ namespace MaryKay
             this.bVendas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bVendas.FlatAppearance.BorderSize = 0;
             this.bVendas.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bVendas.Location = new System.Drawing.Point(637, 583);
-            this.bVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bVendas.Location = new System.Drawing.Point(849, 718);
+            this.bVendas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVendas.Name = "bVendas";
-            this.bVendas.Size = new System.Drawing.Size(271, 86);
+            this.bVendas.Size = new System.Drawing.Size(361, 106);
             this.bVendas.TabIndex = 3;
             this.bVendas.Text = "Vendas";
             this.bVendas.UseVisualStyleBackColor = false;
@@ -89,10 +89,10 @@ namespace MaryKay
             this.bEstoque.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bEstoque.FlatAppearance.BorderSize = 0;
             this.bEstoque.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bEstoque.Location = new System.Drawing.Point(952, 583);
-            this.bEstoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bEstoque.Location = new System.Drawing.Point(1269, 718);
+            this.bEstoque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEstoque.Name = "bEstoque";
-            this.bEstoque.Size = new System.Drawing.Size(271, 86);
+            this.bEstoque.Size = new System.Drawing.Size(361, 106);
             this.bEstoque.TabIndex = 2;
             this.bEstoque.Text = "Estoque";
             this.bEstoque.UseVisualStyleBackColor = false;
@@ -102,10 +102,10 @@ namespace MaryKay
             this.bFechar.BackColor = System.Drawing.Color.Red;
             this.bFechar.Font = new System.Drawing.Font("Arial Black", 20F);
             this.bFechar.ForeColor = System.Drawing.Color.White;
-            this.bFechar.Location = new System.Drawing.Point(1490, -2);
-            this.bFechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bFechar.Location = new System.Drawing.Point(1987, -2);
+            this.bFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bFechar.Name = "bFechar";
-            this.bFechar.Size = new System.Drawing.Size(44, 49);
+            this.bFechar.Size = new System.Drawing.Size(59, 60);
             this.bFechar.TabIndex = 20;
             this.bFechar.Text = "X";
             this.bFechar.UseVisualStyleBackColor = false;
@@ -114,10 +114,10 @@ namespace MaryKay
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(112, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(326, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1283, 647);
+            this.pictureBox1.Size = new System.Drawing.Size(1478, 796);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -128,10 +128,10 @@ namespace MaryKay
             this.bUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bUsuario.FlatAppearance.BorderSize = 0;
             this.bUsuario.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bUsuario.Location = new System.Drawing.Point(1250, 583);
-            this.bUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.bUsuario.Location = new System.Drawing.Point(1667, 718);
+            this.bUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bUsuario.Name = "bUsuario";
-            this.bUsuario.Size = new System.Drawing.Size(271, 86);
+            this.bUsuario.Size = new System.Drawing.Size(361, 106);
             this.bUsuario.TabIndex = 22;
             this.bUsuario.Text = "Usuários";
             this.bUsuario.UseVisualStyleBackColor = false;
@@ -139,10 +139,10 @@ namespace MaryKay
             // 
             // TelaInicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(1543, 817);
+            this.ClientSize = new System.Drawing.Size(2057, 1006);
             this.ControlBox = false;
             this.Controls.Add(this.bUsuario);
             this.Controls.Add(this.bFechar);
@@ -151,7 +151,7 @@ namespace MaryKay
             this.Controls.Add(this.bProdutos);
             this.Controls.Add(this.bClientes);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
