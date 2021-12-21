@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,9 +27,38 @@ namespace MaryKay
 
         private void tsbNovo_Click(object sender, EventArgs e)
         {
-            CadastroCliente cadastroCliente = new CadastroCliente();
+            CadastroCliente cadastroCliente = new CadastroCliente(0);
             cadastroCliente.ShowDialog();
             this.Close();
+        }
+
+        private void tsbAlterar_Click(object sender, EventArgs e)
+        {
+            var idCliente = dgvClientes.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+            CadastroCliente cadastroCliente = new CadastroCliente((int)idCliente);
+            cadastroCliente.ShowDialog();
+        }
+
+        private void tsbExcluir_Click(object sender, EventArgs e)
+        {
+            var idCliente = dgvClientes.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+            if ((int) idCliente != 0)
+            {
+                var pergunta = MessageBox.Show("TEM CERTEZA DA EXCLUSÂO ? ", "MARY MAY", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (pergunta == DialogResult.Yes)
+                {
+                    ClienteDAL clienteDAL = new ClienteDAL();
+                    if (!clienteDAL.DeletarCliente((int) idCliente))
+                    {
+                        MessageBox.Show("ERRO AO DELETAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("CLIENTE DELETADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clientes voltar = new Clientes();
+                    voltar.ShowDialog();
+                }
+            }
         }
 
         private void tsbVoltar_Click(object sender, EventArgs e)

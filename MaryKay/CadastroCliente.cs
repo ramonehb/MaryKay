@@ -1,4 +1,5 @@
 ﻿using DAL;
+using MaryKay.Funcoes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace MaryKay
 {
     public partial class CadastroCliente : Form
     {
-        public CadastroCliente()
+        public CadastroCliente(int id)
         {
             InitializeComponent();
+            CarregaDados(id);
+            txtID.Text = id != 0 ? id.ToString() : string.Empty;
+            btnFinalizar.Text = id != 0 ? "ATUALIZAR" : "FINALIZAR CADASTRO";
             dtNascimento.MaxDate = DateTime.Now;
         }
 
@@ -31,6 +35,12 @@ namespace MaryKay
             if (ValidaCamposObrigatorios())
             {
                 var cliente = new Cliente();
+
+                if (!string.IsNullOrEmpty(txtID.Text))
+                {
+                    cliente.ID_Cliente = int.Parse(txtID.Text);
+                }
+                
                 cliente.Nome = txtNome.Text;
                 cliente.CPF = string.IsNullOrEmpty(mtbCpf.Text.Replace(".", "").Replace("-", "").Replace(" ", "")) ? null : mtbCpf.Text.Replace(".", "").Replace("-", "");
                 cliente.Email = string.IsNullOrEmpty(txtEmail.Text) ? null : txtEmail.Text;
@@ -42,14 +52,32 @@ namespace MaryKay
                 cliente.FL_EnviaEmail = checkEmail.Checked;
 
                 var clienteDal = new ClienteDAL();
-                if (!clienteDal.CadastraCliente(cliente))
+
+                if (string.IsNullOrEmpty(txtID.Text))
                 {
-                    MessageBox.Show("ERRO AO CADASTRAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (!clienteDal.CadastraCliente(cliente))
+                    {
+                        MessageBox.Show("ERRO AO CADASTRAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("CLIENTE CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (!clienteDal.AtualizarCliente(cliente))
+                    {
+                        MessageBox.Show("ERRO AO ATUALIZAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("CLIENTE ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                MessageBox.Show("CLIENTE CADASTRADO COM SUCESSO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 NovoCliente();
+                Clientes voltar = new Clientes();
+                voltar.ShowDialog();
+                this.Close();
             }
         }
 
@@ -93,6 +121,20 @@ namespace MaryKay
                 lTelefone.Text = string.Empty;
             }
 
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                var validaEmail = new ValidaEmail();
+
+                if (!validaEmail.verificarEmail(txtEmail.Text))
+                {
+                    lbEmail.Text = "O E-MAIL PRECISA TER @ E .COM";
+                }
+                else
+                {
+                    lbEmail.Text = string.Empty;
+                }
+            }
+
             return erro == 0;
         }
 
@@ -107,6 +149,34 @@ namespace MaryKay
                 checkEmail.Enabled = false;
                 checkEmail.Checked = false;
             }
+        }
+
+        private void CarregaDados(int idCliente)
+        {
+            if (idCliente != 0)
+            {
+                using (var db = new BaseDataContext())
+                {
+                    try
+                    {
+                        var cliente = db.Clientes.Single(c => c.ID_Cliente == idCliente);
+                        txtNome.Text = cliente.Nome;
+                        txtEmail.Text = cliente.Email;
+                        mtbCpf.Text = cliente.CPF;
+                        mtbCEP.Text = cliente.CEP.ToString();
+                        txtRua.Text = cliente.Rua;
+                        mtbTelefone.Text = cliente.Telefone;
+                        txtNumero.Text = cliente.NR_Logradouro.ToString();
+                        dtNascimento.Value = (DateTime)cliente.DT_Nascimento;
+                        checkEmail.Checked = cliente.FL_EnviaEmail ?? false;
+                    }
+                    catch (Exception erro)
+                    {
+                        var msg = erro.Message;
+                    }
+                }
+            }
+            
         }
     }
 }
