@@ -95,5 +95,18 @@ namespace MaryKay
 
             return erro == 0;
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                checkEmail.Enabled = true;
+            }
+            else
+            {
+                checkEmail.Enabled = false;
+                checkEmail.Checked = false;
+            }
+        }
     }
 }
