@@ -19,13 +19,21 @@ namespace MaryKay
         public CadastroProduto()
         {
             InitializeComponent();
+            nudVL_Pago.Controls.RemoveAt(0);
+            nudVL_Venda.Controls.RemoveAt(0);
+            nudPontos.Controls.RemoveAt(0);
+            nudCodigoRapido.Controls.RemoveAt(0);
+            nudQuantidade.Text = string.Empty;
+            nudVL_Pago.Text = string.Empty;
+            nudVL_Venda.Text = string.Empty;
+            nudCodigoRapido.Text = string.Empty;
+            nudPontos.Text = string.Empty;
         }
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'maryKayDataSet1.Tipo_Produto'. Você pode movê-la ou removê-la conforme necessário.
             this.tipo_ProdutoTableAdapter.Fill(this.maryKayDataSet1.Tipo_Produto);
-
         }
 
         private void bFechar_Click(object sender, EventArgs e)
@@ -60,7 +68,7 @@ namespace MaryKay
                 lbCategoria.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtQuantidade.Text))
+            if (string.IsNullOrEmpty(nudQuantidade.Text))
             {
                 erro++;
                 lbQuantidade.Text = "DIGITE A QUANTIDADE";
@@ -70,7 +78,7 @@ namespace MaryKay
                 lbQuantidade.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtVL_Pago.Text))
+            if (string.IsNullOrEmpty(nudVL_Pago.Text))
             {
                 erro++;
                 lbPago.Text = "DIGITE UM VALOR";
@@ -80,7 +88,7 @@ namespace MaryKay
                 lbPago.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtVL_Venda.Text))
+            if (string.IsNullOrEmpty(nudVL_Venda.Text))
             {
                 erro++;
                 lbVenda.Text = "DIGITE UM VALOR";
@@ -100,7 +108,7 @@ namespace MaryKay
                 lbSessao.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtCodigoRapido.Text))
+            if (string.IsNullOrEmpty(nudCodigoRapido.Text))
             {
                 erro++;
                 lbCodigoRapido.Text = "DIGITE O CODIGO RAPIDO";
@@ -109,9 +117,9 @@ namespace MaryKay
             {
                 lbCodigoRapido.Text = string.Empty;
             }
-            if (!string.IsNullOrEmpty(txtVL_Pago.Text) && !string.IsNullOrEmpty(txtVL_Venda.Text))
+            if (!string.IsNullOrEmpty(nudVL_Pago.Text) && !string.IsNullOrEmpty(nudVL_Venda.Text))
             {
-                if (decimal.Parse(txtVL_Pago.Text) > decimal.Parse(txtVL_Venda.Text))
+                if (decimal.Parse(nudVL_Pago.Text) > decimal.Parse(nudVL_Venda.Text))
                 {
                     lbPago.Text = "O VALOR PAGO NÂO PODE SER MAIOR QUE O DE VENDA";
                     erro++;
@@ -133,11 +141,11 @@ namespace MaryKay
                 var produto = new Produto();
                 produto.Nome = txtNomeProduto.Text;
                 produto.ID_TipoProduto = (int) cboTipoProduto.SelectedValue;
-                produto.Codigo = int.Parse(txtCodigoRapido.Text);
-                produto.Ponto = int.Parse(txtPontos.Text);
-                produto.VL_Pago = decimal.Parse(txtVL_Pago.Text);
-                produto.VL_Venda = decimal.Parse(txtVL_Venda.Text);
-                produto.Quantidade = int.Parse(txtQuantidade.Text);
+                produto.Codigo = int.Parse(nudCodigoRapido.Text);
+                produto.Ponto = int.Parse(nudPontos.Text);
+                produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
+                produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
+                produto.Quantidade = int.Parse(nudQuantidade.Text);
                 produto.Lucro = (produto.VL_Venda - produto.VL_Pago);
                 produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
 
@@ -157,56 +165,12 @@ namespace MaryKay
         private void NovoProduto()
         {
             txtNomeProduto.Text = string.Empty;
-            txtQuantidade.Text = string.Empty;
-            txtVL_Pago.Text = string.Empty;
-            txtVL_Venda.Text = string.Empty;
-            txtCodigoRapido.Text = string.Empty;
-            txtPontos.Text = string.Empty;
+            nudQuantidade.Text = string.Empty;
+            nudVL_Pago.Text = string.Empty;
+            nudVL_Venda.Text = string.Empty;
+            nudCodigoRapido.Text = string.Empty;
+            nudPontos.Text = string.Empty;
             cboSessao.SelectedItem = null;
         }
-
-        #region Transformando campos texto em numeric
-        private void txtVL_Pago_TextChanged(object sender, EventArgs e)
-        {
-            Regex regex = new Regex("[0-9]");
-
-            if (!regex.IsMatch(txtVL_Pago.Text))
-            {
-                txtVL_Pago.Text = string.Empty;
-            }
-        }
-
-        private void txtVL_Venda_TextChanged(object sender, EventArgs e)
-        {
-            if (!regex.IsMatch(txtVL_Venda.Text))
-            {
-                txtVL_Venda.Text = string.Empty;
-            }
-        }
-
-        private void txtCodigoRapido_TextChanged(object sender, EventArgs e)
-        {
-            if (!regex.IsMatch(txtCodigoRapido.Text))
-            {
-                txtCodigoRapido.Text = string.Empty;
-            }
-        }
-
-        private void txtPontos_TextChanged(object sender, EventArgs e)
-        {
-            if (!regex.IsMatch(txtPontos.Text))
-            {
-                txtPontos.Text = string.Empty;
-            }
-        }
-
-        private void txtQuantidade_TextChanged(object sender, EventArgs e)
-        {
-            if (!regex.IsMatch(txtQuantidade.Text))
-            {
-                txtQuantidade.Text = string.Empty;
-            }
-        }
-        #endregion
     }
 }

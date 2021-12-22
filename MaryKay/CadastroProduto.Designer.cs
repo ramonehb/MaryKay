@@ -33,13 +33,9 @@ namespace MaryKay
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
-            this.txtCodigoRapido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtVL_Pago = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtVL_Venda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboSessao = new System.Windows.Forms.ComboBox();
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
@@ -57,16 +53,29 @@ namespace MaryKay
             this.lbPago = new System.Windows.Forms.Label();
             this.lbVenda = new System.Windows.Forms.Label();
             this.lbSessao = new System.Windows.Forms.Label();
-            this.txtPontos = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbCodigoRapido = new System.Windows.Forms.Label();
             this.tipoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipo_ProdutoTableAdapter = new MaryKay.MaryKayDataSet1TableAdapters.Tipo_ProdutoTableAdapter();
+            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.nudVL_Venda = new System.Windows.Forms.NumericUpDown();
+            this.nudVL_Pago = new System.Windows.Forms.NumericUpDown();
+            this.nudPontos = new System.Windows.Forms.NumericUpDown();
+            this.nudCodigoRapido = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVL_Venda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVL_Pago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPontos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCodigoRapido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeProduto
@@ -91,17 +100,6 @@ namespace MaryKay
             this.nm.TabIndex = 28;
             this.nm.Text = "PRODUTO";
             // 
-            // txtCodigoRapido
-            // 
-            this.txtCodigoRapido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoRapido.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtCodigoRapido.Location = new System.Drawing.Point(388, 742);
-            this.txtCodigoRapido.MaxLength = 6;
-            this.txtCodigoRapido.Name = "txtCodigoRapido";
-            this.txtCodigoRapido.Size = new System.Drawing.Size(324, 44);
-            this.txtCodigoRapido.TabIndex = 7;
-            this.txtCodigoRapido.TextChanged += new System.EventHandler(this.txtCodigoRapido_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -113,17 +111,6 @@ namespace MaryKay
             this.label1.Size = new System.Drawing.Size(324, 48);
             this.label1.TabIndex = 30;
             this.label1.Text = "CODIGO RÁPIDO";
-            // 
-            // txtVL_Pago
-            // 
-            this.txtVL_Pago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtVL_Pago.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtVL_Pago.Location = new System.Drawing.Point(388, 628);
-            this.txtVL_Pago.MaxLength = 50;
-            this.txtVL_Pago.Name = "txtVL_Pago";
-            this.txtVL_Pago.Size = new System.Drawing.Size(324, 44);
-            this.txtVL_Pago.TabIndex = 3;
-            this.txtVL_Pago.TextChanged += new System.EventHandler(this.txtVL_Pago_TextChanged);
             // 
             // label2
             // 
@@ -137,17 +124,6 @@ namespace MaryKay
             this.label2.TabIndex = 32;
             this.label2.Text = "VALOR PAGO";
             // 
-            // txtVL_Venda
-            // 
-            this.txtVL_Venda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtVL_Venda.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtVL_Venda.Location = new System.Drawing.Point(1195, 627);
-            this.txtVL_Venda.MaxLength = 50;
-            this.txtVL_Venda.Name = "txtVL_Venda";
-            this.txtVL_Venda.Size = new System.Drawing.Size(324, 44);
-            this.txtVL_Venda.TabIndex = 4;
-            this.txtVL_Venda.TextChanged += new System.EventHandler(this.txtVL_Venda_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -159,17 +135,6 @@ namespace MaryKay
             this.label3.Size = new System.Drawing.Size(349, 48);
             this.label3.TabIndex = 34;
             this.label3.Text = "VALOR DE VENDA";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQuantidade.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtQuantidade.Location = new System.Drawing.Point(1742, 499);
-            this.txtQuantidade.MaxLength = 50;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(168, 44);
-            this.txtQuantidade.TabIndex = 2;
-            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
             // 
             // label4
             // 
@@ -191,7 +156,7 @@ namespace MaryKay
             "1",
             "2",
             "3"});
-            this.cboSessao.Location = new System.Drawing.Point(1818, 621);
+            this.cboSessao.Location = new System.Drawing.Point(1779, 621);
             this.cboSessao.Name = "cboSessao";
             this.cboSessao.Size = new System.Drawing.Size(92, 50);
             this.cboSessao.TabIndex = 5;
@@ -241,7 +206,7 @@ namespace MaryKay
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(1597, 623);
+            this.label6.Location = new System.Drawing.Point(1571, 623);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 48);
             this.label6.TabIndex = 40;
@@ -349,17 +314,6 @@ namespace MaryKay
             this.lbSessao.Size = new System.Drawing.Size(0, 48);
             this.lbSessao.TabIndex = 68;
             // 
-            // txtPontos
-            // 
-            this.txtPontos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPontos.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtPontos.Location = new System.Drawing.Point(1195, 742);
-            this.txtPontos.MaxLength = 6;
-            this.txtPontos.Name = "txtPontos";
-            this.txtPontos.Size = new System.Drawing.Size(324, 44);
-            this.txtPontos.TabIndex = 69;
-            this.txtPontos.TextChanged += new System.EventHandler(this.txtPontos_TextChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -392,15 +346,98 @@ namespace MaryKay
             // 
             this.tipo_ProdutoTableAdapter.ClearBeforeFill = true;
             // 
+            // nudQuantidade
+            // 
+            this.nudQuantidade.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudQuantidade.Location = new System.Drawing.Point(1751, 503);
+            this.nudQuantidade.Name = "nudQuantidade";
+            this.nudQuantidade.Size = new System.Drawing.Size(120, 44);
+            this.nudQuantidade.TabIndex = 72;
+            this.nudQuantidade.ThousandsSeparator = true;
+            // 
+            // nudVL_Venda
+            // 
+            this.nudVL_Venda.DecimalPlaces = 2;
+            this.nudVL_Venda.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudVL_Venda.Location = new System.Drawing.Point(1186, 627);
+            this.nudVL_Venda.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudVL_Venda.Name = "nudVL_Venda";
+            this.nudVL_Venda.Size = new System.Drawing.Size(358, 44);
+            this.nudVL_Venda.TabIndex = 73;
+            this.nudVL_Venda.ThousandsSeparator = true;
+            // 
+            // nudVL_Pago
+            // 
+            this.nudVL_Pago.DecimalPlaces = 2;
+            this.nudVL_Pago.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudVL_Pago.Location = new System.Drawing.Point(388, 628);
+            this.nudVL_Pago.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudVL_Pago.Name = "nudVL_Pago";
+            this.nudVL_Pago.Size = new System.Drawing.Size(358, 44);
+            this.nudVL_Pago.TabIndex = 74;
+            this.nudVL_Pago.ThousandsSeparator = true;
+            // 
+            // nudPontos
+            // 
+            this.nudPontos.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudPontos.Location = new System.Drawing.Point(1186, 742);
+            this.nudPontos.Name = "nudPontos";
+            this.nudPontos.Size = new System.Drawing.Size(358, 44);
+            this.nudPontos.TabIndex = 75;
+            this.nudPontos.ThousandsSeparator = true;
+            // 
+            // nudCodigoRapido
+            // 
+            this.nudCodigoRapido.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudCodigoRapido.Location = new System.Drawing.Point(388, 746);
+            this.nudCodigoRapido.Name = "nudCodigoRapido";
+            this.nudCodigoRapido.Size = new System.Drawing.Size(358, 44);
+            this.nudCodigoRapido.TabIndex = 76;
+            this.nudCodigoRapido.ThousandsSeparator = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1524, 621);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 194);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(726, 621);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(31, 194);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 78;
+            this.pictureBox3.TabStop = false;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2057, 1006);
+            this.ClientSize = new System.Drawing.Size(1924, 1006);
             this.ControlBox = false;
             this.Controls.Add(this.lbCodigoRapido);
-            this.Controls.Add(this.txtPontos);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.nudCodigoRapido);
+            this.Controls.Add(this.nudPontos);
+            this.Controls.Add(this.nudVL_Pago);
+            this.Controls.Add(this.nudVL_Venda);
+            this.Controls.Add(this.nudQuantidade);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbSessao);
             this.Controls.Add(this.lbVenda);
@@ -415,13 +452,9 @@ namespace MaryKay
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cboTipoProduto);
             this.Controls.Add(this.cboSessao);
-            this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtVL_Venda);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtVL_Pago);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtCodigoRapido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNomeProduto);
             this.Controls.Add(this.nm);
@@ -435,6 +468,13 @@ namespace MaryKay
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVL_Venda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVL_Pago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPontos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCodigoRapido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,13 +484,9 @@ namespace MaryKay
 
         private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Label nm;
-        private System.Windows.Forms.TextBox txtCodigoRapido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtVL_Pago;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtVL_Venda;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboSessao;
         private System.Windows.Forms.ComboBox cboTipoProduto;
@@ -465,7 +501,6 @@ namespace MaryKay
         private System.Windows.Forms.Label lbPago;
         private System.Windows.Forms.Label lbVenda;
         private System.Windows.Forms.Label lbSessao;
-        private System.Windows.Forms.TextBox txtPontos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbCodigoRapido;
         private MaryKayDataSet1 maryKayDataSet1;
@@ -473,5 +508,12 @@ namespace MaryKay
         private MaryKayDataSet1TableAdapters.Tipo_ProdutoTableAdapter tipo_ProdutoTableAdapter;
         private System.Windows.Forms.BindingSource tipoProdutoBindingSource1;
         private System.Windows.Forms.BindingSource maryKayDataSet1BindingSource;
+        private System.Windows.Forms.NumericUpDown nudQuantidade;
+        private System.Windows.Forms.NumericUpDown nudVL_Venda;
+        private System.Windows.Forms.NumericUpDown nudVL_Pago;
+        private System.Windows.Forms.NumericUpDown nudPontos;
+        private System.Windows.Forms.NumericUpDown nudCodigoRapido;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
