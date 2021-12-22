@@ -73,10 +73,15 @@
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Funcoes.cs" />
-    <Compile Include="MaryKayDataSet1.Designer.cs">
+    <Compile Include="DataSetCliente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MaryKayDataSet1.xsd</DependentUpon>
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTipoProduto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.cs" />
     <Compile Include="TelaInicial.cs">
@@ -115,16 +120,27 @@
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="MaryKayDataSet1.xsc">
-      <DependentUpon>MaryKayDataSet1.xsd</DependentUpon>
+    <None Include="DataSetCliente.xsc">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
-    <None Include="MaryKayDataSet1.xsd">
+    <None Include="DataSetCliente.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MaryKayDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetCliente.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MaryKayDataSet1.xss">
-      <DependentUpon>MaryKayDataSet1.xsd</DependentUpon>
+    <None Include="DataSetCliente.xss">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoProduto.xsc">
+      <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTipoProduto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTipoProduto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTipoProduto.xss">
+      <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

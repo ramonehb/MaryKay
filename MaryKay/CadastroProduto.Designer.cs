@@ -29,6 +29,7 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProduto));
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@ namespace MaryKay
             this.label4 = new System.Windows.Forms.Label();
             this.cboSessao = new System.Windows.Forms.ComboBox();
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
+            this.tipoProdutoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.maryKayDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maryKayDataSet1 = new MaryKay.MaryKayDataSet1();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,14 +60,20 @@ namespace MaryKay
             this.txtPontos = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbCodigoRapido = new System.Windows.Forms.Label();
+            this.tipoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipo_ProdutoTableAdapter = new MaryKay.MaryKayDataSet1TableAdapters.Tipo_ProdutoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeProduto
             // 
             this.txtNomeProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeProduto.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtNomeProduto.Location = new System.Drawing.Point(387, 417);
+            this.txtNomeProduto.Location = new System.Drawing.Point(388, 373);
             this.txtNomeProduto.MaxLength = 50;
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(1522, 44);
@@ -75,7 +85,7 @@ namespace MaryKay
             this.nm.BackColor = System.Drawing.Color.Transparent;
             this.nm.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.nm.ForeColor = System.Drawing.Color.Black;
-            this.nm.Location = new System.Drawing.Point(52, 414);
+            this.nm.Location = new System.Drawing.Point(53, 370);
             this.nm.Name = "nm";
             this.nm.Size = new System.Drawing.Size(204, 48);
             this.nm.TabIndex = 28;
@@ -85,11 +95,12 @@ namespace MaryKay
             // 
             this.txtCodigoRapido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigoRapido.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtCodigoRapido.Location = new System.Drawing.Point(387, 786);
+            this.txtCodigoRapido.Location = new System.Drawing.Point(388, 742);
             this.txtCodigoRapido.MaxLength = 6;
             this.txtCodigoRapido.Name = "txtCodigoRapido";
             this.txtCodigoRapido.Size = new System.Drawing.Size(324, 44);
             this.txtCodigoRapido.TabIndex = 7;
+            this.txtCodigoRapido.TextChanged += new System.EventHandler(this.txtCodigoRapido_TextChanged);
             // 
             // label1
             // 
@@ -97,7 +108,7 @@ namespace MaryKay
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(43, 786);
+            this.label1.Location = new System.Drawing.Point(44, 742);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 48);
             this.label1.TabIndex = 30;
@@ -107,11 +118,12 @@ namespace MaryKay
             // 
             this.txtVL_Pago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVL_Pago.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtVL_Pago.Location = new System.Drawing.Point(387, 672);
+            this.txtVL_Pago.Location = new System.Drawing.Point(388, 628);
             this.txtVL_Pago.MaxLength = 50;
             this.txtVL_Pago.Name = "txtVL_Pago";
             this.txtVL_Pago.Size = new System.Drawing.Size(324, 44);
             this.txtVL_Pago.TabIndex = 3;
+            this.txtVL_Pago.TextChanged += new System.EventHandler(this.txtVL_Pago_TextChanged);
             // 
             // label2
             // 
@@ -119,7 +131,7 @@ namespace MaryKay
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(52, 668);
+            this.label2.Location = new System.Drawing.Point(53, 624);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 48);
             this.label2.TabIndex = 32;
@@ -129,11 +141,12 @@ namespace MaryKay
             // 
             this.txtVL_Venda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVL_Venda.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtVL_Venda.Location = new System.Drawing.Point(1194, 671);
+            this.txtVL_Venda.Location = new System.Drawing.Point(1195, 627);
             this.txtVL_Venda.MaxLength = 50;
             this.txtVL_Venda.Name = "txtVL_Venda";
             this.txtVL_Venda.Size = new System.Drawing.Size(324, 44);
             this.txtVL_Venda.TabIndex = 4;
+            this.txtVL_Venda.TextChanged += new System.EventHandler(this.txtVL_Venda_TextChanged);
             // 
             // label3
             // 
@@ -141,7 +154,7 @@ namespace MaryKay
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(792, 668);
+            this.label3.Location = new System.Drawing.Point(793, 624);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(349, 48);
             this.label3.TabIndex = 34;
@@ -151,11 +164,12 @@ namespace MaryKay
             // 
             this.txtQuantidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtQuantidade.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtQuantidade.Location = new System.Drawing.Point(1741, 543);
+            this.txtQuantidade.Location = new System.Drawing.Point(1742, 499);
             this.txtQuantidade.MaxLength = 50;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(168, 44);
             this.txtQuantidade.TabIndex = 2;
+            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
             // 
             // label4
             // 
@@ -163,7 +177,7 @@ namespace MaryKay
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1426, 543);
+            this.label4.Location = new System.Drawing.Point(1427, 499);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 48);
             this.label4.TabIndex = 36;
@@ -177,21 +191,37 @@ namespace MaryKay
             "1",
             "2",
             "3"});
-            this.cboSessao.Location = new System.Drawing.Point(1817, 665);
+            this.cboSessao.Location = new System.Drawing.Point(1818, 621);
             this.cboSessao.Name = "cboSessao";
             this.cboSessao.Size = new System.Drawing.Size(92, 50);
             this.cboSessao.TabIndex = 5;
             // 
             // cboTipoProduto
             // 
+            this.cboTipoProduto.DataSource = this.tipoProdutoBindingSource1;
+            this.cboTipoProduto.DisplayMember = "Categoria";
             this.cboTipoProduto.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold);
             this.cboTipoProduto.FormattingEnabled = true;
-            this.cboTipoProduto.Items.AddRange(new object[] {
-            ""});
-            this.cboTipoProduto.Location = new System.Drawing.Point(387, 541);
+            this.cboTipoProduto.Location = new System.Drawing.Point(388, 497);
             this.cboTipoProduto.Name = "cboTipoProduto";
             this.cboTipoProduto.Size = new System.Drawing.Size(975, 50);
             this.cboTipoProduto.TabIndex = 1;
+            this.cboTipoProduto.ValueMember = "ID_TipoProduto";
+            // 
+            // tipoProdutoBindingSource1
+            // 
+            this.tipoProdutoBindingSource1.DataMember = "Tipo_Produto";
+            this.tipoProdutoBindingSource1.DataSource = this.maryKayDataSet1BindingSource;
+            // 
+            // maryKayDataSet1BindingSource
+            // 
+            this.maryKayDataSet1BindingSource.DataSource = this.maryKayDataSet1;
+            this.maryKayDataSet1BindingSource.Position = 0;
+            // 
+            // maryKayDataSet1
+            // 
+            this.maryKayDataSet1.DataSetName = "MaryKayDataSet1";
+            this.maryKayDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -199,7 +229,7 @@ namespace MaryKay
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(43, 543);
+            this.label5.Location = new System.Drawing.Point(44, 499);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(241, 48);
             this.label5.TabIndex = 39;
@@ -211,7 +241,7 @@ namespace MaryKay
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(1596, 667);
+            this.label6.Location = new System.Drawing.Point(1597, 623);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 48);
             this.label6.TabIndex = 40;
@@ -259,7 +289,7 @@ namespace MaryKay
             this.lbNomeProduto.BackColor = System.Drawing.Color.Transparent;
             this.lbNomeProduto.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbNomeProduto.ForeColor = System.Drawing.Color.Red;
-            this.lbNomeProduto.Location = new System.Drawing.Point(792, 347);
+            this.lbNomeProduto.Location = new System.Drawing.Point(793, 303);
             this.lbNomeProduto.Name = "lbNomeProduto";
             this.lbNomeProduto.Size = new System.Drawing.Size(0, 48);
             this.lbNomeProduto.TabIndex = 63;
@@ -270,7 +300,7 @@ namespace MaryKay
             this.lbCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lbCategoria.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbCategoria.ForeColor = System.Drawing.Color.Red;
-            this.lbCategoria.Location = new System.Drawing.Point(614, 478);
+            this.lbCategoria.Location = new System.Drawing.Point(615, 434);
             this.lbCategoria.Name = "lbCategoria";
             this.lbCategoria.Size = new System.Drawing.Size(0, 48);
             this.lbCategoria.TabIndex = 64;
@@ -281,7 +311,7 @@ namespace MaryKay
             this.lbQuantidade.BackColor = System.Drawing.Color.Transparent;
             this.lbQuantidade.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbQuantidade.ForeColor = System.Drawing.Color.Red;
-            this.lbQuantidade.Location = new System.Drawing.Point(1453, 478);
+            this.lbQuantidade.Location = new System.Drawing.Point(1454, 434);
             this.lbQuantidade.Name = "lbQuantidade";
             this.lbQuantidade.Size = new System.Drawing.Size(0, 48);
             this.lbQuantidade.TabIndex = 65;
@@ -292,7 +322,7 @@ namespace MaryKay
             this.lbPago.BackColor = System.Drawing.Color.Transparent;
             this.lbPago.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbPago.ForeColor = System.Drawing.Color.Red;
-            this.lbPago.Location = new System.Drawing.Point(379, 607);
+            this.lbPago.Location = new System.Drawing.Point(380, 563);
             this.lbPago.Name = "lbPago";
             this.lbPago.Size = new System.Drawing.Size(0, 48);
             this.lbPago.TabIndex = 66;
@@ -303,7 +333,7 @@ namespace MaryKay
             this.lbVenda.BackColor = System.Drawing.Color.Transparent;
             this.lbVenda.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbVenda.ForeColor = System.Drawing.Color.Red;
-            this.lbVenda.Location = new System.Drawing.Point(1186, 607);
+            this.lbVenda.Location = new System.Drawing.Point(1187, 563);
             this.lbVenda.Name = "lbVenda";
             this.lbVenda.Size = new System.Drawing.Size(0, 48);
             this.lbVenda.TabIndex = 67;
@@ -314,7 +344,7 @@ namespace MaryKay
             this.lbSessao.BackColor = System.Drawing.Color.Transparent;
             this.lbSessao.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbSessao.ForeColor = System.Drawing.Color.Red;
-            this.lbSessao.Location = new System.Drawing.Point(1652, 607);
+            this.lbSessao.Location = new System.Drawing.Point(1653, 563);
             this.lbSessao.Name = "lbSessao";
             this.lbSessao.Size = new System.Drawing.Size(0, 48);
             this.lbSessao.TabIndex = 68;
@@ -323,11 +353,12 @@ namespace MaryKay
             // 
             this.txtPontos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPontos.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtPontos.Location = new System.Drawing.Point(1194, 786);
+            this.txtPontos.Location = new System.Drawing.Point(1195, 742);
             this.txtPontos.MaxLength = 6;
             this.txtPontos.Name = "txtPontos";
             this.txtPontos.Size = new System.Drawing.Size(324, 44);
             this.txtPontos.TabIndex = 69;
+            this.txtPontos.TextChanged += new System.EventHandler(this.txtPontos_TextChanged);
             // 
             // label7
             // 
@@ -335,7 +366,7 @@ namespace MaryKay
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(963, 786);
+            this.label7.Location = new System.Drawing.Point(964, 742);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(178, 48);
             this.label7.TabIndex = 70;
@@ -347,10 +378,19 @@ namespace MaryKay
             this.lbCodigoRapido.BackColor = System.Drawing.Color.Transparent;
             this.lbCodigoRapido.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbCodigoRapido.ForeColor = System.Drawing.Color.Red;
-            this.lbCodigoRapido.Location = new System.Drawing.Point(276, 735);
+            this.lbCodigoRapido.Location = new System.Drawing.Point(277, 691);
             this.lbCodigoRapido.Name = "lbCodigoRapido";
             this.lbCodigoRapido.Size = new System.Drawing.Size(0, 48);
             this.lbCodigoRapido.TabIndex = 71;
+            // 
+            // tipoProdutoBindingSource
+            // 
+            this.tipoProdutoBindingSource.DataMember = "Tipo_Produto";
+            this.tipoProdutoBindingSource.DataSource = this.maryKayDataSet1;
+            // 
+            // tipo_ProdutoTableAdapter
+            // 
+            this.tipo_ProdutoTableAdapter.ClearBeforeFill = true;
             // 
             // CadastroProduto
             // 
@@ -389,7 +429,12 @@ namespace MaryKay
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroProduto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CadastroProduto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +468,10 @@ namespace MaryKay
         private System.Windows.Forms.TextBox txtPontos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbCodigoRapido;
+        private MaryKayDataSet1 maryKayDataSet1;
+        private System.Windows.Forms.BindingSource tipoProdutoBindingSource;
+        private MaryKayDataSet1TableAdapters.Tipo_ProdutoTableAdapter tipo_ProdutoTableAdapter;
+        private System.Windows.Forms.BindingSource tipoProdutoBindingSource1;
+        private System.Windows.Forms.BindingSource maryKayDataSet1BindingSource;
     }
 }

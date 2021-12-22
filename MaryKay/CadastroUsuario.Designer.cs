@@ -1,7 +1,7 @@
 ﻿
 namespace MaryKay
 {
-    partial class fCadastroUsuario
+    partial class CadastroUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,12 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCadastroUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nm = new System.Windows.Forms.Label();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@ namespace MaryKay
             this.lbEmail = new System.Windows.Forms.Label();
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +101,7 @@ namespace MaryKay
             this.btnFinalizar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(967, 871);
+            this.btnFinalizar.Location = new System.Drawing.Point(810, 868);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(329, 103);
@@ -109,17 +109,6 @@ namespace MaryKay
             this.btnFinalizar.Text = "FINALIZAR CADASTRO";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(559, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1080, 238);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
             // 
             // txtSenha
             // 
@@ -248,13 +237,24 @@ namespace MaryKay
             this.label4.TabIndex = 57;
             this.label4.Text = "TIPO USÚARIO";
             // 
-            // fCadastroUsuario
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(507, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1014, 194);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2057, 1006);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.lbEmail);
@@ -266,14 +266,13 @@ namespace MaryKay
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nm);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "fCadastroUsuario";
+            this.Name = "CadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cadastro de Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -290,7 +289,6 @@ namespace MaryKay
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nm;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -302,5 +300,6 @@ namespace MaryKay
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

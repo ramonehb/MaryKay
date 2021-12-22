@@ -58,6 +58,7 @@ namespace MaryKay
                     if (!clienteDal.CadastraCliente(cliente))
                     {
                         MessageBox.Show("ERRO AO CADASTRAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        NovoCliente();
                         return;
                     }
 
@@ -68,6 +69,7 @@ namespace MaryKay
                     if (!clienteDal.AtualizarCliente(cliente))
                     {
                         MessageBox.Show("ERRO AO ATUALIZAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        NovoCliente();
                         return;
                     }
 

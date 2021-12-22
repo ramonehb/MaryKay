@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MaryKay
 {
-    public partial class fLogin : Form
+    public partial class Login : Form
     {
-        public fLogin()
+        public Login()
         {
             InitializeComponent();
         }

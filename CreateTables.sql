@@ -1,7 +1,4 @@
-﻿CREATE DATABASE MaryKay
-
-Use MARYKAY
-
+﻿
 CREATE TABLE Produto (
 	ID_Produto		INT IDENTITY,
 	ID_TipoProduto	INT NOT NULL,
@@ -11,14 +8,14 @@ CREATE TABLE Produto (
 	VL_Pago			DECIMAL(5,2) NOT NULL,
 	VL_Venda		DECIMAL(5,2) NOT NULL,
 	Quantidade		INT NOT NULL,
-	Lucro			DECIMAL(5,2) DEFAULT (VL_Venda - VL_Pago) NULL,
+	Lucro			DECIMAL(5,2) NULL,
 	Sessao			INT NOT NULL,
 
 	CONSTRAINT PK_ID_Produto PRIMARY KEY (ID_Produto),
 	CONSTRAINT FK_ID_TipoProduto FOREIGN KEY (ID_TipoProduto) REFERENCES Tipo_Produto(ID_TipoProduto),
-	CONSTRAINT FK_ID_ID_Cor FOREIGN KEY (ID_Cor) REFERENCES Cor(ID_Cor)
 )
 
+GO 
 
 
 CREATE TABLE Estoque (
@@ -30,15 +27,7 @@ CREATE TABLE Estoque (
 	CONSTRAINT FK_ID_Produto FOREIGN KEY (ID_Produto) REFERENCES Produto(ID_Produto)
 )
 
-
-CREATE TABLE Cor (
-	ID_Cor		INT IDENTITY,
-	Nome_Cor	VARCHAR(100) NOT NULL,
-
-	CONSTRAINT PK_ID_Cor PRIMARY KEY (ID_Cor)
-)
-
-
+GO 
 
 CREATE TABLE  Tipo_Produto (
 	ID_TipoProduto		INT IDENTITY,
@@ -47,6 +36,7 @@ CREATE TABLE  Tipo_Produto (
 	CONSTRAINT PK_ID_TipoProduto PRIMARY KEY (ID_TipoProduto)
 )
 
+GO 
 
 
 CREATE TABLE Venda_Cliente (
@@ -62,9 +52,11 @@ CREATE TABLE Venda_Cliente (
 	CONSTRAINT FK_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)
 )
 
+GO 
+
 CREATE TABLE Cliente (
-	ID_Ccliente		INT IDENTITY,
-	ID_Usuario		INT NOT NULL,
+	ID_Cliente		INT IDENTITY,
+	ID_Usuario		INT NULL,
 	Nome			VARCHAR (100) NOT NULL,
 	CPF				VARCHAR (11) NULL,
 	Email			VARCHAR (100) NULL,
@@ -78,5 +70,5 @@ CREATE TABLE Cliente (
 	FL_EnviaEmail	BIT NULL,
 
 	CONSTRAINT PK_ID_Cliente PRIMARY KEY (ID_Cliente),
-	CONSTRAINT FK_ID_UsuarioCliente FOREIGN KEY (ID_Usuario) REFERENCES Usuario (ID_Usuario)
+	--CONSTRAINT FK_ID_UsuarioCliente FOREIGN KEY (ID_Usuario) REFERENCES Usuario (ID_Usuario)
 )

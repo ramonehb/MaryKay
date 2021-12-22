@@ -30,9 +30,9 @@ namespace DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCor(Cor instance);
-    partial void UpdateCor(Cor instance);
-    partial void DeleteCor(Cor instance);
+    partial void InsertCliente(Cliente instance);
+    partial void UpdateCliente(Cliente instance);
+    partial void DeleteCliente(Cliente instance);
     partial void InsertEstoque(Estoque instance);
     partial void UpdateEstoque(Estoque instance);
     partial void DeleteEstoque(Estoque instance);
@@ -45,9 +45,6 @@ namespace DAL
     partial void InsertVenda_Cliente(Venda_Cliente instance);
     partial void UpdateVenda_Cliente(Venda_Cliente instance);
     partial void DeleteVenda_Cliente(Venda_Cliente instance);
-    partial void InsertCliente(Cliente instance);
-    partial void UpdateCliente(Cliente instance);
-    partial void DeleteCliente(Cliente instance);
     #endregion
 		
 		public BaseDataContext() : 
@@ -80,11 +77,11 @@ namespace DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Cor> Cors
+		public System.Data.Linq.Table<Cliente> Clientes
 		{
 			get
 			{
-				return this.GetTable<Cor>();
+				return this.GetTable<Cliente>();
 			}
 		}
 		
@@ -119,94 +116,350 @@ namespace DAL
 				return this.GetTable<Venda_Cliente>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Cliente> Clientes
-		{
-			get
-			{
-				return this.GetTable<Cliente>();
-			}
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cor")]
-	public partial class Cor : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cliente")]
+	public partial class Cliente : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ID_Cor;
+		private int _ID_Cliente;
 		
-		private string _Nome_Cor;
+		private System.Nullable<int> _ID_Usuario;
 		
-		private EntitySet<Produto> _Produtos;
+		private string _Nome;
+		
+		private string _CPF;
+		
+		private string _Email;
+		
+		private System.Nullable<System.DateTime> _DT_Nascimento;
+		
+		private string _Telefone;
+		
+		private string _Rua;
+		
+		private int _CEP;
+		
+		private System.Nullable<int> _NR_Logradouro;
+		
+		private string _Estado;
+		
+		private string _Cidade;
+		
+		private System.Nullable<bool> _FL_EnviaEmail;
+		
+		private EntitySet<Venda_Cliente> _Venda_Clientes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnID_CorChanging(int value);
-    partial void OnID_CorChanged();
-    partial void OnNome_CorChanging(string value);
-    partial void OnNome_CorChanged();
+    partial void OnID_ClienteChanging(int value);
+    partial void OnID_ClienteChanged();
+    partial void OnID_UsuarioChanging(System.Nullable<int> value);
+    partial void OnID_UsuarioChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnCPFChanging(string value);
+    partial void OnCPFChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnDT_NascimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnDT_NascimentoChanged();
+    partial void OnTelefoneChanging(string value);
+    partial void OnTelefoneChanged();
+    partial void OnRuaChanging(string value);
+    partial void OnRuaChanged();
+    partial void OnCEPChanging(int value);
+    partial void OnCEPChanged();
+    partial void OnNR_LogradouroChanging(System.Nullable<int> value);
+    partial void OnNR_LogradouroChanged();
+    partial void OnEstadoChanging(string value);
+    partial void OnEstadoChanged();
+    partial void OnCidadeChanging(string value);
+    partial void OnCidadeChanged();
+    partial void OnFL_EnviaEmailChanging(System.Nullable<bool> value);
+    partial void OnFL_EnviaEmailChanged();
     #endregion
 		
-		public Cor()
+		public Cliente()
 		{
-			this._Produtos = new EntitySet<Produto>(new Action<Produto>(this.attach_Produtos), new Action<Produto>(this.detach_Produtos));
+			this._Venda_Clientes = new EntitySet<Venda_Cliente>(new Action<Venda_Cliente>(this.attach_Venda_Clientes), new Action<Venda_Cliente>(this.detach_Venda_Clientes));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cor", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_Cor
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cliente", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_Cliente
 		{
 			get
 			{
-				return this._ID_Cor;
+				return this._ID_Cliente;
 			}
 			set
 			{
-				if ((this._ID_Cor != value))
+				if ((this._ID_Cliente != value))
 				{
-					this.OnID_CorChanging(value);
+					this.OnID_ClienteChanging(value);
 					this.SendPropertyChanging();
-					this._ID_Cor = value;
-					this.SendPropertyChanged("ID_Cor");
-					this.OnID_CorChanged();
+					this._ID_Cliente = value;
+					this.SendPropertyChanged("ID_Cliente");
+					this.OnID_ClienteChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome_Cor", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome_Cor
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Usuario", DbType="Int")]
+		public System.Nullable<int> ID_Usuario
 		{
 			get
 			{
-				return this._Nome_Cor;
+				return this._ID_Usuario;
 			}
 			set
 			{
-				if ((this._Nome_Cor != value))
+				if ((this._ID_Usuario != value))
 				{
-					this.OnNome_CorChanging(value);
+					this.OnID_UsuarioChanging(value);
 					this.SendPropertyChanging();
-					this._Nome_Cor = value;
-					this.SendPropertyChanged("Nome_Cor");
-					this.OnNome_CorChanged();
+					this._ID_Usuario = value;
+					this.SendPropertyChanged("ID_Usuario");
+					this.OnID_UsuarioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cor_Produto", Storage="_Produtos", ThisKey="ID_Cor", OtherKey="ID_Cor")]
-		public EntitySet<Produto> Produtos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nome
 		{
 			get
 			{
-				return this._Produtos;
+				return this._Nome;
 			}
 			set
 			{
-				this._Produtos.Assign(value);
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(11)")]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this.OnCPFChanging(value);
+					this.SendPropertyChanging();
+					this._CPF = value;
+					this.SendPropertyChanged("CPF");
+					this.OnCPFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DT_Nascimento", DbType="Date")]
+		public System.Nullable<System.DateTime> DT_Nascimento
+		{
+			get
+			{
+				return this._DT_Nascimento;
+			}
+			set
+			{
+				if ((this._DT_Nascimento != value))
+				{
+					this.OnDT_NascimentoChanging(value);
+					this.SendPropertyChanging();
+					this._DT_Nascimento = value;
+					this.SendPropertyChanged("DT_Nascimento");
+					this.OnDT_NascimentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefone", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Telefone
+		{
+			get
+			{
+				return this._Telefone;
+			}
+			set
+			{
+				if ((this._Telefone != value))
+				{
+					this.OnTelefoneChanging(value);
+					this.SendPropertyChanging();
+					this._Telefone = value;
+					this.SendPropertyChanged("Telefone");
+					this.OnTelefoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rua", DbType="VarChar(100)")]
+		public string Rua
+		{
+			get
+			{
+				return this._Rua;
+			}
+			set
+			{
+				if ((this._Rua != value))
+				{
+					this.OnRuaChanging(value);
+					this.SendPropertyChanging();
+					this._Rua = value;
+					this.SendPropertyChanged("Rua");
+					this.OnRuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEP", DbType="Int NOT NULL")]
+		public int CEP
+		{
+			get
+			{
+				return this._CEP;
+			}
+			set
+			{
+				if ((this._CEP != value))
+				{
+					this.OnCEPChanging(value);
+					this.SendPropertyChanging();
+					this._CEP = value;
+					this.SendPropertyChanged("CEP");
+					this.OnCEPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NR_Logradouro", DbType="Int")]
+		public System.Nullable<int> NR_Logradouro
+		{
+			get
+			{
+				return this._NR_Logradouro;
+			}
+			set
+			{
+				if ((this._NR_Logradouro != value))
+				{
+					this.OnNR_LogradouroChanging(value);
+					this.SendPropertyChanging();
+					this._NR_Logradouro = value;
+					this.SendPropertyChanged("NR_Logradouro");
+					this.OnNR_LogradouroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50)")]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cidade", DbType="VarChar(100)")]
+		public string Cidade
+		{
+			get
+			{
+				return this._Cidade;
+			}
+			set
+			{
+				if ((this._Cidade != value))
+				{
+					this.OnCidadeChanging(value);
+					this.SendPropertyChanging();
+					this._Cidade = value;
+					this.SendPropertyChanged("Cidade");
+					this.OnCidadeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FL_EnviaEmail", DbType="Bit")]
+		public System.Nullable<bool> FL_EnviaEmail
+		{
+			get
+			{
+				return this._FL_EnviaEmail;
+			}
+			set
+			{
+				if ((this._FL_EnviaEmail != value))
+				{
+					this.OnFL_EnviaEmailChanging(value);
+					this.SendPropertyChanging();
+					this._FL_EnviaEmail = value;
+					this.SendPropertyChanged("FL_EnviaEmail");
+					this.OnFL_EnviaEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Venda_Cliente", Storage="_Venda_Clientes", ThisKey="ID_Cliente", OtherKey="ID_Cliente")]
+		public EntitySet<Venda_Cliente> Venda_Clientes
+		{
+			get
+			{
+				return this._Venda_Clientes;
+			}
+			set
+			{
+				this._Venda_Clientes.Assign(value);
 			}
 		}
 		
@@ -230,16 +483,16 @@ namespace DAL
 			}
 		}
 		
-		private void attach_Produtos(Produto entity)
+		private void attach_Venda_Clientes(Venda_Cliente entity)
 		{
 			this.SendPropertyChanging();
-			entity.Cor = this;
+			entity.Cliente = this;
 		}
 		
-		private void detach_Produtos(Produto entity)
+		private void detach_Venda_Clientes(Venda_Cliente entity)
 		{
 			this.SendPropertyChanging();
-			entity.Cor = null;
+			entity.Cliente = null;
 		}
 	}
 	
@@ -402,25 +655,27 @@ namespace DAL
 		
 		private int _ID_Produto;
 		
-		private System.Nullable<int> _ID_TipoProduto;
-		
-		private System.Nullable<int> _ID_Cor;
+		private int _ID_TipoProduto;
 		
 		private string _Nome;
 		
+		private int _Codigo;
+		
 		private System.Nullable<int> _Ponto;
 		
-		private System.Nullable<decimal> _VL_Pago;
+		private decimal _VL_Pago;
 		
 		private decimal _VL_Venda;
 		
 		private int _Quantidade;
 		
+		private System.Nullable<decimal> _Lucro;
+		
+		private int _Sessao;
+		
 		private EntitySet<Estoque> _Estoques;
 		
 		private EntitySet<Venda_Cliente> _Venda_Clientes;
-		
-		private EntityRef<Cor> _Cor;
 		
 		private EntityRef<Tipo_Produto> _Tipo_Produto;
 		
@@ -430,27 +685,30 @@ namespace DAL
     partial void OnCreated();
     partial void OnID_ProdutoChanging(int value);
     partial void OnID_ProdutoChanged();
-    partial void OnID_TipoProdutoChanging(System.Nullable<int> value);
+    partial void OnID_TipoProdutoChanging(int value);
     partial void OnID_TipoProdutoChanged();
-    partial void OnID_CorChanging(System.Nullable<int> value);
-    partial void OnID_CorChanged();
     partial void OnNomeChanging(string value);
     partial void OnNomeChanged();
+    partial void OnCodigoChanging(int value);
+    partial void OnCodigoChanged();
     partial void OnPontoChanging(System.Nullable<int> value);
     partial void OnPontoChanged();
-    partial void OnVL_PagoChanging(System.Nullable<decimal> value);
+    partial void OnVL_PagoChanging(decimal value);
     partial void OnVL_PagoChanged();
     partial void OnVL_VendaChanging(decimal value);
     partial void OnVL_VendaChanged();
     partial void OnQuantidadeChanging(int value);
     partial void OnQuantidadeChanged();
+    partial void OnLucroChanging(System.Nullable<decimal> value);
+    partial void OnLucroChanged();
+    partial void OnSessaoChanging(int value);
+    partial void OnSessaoChanged();
     #endregion
 		
 		public Produto()
 		{
 			this._Estoques = new EntitySet<Estoque>(new Action<Estoque>(this.attach_Estoques), new Action<Estoque>(this.detach_Estoques));
 			this._Venda_Clientes = new EntitySet<Venda_Cliente>(new Action<Venda_Cliente>(this.attach_Venda_Clientes), new Action<Venda_Cliente>(this.detach_Venda_Clientes));
-			this._Cor = default(EntityRef<Cor>);
 			this._Tipo_Produto = default(EntityRef<Tipo_Produto>);
 			OnCreated();
 		}
@@ -475,8 +733,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TipoProduto", DbType="Int")]
-		public System.Nullable<int> ID_TipoProduto
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TipoProduto", DbType="Int NOT NULL")]
+		public int ID_TipoProduto
 		{
 			get
 			{
@@ -495,30 +753,6 @@ namespace DAL
 					this._ID_TipoProduto = value;
 					this.SendPropertyChanged("ID_TipoProduto");
 					this.OnID_TipoProdutoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cor", DbType="Int")]
-		public System.Nullable<int> ID_Cor
-		{
-			get
-			{
-				return this._ID_Cor;
-			}
-			set
-			{
-				if ((this._ID_Cor != value))
-				{
-					if (this._Cor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_CorChanging(value);
-					this.SendPropertyChanging();
-					this._ID_Cor = value;
-					this.SendPropertyChanged("ID_Cor");
-					this.OnID_CorChanged();
 				}
 			}
 		}
@@ -543,6 +777,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="Int NOT NULL")]
+		public int Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this.OnCodigoChanging(value);
+					this.SendPropertyChanging();
+					this._Codigo = value;
+					this.SendPropertyChanged("Codigo");
+					this.OnCodigoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ponto", DbType="Int")]
 		public System.Nullable<int> Ponto
 		{
@@ -563,8 +817,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VL_Pago", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> VL_Pago
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VL_Pago", DbType="Decimal(5,2) NOT NULL")]
+		public decimal VL_Pago
 		{
 			get
 			{
@@ -623,6 +877,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lucro", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> Lucro
+		{
+			get
+			{
+				return this._Lucro;
+			}
+			set
+			{
+				if ((this._Lucro != value))
+				{
+					this.OnLucroChanging(value);
+					this.SendPropertyChanging();
+					this._Lucro = value;
+					this.SendPropertyChanged("Lucro");
+					this.OnLucroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sessao", DbType="Int NOT NULL")]
+		public int Sessao
+		{
+			get
+			{
+				return this._Sessao;
+			}
+			set
+			{
+				if ((this._Sessao != value))
+				{
+					this.OnSessaoChanging(value);
+					this.SendPropertyChanging();
+					this._Sessao = value;
+					this.SendPropertyChanged("Sessao");
+					this.OnSessaoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_Estoque", Storage="_Estoques", ThisKey="ID_Produto", OtherKey="ID_Produto")]
 		public EntitySet<Estoque> Estoques
 		{
@@ -646,40 +940,6 @@ namespace DAL
 			set
 			{
 				this._Venda_Clientes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cor_Produto", Storage="_Cor", ThisKey="ID_Cor", OtherKey="ID_Cor", IsForeignKey=true)]
-		public Cor Cor
-		{
-			get
-			{
-				return this._Cor.Entity;
-			}
-			set
-			{
-				Cor previousValue = this._Cor.Entity;
-				if (((previousValue != value) 
-							|| (this._Cor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cor.Entity = null;
-						previousValue.Produtos.Remove(this);
-					}
-					this._Cor.Entity = value;
-					if ((value != null))
-					{
-						value.Produtos.Add(this);
-						this._ID_Cor = value.ID_Cor;
-					}
-					else
-					{
-						this._ID_Cor = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Cor");
-				}
 			}
 		}
 		
@@ -710,7 +970,7 @@ namespace DAL
 					}
 					else
 					{
-						this._ID_TipoProduto = default(Nullable<int>);
+						this._ID_TipoProduto = default(int);
 					}
 					this.SendPropertyChanged("Tipo_Produto");
 				}
@@ -894,9 +1154,9 @@ namespace DAL
 		
 		private decimal _VL_Total;
 		
-		private EntityRef<Produto> _Produto;
-		
 		private EntityRef<Cliente> _Cliente;
+		
+		private EntityRef<Produto> _Produto;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -918,8 +1178,8 @@ namespace DAL
 		
 		public Venda_Cliente()
 		{
-			this._Produto = default(EntityRef<Produto>);
 			this._Cliente = default(EntityRef<Cliente>);
+			this._Produto = default(EntityRef<Produto>);
 			OnCreated();
 		}
 		
@@ -1051,40 +1311,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_Venda_Cliente", Storage="_Produto", ThisKey="ID_Produto", OtherKey="ID_Produto", IsForeignKey=true)]
-		public Produto Produto
-		{
-			get
-			{
-				return this._Produto.Entity;
-			}
-			set
-			{
-				Produto previousValue = this._Produto.Entity;
-				if (((previousValue != value) 
-							|| (this._Produto.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Produto.Entity = null;
-						previousValue.Venda_Clientes.Remove(this);
-					}
-					this._Produto.Entity = value;
-					if ((value != null))
-					{
-						value.Venda_Clientes.Add(this);
-						this._ID_Produto = value.ID_Produto;
-					}
-					else
-					{
-						this._ID_Produto = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Produto");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Venda_Cliente", Storage="_Cliente", ThisKey="ID_Cliente", OtherKey="ID_Cliente", IsForeignKey=true)]
 		public Cliente Cliente
 		{
@@ -1119,297 +1345,37 @@ namespace DAL
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cliente")]
-	public partial class Cliente : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_Cliente;
-		
-		private string _Nome;
-		
-		private string _CPF;
-		
-		private string _Email;
-		
-		private System.Nullable<System.DateTime> _DT_Nascimento;
-		
-		private string _Telefone;
-		
-		private string _Rua;
-		
-		private int _CEP;
-		
-		private System.Nullable<int> _NR_Logradouro;
-		
-		private System.Nullable<bool> _FL_EnviaEmail;
-		
-		private EntitySet<Venda_Cliente> _Venda_Clientes;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_ClienteChanging(int value);
-    partial void OnID_ClienteChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnCPFChanging(string value);
-    partial void OnCPFChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnDT_NascimentoChanging(System.Nullable<System.DateTime> value);
-    partial void OnDT_NascimentoChanged();
-    partial void OnTelefoneChanging(string value);
-    partial void OnTelefoneChanged();
-    partial void OnRuaChanging(string value);
-    partial void OnRuaChanged();
-    partial void OnCEPChanging(int value);
-    partial void OnCEPChanged();
-    partial void OnNR_LogradouroChanging(System.Nullable<int> value);
-    partial void OnNR_LogradouroChanged();
-    partial void OnFL_EnviaEmailChanging(System.Nullable<bool> value);
-    partial void OnFL_EnviaEmailChanged();
-    #endregion
-		
-		public Cliente()
-		{
-			this._Venda_Clientes = new EntitySet<Venda_Cliente>(new Action<Venda_Cliente>(this.attach_Venda_Clientes), new Action<Venda_Cliente>(this.detach_Venda_Clientes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cliente", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_Cliente
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_Venda_Cliente", Storage="_Produto", ThisKey="ID_Produto", OtherKey="ID_Produto", IsForeignKey=true)]
+		public Produto Produto
 		{
 			get
 			{
-				return this._ID_Cliente;
+				return this._Produto.Entity;
 			}
 			set
 			{
-				if ((this._ID_Cliente != value))
+				Produto previousValue = this._Produto.Entity;
+				if (((previousValue != value) 
+							|| (this._Produto.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnID_ClienteChanging(value);
 					this.SendPropertyChanging();
-					this._ID_Cliente = value;
-					this.SendPropertyChanged("ID_Cliente");
-					this.OnID_ClienteChanged();
+					if ((previousValue != null))
+					{
+						this._Produto.Entity = null;
+						previousValue.Venda_Clientes.Remove(this);
+					}
+					this._Produto.Entity = value;
+					if ((value != null))
+					{
+						value.Venda_Clientes.Add(this);
+						this._ID_Produto = value.ID_Produto;
+					}
+					else
+					{
+						this._ID_Produto = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Produto");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(11)")]
-		public string CPF
-		{
-			get
-			{
-				return this._CPF;
-			}
-			set
-			{
-				if ((this._CPF != value))
-				{
-					this.OnCPFChanging(value);
-					this.SendPropertyChanging();
-					this._CPF = value;
-					this.SendPropertyChanged("CPF");
-					this.OnCPFChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DT_Nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> DT_Nascimento
-		{
-			get
-			{
-				return this._DT_Nascimento;
-			}
-			set
-			{
-				if ((this._DT_Nascimento != value))
-				{
-					this.OnDT_NascimentoChanging(value);
-					this.SendPropertyChanging();
-					this._DT_Nascimento = value;
-					this.SendPropertyChanged("DT_Nascimento");
-					this.OnDT_NascimentoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefone", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
-		public string Telefone
-		{
-			get
-			{
-				return this._Telefone;
-			}
-			set
-			{
-				if ((this._Telefone != value))
-				{
-					this.OnTelefoneChanging(value);
-					this.SendPropertyChanging();
-					this._Telefone = value;
-					this.SendPropertyChanged("Telefone");
-					this.OnTelefoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rua", DbType="VarChar(100)")]
-		public string Rua
-		{
-			get
-			{
-				return this._Rua;
-			}
-			set
-			{
-				if ((this._Rua != value))
-				{
-					this.OnRuaChanging(value);
-					this.SendPropertyChanging();
-					this._Rua = value;
-					this.SendPropertyChanged("Rua");
-					this.OnRuaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEP", DbType="Int NOT NULL")]
-		public int CEP
-		{
-			get
-			{
-				return this._CEP;
-			}
-			set
-			{
-				if ((this._CEP != value))
-				{
-					this.OnCEPChanging(value);
-					this.SendPropertyChanging();
-					this._CEP = value;
-					this.SendPropertyChanged("CEP");
-					this.OnCEPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NR_Logradouro", DbType="Int")]
-		public System.Nullable<int> NR_Logradouro
-		{
-			get
-			{
-				return this._NR_Logradouro;
-			}
-			set
-			{
-				if ((this._NR_Logradouro != value))
-				{
-					this.OnNR_LogradouroChanging(value);
-					this.SendPropertyChanging();
-					this._NR_Logradouro = value;
-					this.SendPropertyChanged("NR_Logradouro");
-					this.OnNR_LogradouroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FL_EnviaEmail", DbType="Bit")]
-		public System.Nullable<bool> FL_EnviaEmail
-		{
-			get
-			{
-				return this._FL_EnviaEmail;
-			}
-			set
-			{
-				if ((this._FL_EnviaEmail != value))
-				{
-					this.OnFL_EnviaEmailChanging(value);
-					this.SendPropertyChanging();
-					this._FL_EnviaEmail = value;
-					this.SendPropertyChanged("FL_EnviaEmail");
-					this.OnFL_EnviaEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Venda_Cliente", Storage="_Venda_Clientes", ThisKey="ID_Cliente", OtherKey="ID_Cliente")]
-		public EntitySet<Venda_Cliente> Venda_Clientes
-		{
-			get
-			{
-				return this._Venda_Clientes;
-			}
-			set
-			{
-				this._Venda_Clientes.Assign(value);
 			}
 		}
 		
@@ -1431,18 +1397,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Venda_Clientes(Venda_Cliente entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cliente = this;
-		}
-		
-		private void detach_Venda_Clientes(Venda_Cliente entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cliente = null;
 		}
 	}
 }

@@ -11,16 +11,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MaryKay
 {
-    public partial class fCadastroUsuario : Form
+    public partial class CadastroUsuario : Form
     {
-        public fCadastroUsuario()
+        public CadastroUsuario()
         {
             InitializeComponent();
         }
 
         private void bFechar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.ShowDialog();
+            this.Close();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)

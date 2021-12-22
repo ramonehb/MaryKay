@@ -1,7 +1,7 @@
 ﻿
 namespace MaryKay
 {
-    partial class fLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lBemVinda = new System.Windows.Forms.Label();
             this.bFechar = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@ namespace MaryKay
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
-            // fLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +109,7 @@ namespace MaryKay
             this.Controls.Add(this.bFechar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "fLogin";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Mary Kay";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

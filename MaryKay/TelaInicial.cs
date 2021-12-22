@@ -31,8 +31,15 @@ namespace MaryKay
 
         private void bUsuario_Click(object sender, EventArgs e)
         {
-            fCadastroUsuario cadastroUsuario = new fCadastroUsuario();
+            CadastroUsuario cadastroUsuario = new CadastroUsuario();
             cadastroUsuario.ShowDialog();
+            this.Close();
+        }
+
+        private void bProdutos_Click(object sender, EventArgs e)
+        {
+            CadastroProduto cadastroProduto = new CadastroProduto();
+            cadastroProduto.ShowDialog();
             this.Close();
         }
     }
