@@ -352,7 +352,7 @@ namespace MaryKay
             this.nudQuantidade.Location = new System.Drawing.Point(1751, 503);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(120, 44);
-            this.nudQuantidade.TabIndex = 72;
+            this.nudQuantidade.TabIndex = 2;
             this.nudQuantidade.ThousandsSeparator = true;
             // 
             // nudVL_Venda
@@ -361,13 +361,13 @@ namespace MaryKay
             this.nudVL_Venda.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
             this.nudVL_Venda.Location = new System.Drawing.Point(1186, 627);
             this.nudVL_Venda.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});
             this.nudVL_Venda.Name = "nudVL_Venda";
             this.nudVL_Venda.Size = new System.Drawing.Size(358, 44);
-            this.nudVL_Venda.TabIndex = 73;
+            this.nudVL_Venda.TabIndex = 4;
             this.nudVL_Venda.ThousandsSeparator = true;
             // 
             // nudVL_Pago
@@ -376,31 +376,43 @@ namespace MaryKay
             this.nudVL_Pago.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
             this.nudVL_Pago.Location = new System.Drawing.Point(388, 628);
             this.nudVL_Pago.Maximum = new decimal(new int[] {
-            10000,
+            10000000,
             0,
             0,
             0});
             this.nudVL_Pago.Name = "nudVL_Pago";
             this.nudVL_Pago.Size = new System.Drawing.Size(358, 44);
-            this.nudVL_Pago.TabIndex = 74;
+            this.nudVL_Pago.TabIndex = 3;
             this.nudVL_Pago.ThousandsSeparator = true;
             // 
             // nudPontos
             // 
             this.nudPontos.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudPontos.Hexadecimal = true;
             this.nudPontos.Location = new System.Drawing.Point(1186, 742);
+            this.nudPontos.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.nudPontos.Name = "nudPontos";
             this.nudPontos.Size = new System.Drawing.Size(358, 44);
-            this.nudPontos.TabIndex = 75;
+            this.nudPontos.TabIndex = 7;
             this.nudPontos.ThousandsSeparator = true;
             // 
             // nudCodigoRapido
             // 
             this.nudCodigoRapido.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.nudCodigoRapido.Hexadecimal = true;
             this.nudCodigoRapido.Location = new System.Drawing.Point(388, 746);
+            this.nudCodigoRapido.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudCodigoRapido.Name = "nudCodigoRapido";
             this.nudCodigoRapido.Size = new System.Drawing.Size(358, 44);
-            this.nudCodigoRapido.TabIndex = 76;
+            this.nudCodigoRapido.TabIndex = 6;
             this.nudCodigoRapido.ThousandsSeparator = true;
             // 
             // pictureBox2

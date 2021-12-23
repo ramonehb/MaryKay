@@ -29,20 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.nm = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbNovo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbAlterar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbVoltar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.iDClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +50,19 @@
             this.clienteTableAdapter = new MaryKay.MaryKayDataSetTableAdapters.ClienteTableAdapter();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbNovo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbAlterar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbVoltar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nm
@@ -77,90 +77,7 @@
             this.nm.Size = new System.Drawing.Size(239, 68);
             this.nm.TabIndex = 27;
             this.nm.Text = "Clientes";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(45, 45);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNovo,
-            this.toolStripSeparator2,
-            this.tsbAlterar,
-            this.toolStripSeparator3,
-            this.tsbExcluir,
-            this.toolStripSeparator1,
-            this.tsbVoltar,
-            this.toolStripSeparator4});
-            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2034, 52);
-            this.toolStrip1.TabIndex = 28;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbNovo
-            // 
-            this.tsbNovo.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsbNovo.ForeColor = System.Drawing.Color.Black;
-            this.tsbNovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNovo.Image")));
-            this.tsbNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNovo.Name = "tsbNovo";
-            this.tsbNovo.Size = new System.Drawing.Size(221, 49);
-            this.tsbNovo.Text = "NOVO CLIENTE";
-            this.tsbNovo.Click += new System.EventHandler(this.tsbNovo_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            // 
-            // tsbAlterar
-            // 
-            this.tsbAlterar.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
-            this.tsbAlterar.ForeColor = System.Drawing.Color.Black;
-            this.tsbAlterar.Image = ((System.Drawing.Image)(resources.GetObject("tsbAlterar.Image")));
-            this.tsbAlterar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAlterar.Name = "tsbAlterar";
-            this.tsbAlterar.Size = new System.Drawing.Size(260, 49);
-            this.tsbAlterar.Text = "ALTERAR CLIENTE";
-            this.tsbAlterar.Click += new System.EventHandler(this.tsbAlterar_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
-            // 
-            // tsbExcluir
-            // 
-            this.tsbExcluir.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
-            this.tsbExcluir.ForeColor = System.Drawing.Color.Black;
-            this.tsbExcluir.Image = ((System.Drawing.Image)(resources.GetObject("tsbExcluir.Image")));
-            this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExcluir.Name = "tsbExcluir";
-            this.tsbExcluir.Size = new System.Drawing.Size(254, 49);
-            this.tsbExcluir.Text = "EXCLUIR CLIENTE";
-            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // tsbVoltar
-            // 
-            this.tsbVoltar.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
-            this.tsbVoltar.ForeColor = System.Drawing.Color.Black;
-            this.tsbVoltar.Image = ((System.Drawing.Image)(resources.GetObject("tsbVoltar.Image")));
-            this.tsbVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVoltar.Name = "tsbVoltar";
-            this.tsbVoltar.Size = new System.Drawing.Size(357, 49);
-            this.tsbVoltar.Text = "VOLTAR PARA TELA INICIAL";
-            this.tsbVoltar.Click += new System.EventHandler(this.tsbVoltar_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            this.nm.Click += new System.EventHandler(this.nm_Click);
             // 
             // dgvClientes
             // 
@@ -220,6 +137,7 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(2010, 792);
             this.dgvClientes.TabIndex = 29;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // iDClienteDataGridViewTextBoxColumn
             // 
@@ -350,6 +268,91 @@
             this.label1.Size = new System.Drawing.Size(155, 38);
             this.label1.TabIndex = 31;
             this.label1.Text = "BUSCAR";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNovo,
+            this.toolStripSeparator2,
+            this.tsbAlterar,
+            this.toolStripSeparator3,
+            this.tsbExcluir,
+            this.toolStripSeparator1,
+            this.tsbVoltar,
+            this.toolStripSeparator4});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(2034, 52);
+            this.toolStrip1.TabIndex = 28;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbNovo
+            // 
+            this.tsbNovo.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbNovo.ForeColor = System.Drawing.Color.Black;
+            this.tsbNovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNovo.Image")));
+            this.tsbNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNovo.Name = "tsbNovo";
+            this.tsbNovo.Size = new System.Drawing.Size(221, 49);
+            this.tsbNovo.Text = "NOVO CLIENTE";
+            this.tsbNovo.Click += new System.EventHandler(this.tsbNovo_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbAlterar
+            // 
+            this.tsbAlterar.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
+            this.tsbAlterar.ForeColor = System.Drawing.Color.Black;
+            this.tsbAlterar.Image = ((System.Drawing.Image)(resources.GetObject("tsbAlterar.Image")));
+            this.tsbAlterar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAlterar.Name = "tsbAlterar";
+            this.tsbAlterar.Size = new System.Drawing.Size(282, 49);
+            this.tsbAlterar.Text = "ATUALIZAR CLIENTE";
+            this.tsbAlterar.Click += new System.EventHandler(this.tsbAlterar_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbExcluir
+            // 
+            this.tsbExcluir.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
+            this.tsbExcluir.ForeColor = System.Drawing.Color.Black;
+            this.tsbExcluir.Image = ((System.Drawing.Image)(resources.GetObject("tsbExcluir.Image")));
+            this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExcluir.Name = "tsbExcluir";
+            this.tsbExcluir.Size = new System.Drawing.Size(254, 49);
+            this.tsbExcluir.Text = "EXCLUIR CLIENTE";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbVoltar
+            // 
+            this.tsbVoltar.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold);
+            this.tsbVoltar.ForeColor = System.Drawing.Color.Black;
+            this.tsbVoltar.Image = ((System.Drawing.Image)(resources.GetObject("tsbVoltar.Image")));
+            this.tsbVoltar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVoltar.Name = "tsbVoltar";
+            this.tsbVoltar.Size = new System.Drawing.Size(357, 49);
+            this.tsbVoltar.Text = "VOLTAR PARA TELA INICIAL";
+            this.tsbVoltar.Click += new System.EventHandler(this.tsbVoltar_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
             // Clientes
             // 
@@ -368,11 +371,11 @@
             this.Text = "Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Clientes_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MaryKayDataSet3" targetNamespace="http://tempuri.org/MaryKayDataSet3.xsd" xmlns:mstns="http://tempuri.org/MaryKayDataSet3.xsd" xmlns="http://tempuri.org/MaryKayDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MaryKayConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MaryKayConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaryKay.Properties.Settings.GlobalReference.Default.MaryKayConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_ProdutosTableAdapter" GeneratorDataComponentClassName="vw_ProdutosTableAdapter" Name="vw_Produtos" UserDataComponentName="vw_ProdutosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaryKayConnectionString (Settings)" DbObjectName="MaryKay.dbo.vw_Produtos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NOME, [CATEGORIA DO PRODUTO], [CÓDIGO RÁPIDO], PONTOS, [VALOR DE COMPRA], [VALOR DE VENDA], LUCRO, SESSÃO FROM dbo.vw_Produtos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOME" DataSetColumn="NOME" />
+              <Mapping SourceColumn="CATEGORIA DO PRODUTO" DataSetColumn="CATEGORIA DO PRODUTO" />
+              <Mapping SourceColumn="CÓDIGO RÁPIDO" DataSetColumn="CÓDIGO RÁPIDO" />
+              <Mapping SourceColumn="PONTOS" DataSetColumn="PONTOS" />
+              <Mapping SourceColumn="VALOR DE COMPRA" DataSetColumn="VALOR DE COMPRA" />
+              <Mapping SourceColumn="VALOR DE VENDA" DataSetColumn="VALOR DE VENDA" />
+              <Mapping SourceColumn="LUCRO" DataSetColumn="LUCRO" />
+              <Mapping SourceColumn="SESSÃO" DataSetColumn="SESSÃO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MaryKayDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MaryKayDataSet3" msprop:Generator_UserDSName="MaryKayDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_Produtos" msprop:Generator_TableClassName="vw_ProdutosDataTable" msprop:Generator_TableVarName="tablevw_Produtos" msprop:Generator_TablePropName="vw_Produtos" msprop:Generator_RowDeletingName="vw_ProdutosRowDeleting" msprop:Generator_RowChangingName="vw_ProdutosRowChanging" msprop:Generator_RowEvHandlerName="vw_ProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ProdutosRowDeleted" msprop:Generator_UserTableName="vw_Produtos" msprop:Generator_RowChangedName="vw_ProdutosRowChanged" msprop:Generator_RowEvArgName="vw_ProdutosRowChangeEvent" msprop:Generator_RowClassName="vw_ProdutosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_UserColumnName="NOME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CATEGORIA_x0020_DO_x0020_PRODUTO" msprop:Generator_ColumnVarNameInTable="columnCATEGORIA_DO_PRODUTO" msprop:Generator_ColumnPropNameInRow="CATEGORIA_DO_PRODUTO" msprop:Generator_ColumnPropNameInTable="CATEGORIA_DO_PRODUTOColumn" msprop:Generator_UserColumnName="CATEGORIA DO PRODUTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CÓDIGO_x0020_RÁPIDO" msprop:Generator_ColumnVarNameInTable="columnCÓDIGO_RÁPIDO" msprop:Generator_ColumnPropNameInRow="CÓDIGO_RÁPIDO" msprop:Generator_ColumnPropNameInTable="CÓDIGO_RÁPIDOColumn" msprop:Generator_UserColumnName="CÓDIGO RÁPIDO" type="xs:int" />
+              <xs:element name="PONTOS" msprop:Generator_ColumnVarNameInTable="columnPONTOS" msprop:Generator_ColumnPropNameInRow="PONTOS" msprop:Generator_ColumnPropNameInTable="PONTOSColumn" msprop:Generator_UserColumnName="PONTOS" type="xs:int" minOccurs="0" />
+              <xs:element name="VALOR_x0020_DE_x0020_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_DE_COMPRA" msprop:Generator_ColumnPropNameInRow="VALOR_DE_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_DE_COMPRAColumn" msprop:Generator_UserColumnName="VALOR DE COMPRA" type="xs:decimal" />
+              <xs:element name="VALOR_x0020_DE_x0020_VENDA" msprop:Generator_ColumnVarNameInTable="columnVALOR_DE_VENDA" msprop:Generator_ColumnPropNameInRow="VALOR_DE_VENDA" msprop:Generator_ColumnPropNameInTable="VALOR_DE_VENDAColumn" msprop:Generator_UserColumnName="VALOR DE VENDA" type="xs:decimal" />
+              <xs:element name="LUCRO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLUCRO" msprop:Generator_ColumnPropNameInRow="LUCRO" msprop:Generator_ColumnPropNameInTable="LUCROColumn" msprop:Generator_UserColumnName="LUCRO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SESSÃO" msprop:Generator_ColumnVarNameInTable="columnSESSÃO" msprop:Generator_ColumnPropNameInRow="SESSÃO" msprop:Generator_ColumnPropNameInTable="SESSÃOColumn" msprop:Generator_UserColumnName="SESSÃO" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

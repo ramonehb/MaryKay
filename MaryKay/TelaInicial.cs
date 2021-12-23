@@ -38,8 +38,8 @@ namespace MaryKay
 
         private void bProdutos_Click(object sender, EventArgs e)
         {
-            CadastroProduto cadastroProduto = new CadastroProduto();
-            cadastroProduto.ShowDialog();
+            Produtos produtos = new Produtos();
+            produtos.ShowDialog();
             this.Close();
         }
     }

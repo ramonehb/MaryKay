@@ -18,31 +18,6 @@
       <Association Name="Cliente_Venda_Cliente" Member="Venda_Clientes" ThisKey="ID_Cliente" OtherKey="ID_Cliente" Type="Venda_Cliente" />
     </Type>
   </Table>
-  <Table Name="dbo.Estoque" Member="Estoques">
-    <Type Name="Estoque">
-      <Column Name="ID_Estoque" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Produto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="QTD_Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Produto_Estoque" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Produto" Member="Produtos">
-    <Type Name="Produto">
-      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Ponto" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VL_Pago" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="VL_Venda" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Lucro" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="Sessao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Produto_Estoque" Member="Estoques" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Estoque" />
-      <Association Name="Produto_Venda_Cliente" Member="Venda_Clientes" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Venda_Cliente" />
-      <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tipo_Produto" Member="Tipo_Produtos">
     <Type Name="Tipo_Produto">
       <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -62,4 +37,45 @@
       <Association Name="Produto_Venda_Cliente" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Produto" Member="Produtos">
+    <Type Name="Produto">
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ponto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VL_Pago" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VL_Venda" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Sessao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lucro" Type="System.Decimal" DbType="Decimal(6,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Produto_Venda_Cliente" Member="Venda_Clientes" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Venda_Cliente" />
+      <Association Name="Produto_Estoque" Member="Estoques" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Estoque" />
+      <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estoque" Member="Estoques">
+    <Type Name="Estoque">
+      <Column Name="ID_Estoque" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QTD_Item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Produto_Estoque" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_Produtos" Member="vw_Produtos">
+    <Type Name="vw_Produto">
+      <Column Name="NOME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[CATEGORIA DO PRODUTO]" Member="CATEGORIA_DO_PRODUTO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[CÓDIGO RÁPIDO]" Member="CÓDIGO_RÁPIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PONTOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[VALOR DE COMPRA]" Member="VALOR_DE_COMPRA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[VALOR DE VENDA]" Member="VALOR_DE_VENDA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LUCRO" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="SESSÃO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_AlterarEstoque" Method="usp_AlterarEstoque">
+    <Parameter Name="ID_Produto" Parameter="iD_Produto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantidade" Parameter="quantidade" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

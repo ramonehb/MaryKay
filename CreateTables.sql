@@ -7,8 +7,7 @@ CREATE TABLE Produto (
 	Ponto			INT NULL,
 	VL_Pago			DECIMAL(5,2) NOT NULL,
 	VL_Venda		DECIMAL(5,2) NOT NULL,
-	Quantidade		INT NOT NULL,
-	Lucro			DECIMAL(5,2) NULL,
+	Lucro			As (IsNull(VL_Venda, 0) - IsNull(VL_Pago, 0 )),
 	Sessao			INT NOT NULL,
 
 	CONSTRAINT PK_ID_Produto PRIMARY KEY (ID_Produto),
@@ -20,11 +19,11 @@ GO
 
 CREATE TABLE Estoque (
 	ID_Estoque		INT IDENTITY,
-	ID_Produto		INT,
+	ID_Produto		INT NOT NULL,
 	QTD_Item		INT NOT NULL,
 
 	CONSTRAINT PK_ID_Estoque PRIMARY KEY (ID_Estoque),
-	CONSTRAINT FK_ID_Produto FOREIGN KEY (ID_Produto) REFERENCES Produto(ID_Produto)
+	CONSTRAINT FK_Estoque_Produto FOREIGN KEY (ID_Produto) REFERENCES Produto(ID_Produto)
 )
 
 GO 

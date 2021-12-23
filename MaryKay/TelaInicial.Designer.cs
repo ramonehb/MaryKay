@@ -50,7 +50,7 @@ namespace MaryKay
             this.bClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bClientes.Name = "bClientes";
             this.bClientes.Size = new System.Drawing.Size(361, 106);
-            this.bClientes.TabIndex = 0;
+            this.bClientes.TabIndex = 1;
             this.bClientes.Text = "Clientes";
             this.bClientes.UseVisualStyleBackColor = false;
             this.bClientes.Click += new System.EventHandler(this.bClientes_Click);
@@ -65,7 +65,7 @@ namespace MaryKay
             this.bProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bProdutos.Name = "bProdutos";
             this.bProdutos.Size = new System.Drawing.Size(361, 106);
-            this.bProdutos.TabIndex = 1;
+            this.bProdutos.TabIndex = 0;
             this.bProdutos.Text = "Produtos";
             this.bProdutos.UseVisualStyleBackColor = false;
             this.bProdutos.Click += new System.EventHandler(this.bProdutos_Click);
@@ -80,7 +80,7 @@ namespace MaryKay
             this.bVendas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVendas.Name = "bVendas";
             this.bVendas.Size = new System.Drawing.Size(361, 106);
-            this.bVendas.TabIndex = 3;
+            this.bVendas.TabIndex = 2;
             this.bVendas.Text = "Vendas";
             this.bVendas.UseVisualStyleBackColor = false;
             // 
@@ -94,7 +94,7 @@ namespace MaryKay
             this.bEstoque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEstoque.Name = "bEstoque";
             this.bEstoque.Size = new System.Drawing.Size(361, 106);
-            this.bEstoque.TabIndex = 2;
+            this.bEstoque.TabIndex = 3;
             this.bEstoque.Text = "Estoque";
             this.bEstoque.UseVisualStyleBackColor = false;
             // 
@@ -133,7 +133,7 @@ namespace MaryKay
             this.bUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bUsuario.Name = "bUsuario";
             this.bUsuario.Size = new System.Drawing.Size(361, 106);
-            this.bUsuario.TabIndex = 22;
+            this.bUsuario.TabIndex = 4;
             this.bUsuario.Text = "Usuários";
             this.bUsuario.UseVisualStyleBackColor = false;
             this.bUsuario.Click += new System.EventHandler(this.bUsuario_Click);

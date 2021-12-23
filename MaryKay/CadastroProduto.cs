@@ -14,8 +14,6 @@ namespace MaryKay
 {
     public partial class CadastroProduto : Form
     {
-        private Regex regex = new Regex("[0-9]");
-
         public CadastroProduto()
         {
             InitializeComponent();
@@ -38,8 +36,8 @@ namespace MaryKay
 
         private void bFechar_Click(object sender, EventArgs e)
         {
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.ShowDialog();
+            Produtos produtos = new Produtos();
+            produtos.ShowDialog();
             this.Close();
         }
 
@@ -115,7 +113,19 @@ namespace MaryKay
             }
             else
             {
-                lbCodigoRapido.Text = string.Empty;
+                using (var db = new BaseDataContext())
+                {
+                    var codigoExistente = db.Produtos.Any(p => p.Codigo == int.Parse(nudCodigoRapido.Text));
+                    if (codigoExistente)
+                    {
+                        erro++;
+                        lbCodigoRapido.Text = "CODIGO RAPIDO JÁ CADASTRADO TENTE OUTRO";
+                    }
+                    else
+                    {
+                        lbCodigoRapido.Text = string.Empty;
+                    }
+                }                
             }
             if (!string.IsNullOrEmpty(nudVL_Pago.Text) && !string.IsNullOrEmpty(nudVL_Venda.Text))
             {
@@ -145,13 +155,11 @@ namespace MaryKay
                 produto.Ponto = int.Parse(nudPontos.Text);
                 produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
                 produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
-                produto.Quantidade = int.Parse(nudQuantidade.Text);
-                produto.Lucro = (produto.VL_Venda - produto.VL_Pago);
                 produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
 
                 var produtoDAL= new ProdutoDAL();
 
-                if (!produtoDAL.CadastrarProduto(produto))
+                if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
                 {
                     MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     NovoProduto();
@@ -159,6 +167,10 @@ namespace MaryKay
                 }
 
                 MessageBox.Show("PRODUTO CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NovoProduto();
+                Clientes voltar = new Clientes();
+                voltar.ShowDialog();
+                this.Close();
             }
         }
 
