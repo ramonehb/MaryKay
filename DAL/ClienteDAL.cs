@@ -53,13 +53,13 @@ namespace DAL
             }
         }
 
-        public bool DeletarCliente(int id)
+        public bool DeletarCliente(int idCliente)
         {
             try
             {
                 using (var db = new BaseDataContext())
                 {
-                    var cliente = db.Clientes.Single(c => c.ID_Cliente == id);
+                    var cliente = db.Clientes.Single(c => c.ID_Cliente == idCliente);
                     db.Clientes.DeleteOnSubmit(cliente);
                     db.SubmitChanges();
                     return true;
@@ -69,8 +69,7 @@ namespace DAL
             {
                 var msg = erro.Message;
                 return false;
-            }
-            
+            }   
         }
     }
 }

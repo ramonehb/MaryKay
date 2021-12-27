@@ -1,6 +1,7 @@
 ﻿CREATE VIEW dbo.vw_Produtos
 AS
-SELECT	Nome AS NOME,
+SELECT	ID_Produto,
+		Nome AS NOME,
 		TP.Categoria AS 'CATEGORIA DO PRODUTO',
 		Codigo as 'CÓDIGO RÁPIDO',
 		Ponto AS PONTOS,

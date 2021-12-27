@@ -1395,6 +1395,8 @@ namespace DAL
 	public partial class vw_Produto
 	{
 		
+		private int _ID_Produto;
+		
 		private string _NOME;
 		
 		private string _CATEGORIA_DO_PRODUTO;
@@ -1413,6 +1415,22 @@ namespace DAL
 		
 		public vw_Produto()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Produto", DbType="Int NOT NULL")]
+		public int ID_Produto
+		{
+			get
+			{
+				return this._ID_Produto;
+			}
+			set
+			{
+				if ((this._ID_Produto != value))
+				{
+					this._ID_Produto = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOME", DbType="VarChar(100) NOT NULL", CanBeNull=false)]

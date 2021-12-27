@@ -63,6 +63,7 @@
   </Table>
   <Table Name="dbo.vw_Produtos" Member="vw_Produtos">
     <Type Name="vw_Produto">
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NOME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="[CATEGORIA DO PRODUTO]" Member="CATEGORIA_DO_PRODUTO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="[CÓDIGO RÁPIDO]" Member="CÓDIGO_RÁPIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -28,7 +28,7 @@ namespace DAL
             }
         }
 
-        public bool AlterarProduto(Produto produto, int quantidade)
+        public bool AlterarProduto(Produto produto)
         {
             try
             {
@@ -41,12 +41,36 @@ namespace DAL
                     produtoAtualizado.Ponto = produto.Ponto;
                     produtoAtualizado.VL_Pago = produto.VL_Pago;
                     produtoAtualizado.VL_Venda = produto.VL_Venda;
-                    //produtoAtualizado.Quantidade = produto.Quantidade;
                     produtoAtualizado.Sessao = produto.Sessao;
 
+                    db.SubmitChanges();                    
+                    return true;
+                }
+            }
+            catch (Exception erro)
+            {
+                var msg = erro.Message;
+                return false;
+            }
+        }
+
+        public bool DeletarProduto(int idProduto)
+        {
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var produto = db.Produtos.Single(c => c.ID_Produto == idProduto);
+                    var estoque = db.Estoques.SingleOrDefault(e => e.ID_Produto == idProduto);
+
+                    if (estoque != null)
+                    {
+                        db.Estoques.DeleteOnSubmit(estoque);
+                        db.SubmitChanges();
+                    }
+
+                    db.Produtos.DeleteOnSubmit(produto);
                     db.SubmitChanges();
-                    db.usp_AlterarEstoque(produtoAtualizado.ID_Produto, quantidade);
-                    
                     return true;
                 }
             }
