@@ -44,7 +44,7 @@ namespace MaryKay
             {
                 using (var db = new BaseDataContext())
                 {
-                    var produtoFiltro = db.vw_Produtos.Where(p => p.NOME.Contains(txtBusca.Text));
+                    var produtoFiltro = db.vw_Produtos.Where(p => p.NOME.Contains(txtFiltroProduto.Text));
                     dgvProdutos.DataSource = produtoFiltro;
                 }
             }
@@ -84,6 +84,22 @@ namespace MaryKay
                     var voltar = new Produtos();
                     voltar.ShowDialog();
                 }
+            }
+        }
+
+        private void txtBusca_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var produtoFiltrados = db.vw_Produtos.Where(p => p.NOME.Contains(txtFiltroProduto.Text));
+                    dgvProdutos.DataSource = produtoFiltrados;
+                }
+            }
+            catch (Exception erro)
+            {
+                var msg = erro.Message;
             }
         }
     }

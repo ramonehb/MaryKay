@@ -35,20 +35,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.nm = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.iDClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dTNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nRLogradouroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fLEnviaEmailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maryKayDataSet = new MaryKay.MaryKayDataSet();
             this.clienteTableAdapter = new MaryKay.MaryKayDataSetTableAdapters.ClienteTableAdapter();
-            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNovo = new System.Windows.Forms.ToolStripButton();
@@ -59,6 +49,16 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbVoltar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.iDClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dTNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nRLogradouroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fLEnviaEmailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet)).BeginInit();
@@ -137,99 +137,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(2010, 792);
             this.dgvClientes.TabIndex = 29;
             // 
-            // iDClienteDataGridViewTextBoxColumn
-            // 
-            this.iDClienteDataGridViewTextBoxColumn.DataPropertyName = "ID_Cliente";
-            this.iDClienteDataGridViewTextBoxColumn.HeaderText = "ID_Cliente";
-            this.iDClienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDClienteDataGridViewTextBoxColumn.Name = "iDClienteDataGridViewTextBoxColumn";
-            this.iDClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDClienteDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.iDClienteDataGridViewTextBoxColumn.Visible = false;
-            this.iDClienteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nomeDataGridViewTextBoxColumn.Width = 430;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
-            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 170;
-            // 
-            // cPFDataGridViewTextBoxColumn
-            // 
-            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
-            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
-            this.cPFDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
-            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn.Width = 220;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "E-MAIL";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 350;
-            // 
-            // dTNascimentoDataGridViewTextBoxColumn
-            // 
-            this.dTNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DT_Nascimento";
-            this.dTNascimentoDataGridViewTextBoxColumn.HeaderText = "DATA DE NASCIMENTO";
-            this.dTNascimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dTNascimentoDataGridViewTextBoxColumn.Name = "dTNascimentoDataGridViewTextBoxColumn";
-            this.dTNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dTNascimentoDataGridViewTextBoxColumn.Width = 320;
-            // 
-            // ruaDataGridViewTextBoxColumn
-            // 
-            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "Rua";
-            this.ruaDataGridViewTextBoxColumn.HeaderText = "Rua";
-            this.ruaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
-            this.ruaDataGridViewTextBoxColumn.Visible = false;
-            this.ruaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cEPDataGridViewTextBoxColumn
-            // 
-            this.cEPDataGridViewTextBoxColumn.DataPropertyName = "CEP";
-            this.cEPDataGridViewTextBoxColumn.HeaderText = "CEP";
-            this.cEPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cEPDataGridViewTextBoxColumn.Name = "cEPDataGridViewTextBoxColumn";
-            this.cEPDataGridViewTextBoxColumn.Visible = false;
-            this.cEPDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nRLogradouroDataGridViewTextBoxColumn
-            // 
-            this.nRLogradouroDataGridViewTextBoxColumn.DataPropertyName = "NR_Logradouro";
-            this.nRLogradouroDataGridViewTextBoxColumn.HeaderText = "NR_Logradouro";
-            this.nRLogradouroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nRLogradouroDataGridViewTextBoxColumn.Name = "nRLogradouroDataGridViewTextBoxColumn";
-            this.nRLogradouroDataGridViewTextBoxColumn.Visible = false;
-            this.nRLogradouroDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fLEnviaEmailDataGridViewCheckBoxColumn
-            // 
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.DataPropertyName = "FL_EnviaEmail";
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.HeaderText = "FL_EnviaEmail";
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.Name = "fLEnviaEmailDataGridViewCheckBoxColumn";
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.Visible = false;
-            this.fLEnviaEmailDataGridViewCheckBoxColumn.Width = 125;
-            // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "Cliente";
@@ -244,16 +151,16 @@
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // txtBusca
+            // txtBuscaCliente
             // 
-            this.txtBusca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBusca.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtBusca.Location = new System.Drawing.Point(191, 102);
-            this.txtBusca.MaxLength = 50;
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(590, 44);
-            this.txtBusca.TabIndex = 30;
-            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
+            this.txtBuscaCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscaCliente.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtBuscaCliente.Location = new System.Drawing.Point(191, 102);
+            this.txtBuscaCliente.MaxLength = 50;
+            this.txtBuscaCliente.Name = "txtBuscaCliente";
+            this.txtBuscaCliente.Size = new System.Drawing.Size(590, 44);
+            this.txtBuscaCliente.TabIndex = 30;
+            this.txtBuscaCliente.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // label1
             // 
@@ -351,6 +258,99 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
+            // iDClienteDataGridViewTextBoxColumn
+            // 
+            this.iDClienteDataGridViewTextBoxColumn.DataPropertyName = "ID_Cliente";
+            this.iDClienteDataGridViewTextBoxColumn.HeaderText = "ID_Cliente";
+            this.iDClienteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDClienteDataGridViewTextBoxColumn.Name = "iDClienteDataGridViewTextBoxColumn";
+            this.iDClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDClienteDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.iDClienteDataGridViewTextBoxColumn.Visible = false;
+            this.iDClienteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nomeDataGridViewTextBoxColumn.Width = 435;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
+            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // cPFDataGridViewTextBoxColumn
+            // 
+            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
+            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cPFDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
+            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cPFDataGridViewTextBoxColumn.Width = 220;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-MAIL";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // dTNascimentoDataGridViewTextBoxColumn
+            // 
+            this.dTNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DT_Nascimento";
+            this.dTNascimentoDataGridViewTextBoxColumn.HeaderText = "DATA DE NASCIMENTO";
+            this.dTNascimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dTNascimentoDataGridViewTextBoxColumn.Name = "dTNascimentoDataGridViewTextBoxColumn";
+            this.dTNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dTNascimentoDataGridViewTextBoxColumn.Width = 270;
+            // 
+            // ruaDataGridViewTextBoxColumn
+            // 
+            this.ruaDataGridViewTextBoxColumn.DataPropertyName = "Rua";
+            this.ruaDataGridViewTextBoxColumn.HeaderText = "Rua";
+            this.ruaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ruaDataGridViewTextBoxColumn.Name = "ruaDataGridViewTextBoxColumn";
+            this.ruaDataGridViewTextBoxColumn.Visible = false;
+            this.ruaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cEPDataGridViewTextBoxColumn
+            // 
+            this.cEPDataGridViewTextBoxColumn.DataPropertyName = "CEP";
+            this.cEPDataGridViewTextBoxColumn.HeaderText = "CEP";
+            this.cEPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cEPDataGridViewTextBoxColumn.Name = "cEPDataGridViewTextBoxColumn";
+            this.cEPDataGridViewTextBoxColumn.Visible = false;
+            this.cEPDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nRLogradouroDataGridViewTextBoxColumn
+            // 
+            this.nRLogradouroDataGridViewTextBoxColumn.DataPropertyName = "NR_Logradouro";
+            this.nRLogradouroDataGridViewTextBoxColumn.HeaderText = "NR_Logradouro";
+            this.nRLogradouroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nRLogradouroDataGridViewTextBoxColumn.Name = "nRLogradouroDataGridViewTextBoxColumn";
+            this.nRLogradouroDataGridViewTextBoxColumn.Visible = false;
+            this.nRLogradouroDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fLEnviaEmailDataGridViewCheckBoxColumn
+            // 
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.DataPropertyName = "FL_EnviaEmail";
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.HeaderText = "FL_EnviaEmail";
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.Name = "fLEnviaEmailDataGridViewCheckBoxColumn";
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.Visible = false;
+            this.fLEnviaEmailDataGridViewCheckBoxColumn.Width = 125;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -359,7 +359,7 @@
             this.ClientSize = new System.Drawing.Size(2034, 980);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBusca);
+            this.Controls.Add(this.txtBuscaCliente);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.nm);
@@ -394,6 +394,8 @@
         private MaryKayDataSet maryKayDataSet;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private MaryKayDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.TextBox txtBuscaCliente;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
@@ -404,7 +406,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cEPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nRLogradouroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn fLEnviaEmailDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -77,7 +77,7 @@ namespace MaryKay
             {
                 using(var db = new BaseDataContext())
                 {
-                    var clienteFiltro = db.Clientes.Where(cf => cf.Nome.Contains(txtBusca.Text));
+                    var clienteFiltro = db.Clientes.Where(cf => cf.Nome.Contains(txtBuscaCliente.Text));
                     dgvClientes.DataSource = clienteFiltro;
                 }
             }
