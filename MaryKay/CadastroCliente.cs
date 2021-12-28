@@ -14,12 +14,21 @@ namespace MaryKay
 {
     public partial class CadastroCliente : Form
     {
-        public CadastroCliente(int id)
+        public CadastroCliente(int idCliente)
         {
             InitializeComponent();
-            CarregaDados(id);
-            txtID.Text = id != 0 ? id.ToString() : string.Empty;
-            btnFinalizar.Text = id != 0 ? "ATUALIZAR" : "FINALIZAR CADASTRO";
+            btnFinalizar.Text = idCliente == 0 ? "FINALIZAR CADASTRO" : "ATUALIZAR";
+
+            if (idCliente != 0)
+            {
+                txtIdCliente.Text = idCliente.ToString();
+                CarregaCliente(idCliente);
+            }
+            else
+            {
+                NovoCliente();
+            }
+            
             dtNascimento.MaxDate = DateTime.Now;
         }
 
@@ -35,10 +44,11 @@ namespace MaryKay
             if (ValidaCamposObrigatorios())
             {
                 var cliente = new Cliente();
+                var novo = string.IsNullOrEmpty(txtIdCliente.Text) ? true : false;
 
-                if (!string.IsNullOrEmpty(txtID.Text))
+                if (!novo)
                 {
-                    cliente.ID_Cliente = int.Parse(txtID.Text);
+                    cliente.ID_Cliente = int.Parse(txtIdCliente.Text);
                 }
                 
                 cliente.Nome = txtNome.Text;
@@ -53,12 +63,11 @@ namespace MaryKay
 
                 var clienteDal = new ClienteDAL();
 
-                if (string.IsNullOrEmpty(txtID.Text))
+                if (novo)
                 {
                     if (!clienteDal.CadastraCliente(cliente))
                     {
                         MessageBox.Show("ERRO AO CADASTRAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        NovoCliente();
                         return;
                     }
 
@@ -69,15 +78,13 @@ namespace MaryKay
                     if (!clienteDal.AtualizarCliente(cliente))
                     {
                         MessageBox.Show("ERRO AO ATUALIZAR O CLIENTE", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        NovoCliente();
                         return;
                     }
 
                     MessageBox.Show("CLIENTE ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                NovoCliente();
-                Clientes voltar = new Clientes();
+                var voltar = new Clientes();
                 voltar.ShowDialog();
                 this.Close();
             }
@@ -85,6 +92,7 @@ namespace MaryKay
 
         private void NovoCliente()
         {
+            txtIdCliente.Text = string.Empty;
             txtNome.Text = string.Empty;
             lNome.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -175,7 +183,7 @@ namespace MaryKay
             }
         }
 
-        private void CarregaDados(int idCliente)
+        private void CarregaCliente(int idCliente)
         {
             if (idCliente != 0)
             {

@@ -36,7 +36,7 @@ namespace MaryKay
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelQtd = new System.Windows.Forms.Label();
             this.cboSessao = new System.Windows.Forms.ComboBox();
             this.cboTipoProduto = new System.Windows.Forms.ComboBox();
             this.tipoProdutoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -64,6 +64,7 @@ namespace MaryKay
             this.nudCodigoRapido = new System.Windows.Forms.NumericUpDown();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtIdProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).BeginInit();
@@ -136,17 +137,17 @@ namespace MaryKay
             this.label3.TabIndex = 34;
             this.label3.Text = "VALOR DE VENDA";
             // 
-            // label4
+            // labelQtd
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1427, 499);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(269, 48);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "QUANTIDADE";
+            this.labelQtd.AutoSize = true;
+            this.labelQtd.BackColor = System.Drawing.Color.Transparent;
+            this.labelQtd.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.labelQtd.ForeColor = System.Drawing.Color.Black;
+            this.labelQtd.Location = new System.Drawing.Point(1427, 499);
+            this.labelQtd.Name = "labelQtd";
+            this.labelQtd.Size = new System.Drawing.Size(269, 48);
+            this.labelQtd.TabIndex = 36;
+            this.labelQtd.Text = "QUANTIDADE";
             // 
             // cboSessao
             // 
@@ -435,6 +436,17 @@ namespace MaryKay
             this.pictureBox3.TabIndex = 78;
             this.pictureBox3.TabStop = false;
             // 
+            // txtIdProduto
+            // 
+            this.txtIdProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdProduto.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtIdProduto.Location = new System.Drawing.Point(388, 268);
+            this.txtIdProduto.MaxLength = 50;
+            this.txtIdProduto.Name = "txtIdProduto";
+            this.txtIdProduto.Size = new System.Drawing.Size(62, 44);
+            this.txtIdProduto.TabIndex = 79;
+            this.txtIdProduto.Visible = false;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,6 +454,7 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1924, 1006);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.lbCodigoRapido);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -464,7 +477,7 @@ namespace MaryKay
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cboTipoProduto);
             this.Controls.Add(this.cboSessao);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelQtd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -499,7 +512,7 @@ namespace MaryKay
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelQtd;
         private System.Windows.Forms.ComboBox cboSessao;
         private System.Windows.Forms.ComboBox cboTipoProduto;
         private System.Windows.Forms.Label label5;
@@ -527,5 +540,6 @@ namespace MaryKay
         private System.Windows.Forms.NumericUpDown nudCodigoRapido;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox txtIdProduto;
     }
 }

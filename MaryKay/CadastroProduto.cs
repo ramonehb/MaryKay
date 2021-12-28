@@ -14,18 +14,25 @@ namespace MaryKay
 {
     public partial class CadastroProduto : Form
     {
-        public CadastroProduto()
+        public CadastroProduto(int idProduto)
         {
             InitializeComponent();
             nudVL_Pago.Controls.RemoveAt(0);
             nudVL_Venda.Controls.RemoveAt(0);
             nudPontos.Controls.RemoveAt(0);
             nudCodigoRapido.Controls.RemoveAt(0);
-            nudQuantidade.Text = string.Empty;
-            nudVL_Pago.Text = string.Empty;
-            nudVL_Venda.Text = string.Empty;
-            nudCodigoRapido.Text = string.Empty;
-            nudPontos.Text = string.Empty;
+            btnFinalizar.Text = idProduto == 0 ? "FINALIZAR CADASTRO" : "ATUALIZAR";
+
+            if (idProduto != 0)
+            {
+                MessageBox.Show("PARA ATUALIZAR A QUANTIDADE NAVEGUE ATÉ A ABA ESTOQUE NO MENU", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdProduto.Text = idProduto.ToString();
+                CarregaProduto(idProduto);
+            }
+            else
+            {
+                NovoProduto();
+            }
         }
 
         private void CadastroProduto_Load(object sender, EventArgs e)
@@ -44,6 +51,7 @@ namespace MaryKay
         private bool ValidaProduto()
         {
             var erro = 0;
+            var novo = string.IsNullOrEmpty(txtIdProduto.Text) ? true : false;
 
             if (string.IsNullOrEmpty(txtNomeProduto.Text))
             {
@@ -66,7 +74,7 @@ namespace MaryKay
                 lbCategoria.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(nudQuantidade.Text))
+            if (string.IsNullOrEmpty(nudQuantidade.Text) && novo)
             {
                 erro++;
                 lbQuantidade.Text = "DIGITE A QUANTIDADE";
@@ -116,7 +124,7 @@ namespace MaryKay
                 using (var db = new BaseDataContext())
                 {
                     var codigoExistente = db.Produtos.Any(p => p.Codigo == int.Parse(nudCodigoRapido.Text));
-                    if (codigoExistente)
+                    if (codigoExistente && novo)
                     {
                         erro++;
                         lbCodigoRapido.Text = "CODIGO RAPIDO JÁ CADASTRADO TENTE OUTRO";
@@ -148,7 +156,14 @@ namespace MaryKay
         {
             if (ValidaProduto())
             {
+                var novoProduto = string.IsNullOrEmpty(txtIdProduto.Text) ? true : false;
                 var produto = new Produto();
+
+                if (!novoProduto)
+                {
+                    produto.ID_Produto = int.Parse(txtIdProduto.Text);
+                }
+
                 produto.Nome = txtNomeProduto.Text;
                 produto.ID_TipoProduto = (int) cboTipoProduto.SelectedValue;
                 produto.Codigo = int.Parse(nudCodigoRapido.Text);
@@ -159,16 +174,28 @@ namespace MaryKay
 
                 var produtoDAL= new ProdutoDAL();
 
-                if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
+                if (novoProduto)
                 {
-                    MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    NovoProduto();
-                    return;
-                }
+                    if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
+                    {
+                        MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
-                MessageBox.Show("PRODUTO CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                NovoProduto();
-                Clientes voltar = new Clientes();
+                    MessageBox.Show("PRODUTO CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (!produtoDAL.AlterarProduto(produto))
+                    {
+                        MessageBox.Show("ERRO AO ATUALIZAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("PRODUTO ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+                var voltar = new Produtos();
                 voltar.ShowDialog();
                 this.Close();
             }
@@ -176,6 +203,10 @@ namespace MaryKay
 
         private void NovoProduto()
         {
+            labelQtd.Visible = true;
+            nudQuantidade.Visible = true;
+
+            txtIdProduto.Text = string.Empty;
             txtNomeProduto.Text = string.Empty;
             nudQuantidade.Text = string.Empty;
             nudVL_Pago.Text = string.Empty;
@@ -183,6 +214,31 @@ namespace MaryKay
             nudCodigoRapido.Text = string.Empty;
             nudPontos.Text = string.Empty;
             cboSessao.SelectedItem = null;
+        }
+
+        private void CarregaProduto(int idProduto)
+        {
+            try
+            {
+                labelQtd.Visible = false;
+                nudQuantidade.Visible = false;
+
+                using (var db = new BaseDataContext())
+                {
+                    var produto = db.Produtos.Single(p => p.ID_Produto == idProduto);
+                    txtIdProduto.Text = produto.ID_Produto.ToString();
+                    txtNomeProduto.Text = produto.Nome;
+                    nudVL_Pago.Text = produto.VL_Pago.ToString();
+                    nudVL_Venda.Text = produto.VL_Venda.ToString();
+                    nudCodigoRapido.Text = produto.Codigo.ToString();
+                    nudPontos.Text = produto.Ponto.ToString();
+                    cboSessao.SelectedItem = produto.Sessao.ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                var msg = erro.Message;
+            }
         }
     }
 }

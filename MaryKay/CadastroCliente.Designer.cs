@@ -55,7 +55,7 @@ namespace MaryKay
             this.lTelefone = new System.Windows.Forms.Label();
             this.bFechar = new System.Windows.Forms.Button();
             this.dtNascimento = new System.Windows.Forms.DateTimePicker();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbCpf = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -342,16 +342,16 @@ namespace MaryKay
             this.dtNascimento.TabIndex = 5;
             this.dtNascimento.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
-            // txtID
+            // txtIdCliente
             // 
-            this.txtID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtID.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtID.Location = new System.Drawing.Point(183, 310);
-            this.txtID.MaxLength = 50;
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(75, 44);
-            this.txtID.TabIndex = 62;
-            this.txtID.Visible = false;
+            this.txtIdCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdCliente.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtIdCliente.Location = new System.Drawing.Point(183, 310);
+            this.txtIdCliente.MaxLength = 50;
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(75, 44);
+            this.txtIdCliente.TabIndex = 62;
+            this.txtIdCliente.Visible = false;
             // 
             // lbEmail
             // 
@@ -384,7 +384,7 @@ namespace MaryKay
             this.ControlBox = false;
             this.Controls.Add(this.lbCpf);
             this.Controls.Add(this.lbEmail);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.dtNascimento);
             this.Controls.Add(this.bFechar);
             this.Controls.Add(this.lTelefone);
@@ -446,7 +446,7 @@ namespace MaryKay
         private System.Windows.Forms.Label lTelefone;
         private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.DateTimePicker dtNascimento;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbCpf;
     }

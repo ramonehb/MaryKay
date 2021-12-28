@@ -77,7 +77,6 @@
             this.nm.Size = new System.Drawing.Size(239, 68);
             this.nm.TabIndex = 27;
             this.nm.Text = "Clientes";
-            this.nm.Click += new System.EventHandler(this.nm_Click);
             // 
             // dgvClientes
             // 
@@ -137,7 +136,6 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(2010, 792);
             this.dgvClientes.TabIndex = 29;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // iDClienteDataGridViewTextBoxColumn
             // 
@@ -268,7 +266,6 @@
             this.label1.Size = new System.Drawing.Size(155, 38);
             this.label1.TabIndex = 31;
             this.label1.Text = "BUSCAR";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // toolStrip1
             // 

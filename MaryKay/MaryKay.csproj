@@ -72,6 +72,11 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetViewProdutos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Funcoes\Funcoes.cs" />
     <Compile Include="DataSetCliente.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -166,6 +171,17 @@
     </None>
     <None Include="DataSetProdutos.xss">
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewProdutos.xsc">
+      <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewProdutos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetViewProdutos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetViewProdutos.xss">
+      <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
