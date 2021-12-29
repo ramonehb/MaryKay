@@ -72,10 +72,21 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetViewEstoque.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetViewProdutos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Funcoes.cs" />
     <Compile Include="DataSetCliente.Designer.cs">
@@ -122,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -171,6 +185,17 @@
     </None>
     <None Include="DataSetProdutos.xss">
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewEstoque.xsc">
+      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewEstoque.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetViewEstoque.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetViewEstoque.xss">
+      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
     </None>
     <None Include="DataSetViewProdutos.xsc">
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>

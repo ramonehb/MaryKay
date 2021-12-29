@@ -20,7 +20,6 @@ namespace MaryKay
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'maryKayDataSet.Cliente'. Você pode movê-la ou removê-la conforme necessário.
             this.clienteTableAdapter.Fill(this.maryKayDataSet.Cliente);
 
         }

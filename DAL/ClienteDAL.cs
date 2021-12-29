@@ -39,6 +39,8 @@ namespace DAL
                     clientes.Telefone = cliente.Telefone;
                     clientes.Rua = cliente.Rua;
                     clientes.CEP = cliente.CEP;
+                    clientes.Cidade = cliente.Cidade;
+                    clientes.Estado = cliente.Estado;
                     clientes.NR_Logradouro = cliente.NR_Logradouro;
                     clientes.FL_EnviaEmail = cliente.FL_EnviaEmail;
 

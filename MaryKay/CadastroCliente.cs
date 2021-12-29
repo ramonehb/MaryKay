@@ -1,13 +1,6 @@
 ﻿using DAL;
-using MaryKay.Funcoes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MaryKay
@@ -17,7 +10,7 @@ namespace MaryKay
         public CadastroCliente(int idCliente)
         {
             InitializeComponent();
-            btnFinalizar.Text = idCliente == 0 ? "FINALIZAR CADASTRO" : "ATUALIZAR";
+            btnFinalizar.Text = idCliente == 0 ? "FINALIZAR" : "ATUALIZAR";
 
             if (idCliente != 0)
             {
@@ -28,7 +21,7 @@ namespace MaryKay
             {
                 NovoCliente();
             }
-            
+
             dtNascimento.MaxDate = DateTime.Now;
         }
 
@@ -50,7 +43,7 @@ namespace MaryKay
                 {
                     cliente.ID_Cliente = int.Parse(txtIdCliente.Text);
                 }
-                
+
                 cliente.Nome = txtNome.Text;
                 cliente.CPF = string.IsNullOrEmpty(mtbCpf.Text.Replace(".", "").Replace("-", "").Replace(" ", "")) ? null : mtbCpf.Text.Replace(".", "").Replace("-", "");
                 cliente.Email = string.IsNullOrEmpty(txtEmail.Text) ? null : txtEmail.Text;
@@ -59,6 +52,8 @@ namespace MaryKay
                 cliente.Rua = string.IsNullOrEmpty(txtRua.Text) ? null : txtRua.Text;
                 cliente.CEP = string.IsNullOrEmpty(mtbCEP.Text.Replace("-", "").Replace(" ", "")) ? 0000000 : int.Parse(mtbCEP.Text.Replace("-", ""));
                 cliente.NR_Logradouro = string.IsNullOrEmpty(txtNumero.Text) ? 0 : int.Parse(txtNumero.Text);
+                cliente.Cidade = txtCidade.Text;
+                cliente.Estado = txtEstado.Text;
                 cliente.FL_EnviaEmail = checkEmail.Checked;
 
                 var clienteDal = new ClienteDAL();
@@ -101,6 +96,8 @@ namespace MaryKay
             txtRua.Text = string.Empty;
             mtbTelefone.Text = string.Empty;
             lTelefone.Text = string.Empty;
+            txtEstado.Text = string.Empty;
+            txtCidade.Text = string.Empty;
             txtNumero.Text = string.Empty;
             dtNascimento.Value = DateTime.Parse("01-01-1990");
             checkEmail.Checked = false;
@@ -131,7 +128,7 @@ namespace MaryKay
                 lTelefone.Text = string.Empty;
             }
 
-            if(mtbCpf.Text.Replace(".", "").Replace("-", "").Length == 11)
+            if (mtbCpf.Text.Replace(".", "").Replace("-", "").Length == 11)
             {
                 var cpf = mtbCpf.Text.Replace(".", "").Replace("-", "");
                 if (!Funcoes.Funcoes.VerificaCPF(cpf))
@@ -198,6 +195,8 @@ namespace MaryKay
                         mtbCEP.Text = cliente.CEP.ToString();
                         txtRua.Text = cliente.Rua;
                         mtbTelefone.Text = cliente.Telefone;
+                        txtEstado.Text = cliente.Estado;
+                        txtCidade.Text = cliente.Cidade;
                         txtNumero.Text = cliente.NR_Logradouro.ToString();
                         dtNascimento.Value = (DateTime)cliente.DT_Nascimento;
                         checkEmail.Checked = cliente.FL_EnviaEmail ?? false;
@@ -208,7 +207,7 @@ namespace MaryKay
                     }
                 }
             }
-            
+
         }
     }
 }

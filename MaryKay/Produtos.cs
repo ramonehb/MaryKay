@@ -34,7 +34,6 @@ namespace MaryKay
 
         private void Produtos_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetViewProdutos.vw_Produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.vw_ProdutosTableAdapter3.Fill(this.dataSetViewProdutos.vw_Produtos);
         }
 

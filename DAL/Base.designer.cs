@@ -125,6 +125,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<vw_Estoque> vw_Estoques
+		{
+			get
+			{
+				return this.GetTable<vw_Estoque>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_AlterarEstoque")]
 		public int usp_AlterarEstoque([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_Produto", DbType="Int")] System.Nullable<int> iD_Produto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantidade", DbType="Int")] System.Nullable<int> quantidade)
 		{
@@ -1557,6 +1565,141 @@ namespace DAL
 				if ((this._SESSÃO != value))
 				{
 					this._SESSÃO = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Estoque")]
+	public partial class vw_Estoque
+	{
+		
+		private string _NOME;
+		
+		private string _CATEGORIA;
+		
+		private int _QUANTIDADE;
+		
+		private decimal _COMPRA;
+		
+		private decimal _VENDA;
+		
+		private System.Nullable<decimal> _LUCRO;
+		
+		private System.Nullable<int> _TOTAL_DE_UNIDADES_VENDIDAS;
+		
+		public vw_Estoque()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOME", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string NOME
+		{
+			get
+			{
+				return this._NOME;
+			}
+			set
+			{
+				if ((this._NOME != value))
+				{
+					this._NOME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CATEGORIA", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string CATEGORIA
+		{
+			get
+			{
+				return this._CATEGORIA;
+			}
+			set
+			{
+				if ((this._CATEGORIA != value))
+				{
+					this._CATEGORIA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUANTIDADE", DbType="Int NOT NULL")]
+		public int QUANTIDADE
+		{
+			get
+			{
+				return this._QUANTIDADE;
+			}
+			set
+			{
+				if ((this._QUANTIDADE != value))
+				{
+					this._QUANTIDADE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPRA", DbType="Decimal(5,2) NOT NULL")]
+		public decimal COMPRA
+		{
+			get
+			{
+				return this._COMPRA;
+			}
+			set
+			{
+				if ((this._COMPRA != value))
+				{
+					this._COMPRA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VENDA", DbType="Decimal(5,2) NOT NULL")]
+		public decimal VENDA
+		{
+			get
+			{
+				return this._VENDA;
+			}
+			set
+			{
+				if ((this._VENDA != value))
+				{
+					this._VENDA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LUCRO", DbType="Decimal(6,2)")]
+		public System.Nullable<decimal> LUCRO
+		{
+			get
+			{
+				return this._LUCRO;
+			}
+			set
+			{
+				if ((this._LUCRO != value))
+				{
+					this._LUCRO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[TOTAL DE UNIDADES VENDIDAS]", Storage="_TOTAL_DE_UNIDADES_VENDIDAS", DbType="Int")]
+		public System.Nullable<int> TOTAL_DE_UNIDADES_VENDIDAS
+		{
+			get
+			{
+				return this._TOTAL_DE_UNIDADES_VENDIDAS;
+			}
+			set
+			{
+				if ((this._TOTAL_DE_UNIDADES_VENDIDAS != value))
+				{
+					this._TOTAL_DE_UNIDADES_VENDIDAS = value;
 				}
 			}
 		}

@@ -35,12 +35,13 @@ namespace MaryKay
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbNovo = new System.Windows.Forms.ToolStripButton();
+            this.tsbCategoria = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAtualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbNovo = new System.Windows.Forms.ToolStripButton();
             this.tsbVoltar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,13 +53,6 @@ namespace MaryKay
             this.vw_ProdutosTableAdapter = new MaryKay.MaryKayDataSet3TableAdapters.vw_ProdutosTableAdapter();
             this.dataSetTesteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.vwProdutosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetViewProdutos = new MaryKay.DataSetViewProdutos();
-            this.vwProdutosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vwProdutosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.vw_ProdutosTableAdapter3 = new MaryKay.DataSetViewProdutosTableAdapters.vw_ProdutosTableAdapter();
-            this.tipoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoProdutoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cATEGORIADOPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +62,13 @@ namespace MaryKay
             this.vALORDEVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lUCRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sESSÃODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwProdutosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetViewProdutos = new MaryKay.DataSetViewProdutos();
+            this.vwProdutosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vwProdutosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_ProdutosTableAdapter3 = new MaryKay.DataSetViewProdutosTableAdapters.vw_ProdutosTableAdapter();
+            this.tipoProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoProdutoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vwProdutosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet3)).BeginInit();
@@ -93,6 +94,7 @@ namespace MaryKay
             this.toolStripSeparator3,
             this.tsbExcluir,
             this.toolStripSeparator1,
+            this.tsbCategoria,
             this.tsbVoltar,
             this.toolStripSeparator4});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
@@ -102,16 +104,15 @@ namespace MaryKay
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsbNovo
+            // tsbCategoria
             // 
-            this.tsbNovo.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsbNovo.ForeColor = System.Drawing.Color.Black;
-            this.tsbNovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNovo.Image")));
-            this.tsbNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNovo.Name = "tsbNovo";
-            this.tsbNovo.Size = new System.Drawing.Size(233, 49);
-            this.tsbNovo.Text = "NOVO PRODUTO";
-            this.tsbNovo.Click += new System.EventHandler(this.tsbNovo_Click);
+            this.tsbCategoria.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbCategoria.ForeColor = System.Drawing.Color.Black;
+            this.tsbCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsbCategoria.Image")));
+            this.tsbCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCategoria.Name = "tsbCategoria";
+            this.tsbCategoria.Size = new System.Drawing.Size(253, 49);
+            this.tsbCategoria.Text = "NOVA CATEGORIA";
             // 
             // toolStripSeparator2
             // 
@@ -149,6 +150,17 @@ namespace MaryKay
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbNovo
+            // 
+            this.tsbNovo.Font = new System.Drawing.Font("Arial Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbNovo.ForeColor = System.Drawing.Color.Black;
+            this.tsbNovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNovo.Image")));
+            this.tsbNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNovo.Name = "tsbNovo";
+            this.tsbNovo.Size = new System.Drawing.Size(293, 49);
+            this.tsbNovo.Text = "ADICIONAR PRODUTO";
+            this.tsbNovo.Click += new System.EventHandler(this.tsbNovo_Click);
             // 
             // tsbVoltar
             // 
@@ -275,30 +287,8 @@ namespace MaryKay
             this.dgvProdutos.RowHeadersWidth = 51;
             this.dgvProdutos.RowTemplate.Height = 30;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(1975, 796);
+            this.dgvProdutos.Size = new System.Drawing.Size(2010, 796);
             this.dgvProdutos.TabIndex = 36;
-            // 
-            // vwProdutosBindingSource3
-            // 
-            this.vwProdutosBindingSource3.DataMember = "vw_Produtos";
-            this.vwProdutosBindingSource3.DataSource = this.dataSetViewProdutos;
-            // 
-            // dataSetViewProdutos
-            // 
-            this.dataSetViewProdutos.DataSetName = "DataSetViewProdutos";
-            this.dataSetViewProdutos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwProdutosBindingSource1
-            // 
-            this.vwProdutosBindingSource1.DataMember = "vw_Produtos";
-            // 
-            // vw_ProdutosTableAdapter3
-            // 
-            this.vw_ProdutosTableAdapter3.ClearBeforeFill = true;
-            // 
-            // tipoProdutoBindingSource
-            // 
-            this.tipoProdutoBindingSource.DataMember = "Tipo_Produto";
             // 
             // iDProdutoDataGridViewTextBoxColumn
             // 
@@ -321,20 +311,20 @@ namespace MaryKay
             // cATEGORIADOPRODUTODataGridViewTextBoxColumn
             // 
             this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.DataPropertyName = "CATEGORIA DO PRODUTO";
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.HeaderText = "CATEGORIA DO PRODUTO";
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.HeaderText = "CATEGORIA";
             this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Name = "cATEGORIADOPRODUTODataGridViewTextBoxColumn";
             this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Width = 330;
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Width = 300;
             // 
             // cÓDIGORÁPIDODataGridViewTextBoxColumn
             // 
             this.cÓDIGORÁPIDODataGridViewTextBoxColumn.DataPropertyName = "CÓDIGO RÁPIDO";
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.HeaderText = "CÓDIGO RÁPIDO";
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.HeaderText = "CÓDIGO";
             this.cÓDIGORÁPIDODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Name = "cÓDIGORÁPIDODataGridViewTextBoxColumn";
             this.cÓDIGORÁPIDODataGridViewTextBoxColumn.ReadOnly = true;
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Width = 115;
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Width = 125;
             // 
             // pONTOSDataGridViewTextBoxColumn
             // 
@@ -343,11 +333,12 @@ namespace MaryKay
             this.pONTOSDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pONTOSDataGridViewTextBoxColumn.Name = "pONTOSDataGridViewTextBoxColumn";
             this.pONTOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pONTOSDataGridViewTextBoxColumn.Width = 125;
             // 
             // vALORDECOMPRADataGridViewTextBoxColumn
             // 
             this.vALORDECOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE COMPRA";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR DE COMPRA";
+            this.vALORDECOMPRADataGridViewTextBoxColumn.HeaderText = "COMPRA";
             this.vALORDECOMPRADataGridViewTextBoxColumn.MinimumWidth = 6;
             this.vALORDECOMPRADataGridViewTextBoxColumn.Name = "vALORDECOMPRADataGridViewTextBoxColumn";
             this.vALORDECOMPRADataGridViewTextBoxColumn.ReadOnly = true;
@@ -356,7 +347,7 @@ namespace MaryKay
             // vALORDEVENDADataGridViewTextBoxColumn
             // 
             this.vALORDEVENDADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE VENDA";
-            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VENDA";
             this.vALORDEVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
             this.vALORDEVENDADataGridViewTextBoxColumn.Name = "vALORDEVENDADataGridViewTextBoxColumn";
             this.vALORDEVENDADataGridViewTextBoxColumn.ReadOnly = true;
@@ -369,6 +360,7 @@ namespace MaryKay
             this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
             this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
+            this.lUCRODataGridViewTextBoxColumn.Width = 125;
             // 
             // sESSÃODataGridViewTextBoxColumn
             // 
@@ -377,6 +369,29 @@ namespace MaryKay
             this.sESSÃODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sESSÃODataGridViewTextBoxColumn.Name = "sESSÃODataGridViewTextBoxColumn";
             this.sESSÃODataGridViewTextBoxColumn.ReadOnly = true;
+            this.sESSÃODataGridViewTextBoxColumn.Width = 95;
+            // 
+            // vwProdutosBindingSource3
+            // 
+            this.vwProdutosBindingSource3.DataMember = "vw_Produtos";
+            this.vwProdutosBindingSource3.DataSource = this.dataSetViewProdutos;
+            // 
+            // dataSetViewProdutos
+            // 
+            this.dataSetViewProdutos.DataSetName = "DataSetViewProdutos";
+            this.dataSetViewProdutos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwProdutosBindingSource1
+            // 
+            this.vwProdutosBindingSource1.DataMember = "vw_Produtos";
+            // 
+            // vw_ProdutosTableAdapter3
+            // 
+            this.vw_ProdutosTableAdapter3.ClearBeforeFill = true;
+            // 
+            // tipoProdutoBindingSource
+            // 
+            this.tipoProdutoBindingSource.DataMember = "Tipo_Produto";
             // 
             // Produtos
             // 
@@ -449,5 +464,6 @@ namespace MaryKay
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORDEVENDADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lUCRODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sESSÃODataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton tsbCategoria;
     }
 }

@@ -24,23 +24,29 @@ namespace MaryKay
 
         private void bClientes_Click(object sender, EventArgs e)
         {
-            Clientes cliente = new Clientes();
+            var cliente = new Clientes();
             cliente.ShowDialog();
             this.Close();
         }
 
         private void bUsuario_Click(object sender, EventArgs e)
         {
-            CadastroUsuario cadastroUsuario = new CadastroUsuario();
+            var cadastroUsuario = new CadastroUsuario();
             cadastroUsuario.ShowDialog();
             this.Close();
         }
 
         private void bProdutos_Click(object sender, EventArgs e)
         {
-            Produtos produtos = new Produtos();
+            var produtos = new Produtos();
             produtos.ShowDialog();
             this.Close();
+        }
+
+        private void bEstoque_Click(object sender, EventArgs e)
+        {
+            var estoque = new Estoque();
+            estoque.ShowDialog();
         }
     }
 }

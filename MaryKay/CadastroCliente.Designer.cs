@@ -44,7 +44,6 @@ namespace MaryKay
             this.nm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtRua = new System.Windows.Forms.TextBox();
-            this.lRua = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lNumero = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +57,11 @@ namespace MaryKay
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbCpf = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +71,7 @@ namespace MaryKay
             this.lblData.BackColor = System.Drawing.Color.Transparent;
             this.lblData.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.lblData.ForeColor = System.Drawing.Color.Red;
-            this.lblData.Location = new System.Drawing.Point(1376, 535);
+            this.lblData.Location = new System.Drawing.Point(1390, 520);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(0, 27);
             this.lblData.TabIndex = 43;
@@ -75,7 +79,7 @@ namespace MaryKay
             // mtbTelefone
             // 
             this.mtbTelefone.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.mtbTelefone.Location = new System.Drawing.Point(266, 613);
+            this.mtbTelefone.Location = new System.Drawing.Point(280, 598);
             this.mtbTelefone.Mask = "(00) 00000 - 0000";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(278, 44);
@@ -87,7 +91,7 @@ namespace MaryKay
             this.lNome.BackColor = System.Drawing.Color.Transparent;
             this.lNome.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
             this.lNome.ForeColor = System.Drawing.Color.Red;
-            this.lNome.Location = new System.Drawing.Point(498, 357);
+            this.lNome.Location = new System.Drawing.Point(512, 342);
             this.lNome.Name = "lNome";
             this.lNome.Size = new System.Drawing.Size(0, 38);
             this.lNome.TabIndex = 40;
@@ -109,7 +113,7 @@ namespace MaryKay
             this.checkEmail.Enabled = false;
             this.checkEmail.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
             this.checkEmail.ForeColor = System.Drawing.Color.Black;
-            this.checkEmail.Location = new System.Drawing.Point(1206, 506);
+            this.checkEmail.Location = new System.Drawing.Point(1220, 491);
             this.checkEmail.Name = "checkEmail";
             this.checkEmail.Size = new System.Drawing.Size(744, 40);
             this.checkEmail.TabIndex = 3;
@@ -121,11 +125,11 @@ namespace MaryKay
             this.btnFinalizar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(874, 864);
+            this.btnFinalizar.Location = new System.Drawing.Point(876, 891);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(329, 104);
+            this.btnFinalizar.Size = new System.Drawing.Size(255, 77);
             this.btnFinalizar.TabIndex = 37;
-            this.btnFinalizar.Text = "FINALIZAR CADASTRO";
+            this.btnFinalizar.Text = "FINALIZAR";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -133,7 +137,7 @@ namespace MaryKay
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(185, 506);
+            this.txtEmail.Location = new System.Drawing.Point(199, 491);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(971, 44);
@@ -144,7 +148,7 @@ namespace MaryKay
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtNome.Location = new System.Drawing.Point(183, 399);
+            this.txtNome.Location = new System.Drawing.Point(197, 384);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(993, 44);
@@ -156,7 +160,7 @@ namespace MaryKay
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(777, 609);
+            this.label4.Location = new System.Drawing.Point(791, 594);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(446, 48);
             this.label4.TabIndex = 34;
@@ -168,7 +172,7 @@ namespace MaryKay
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(20, 502);
+            this.label2.Location = new System.Drawing.Point(34, 487);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 48);
             this.label2.TabIndex = 30;
@@ -180,7 +184,7 @@ namespace MaryKay
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(17, 610);
+            this.label1.Location = new System.Drawing.Point(31, 595);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 48);
             this.label1.TabIndex = 29;
@@ -192,7 +196,7 @@ namespace MaryKay
             this.nm.BackColor = System.Drawing.Color.Transparent;
             this.nm.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.nm.ForeColor = System.Drawing.Color.Black;
-            this.nm.Location = new System.Drawing.Point(17, 395);
+            this.nm.Location = new System.Drawing.Point(31, 380);
             this.nm.Name = "nm";
             this.nm.Size = new System.Drawing.Size(133, 48);
             this.nm.TabIndex = 26;
@@ -212,29 +216,17 @@ namespace MaryKay
             // 
             this.txtRua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRua.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtRua.Location = new System.Drawing.Point(646, 731);
+            this.txtRua.Location = new System.Drawing.Point(721, 719);
             this.txtRua.MaxLength = 50;
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(971, 44);
+            this.txtRua.Size = new System.Drawing.Size(903, 44);
             this.txtRua.TabIndex = 7;
-            // 
-            // lRua
-            // 
-            this.lRua.AutoSize = true;
-            this.lRua.BackColor = System.Drawing.Color.Transparent;
-            this.lRua.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
-            this.lRua.ForeColor = System.Drawing.Color.Black;
-            this.lRua.Location = new System.Drawing.Point(520, 727);
-            this.lRua.Name = "lRua";
-            this.lRua.Size = new System.Drawing.Size(98, 48);
-            this.lRua.TabIndex = 46;
-            this.lRua.Text = "RUA";
             // 
             // txtNumero
             // 
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtNumero.Location = new System.Drawing.Point(1774, 731);
+            this.txtNumero.Location = new System.Drawing.Point(1774, 720);
             this.txtNumero.MaxLength = 50;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(222, 44);
@@ -246,7 +238,7 @@ namespace MaryKay
             this.lNumero.BackColor = System.Drawing.Color.Transparent;
             this.lNumero.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lNumero.ForeColor = System.Drawing.Color.Black;
-            this.lNumero.Location = new System.Drawing.Point(1677, 727);
+            this.lNumero.Location = new System.Drawing.Point(1677, 716);
             this.lNumero.Name = "lNumero";
             this.lNumero.Size = new System.Drawing.Size(62, 48);
             this.lNumero.TabIndex = 50;
@@ -270,7 +262,7 @@ namespace MaryKay
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(1274, 395);
+            this.label7.Location = new System.Drawing.Point(1288, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 48);
             this.label7.TabIndex = 53;
@@ -279,7 +271,7 @@ namespace MaryKay
             // mtbCpf
             // 
             this.mtbCpf.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.mtbCpf.Location = new System.Drawing.Point(1414, 399);
+            this.mtbCpf.Location = new System.Drawing.Point(1428, 384);
             this.mtbCpf.Mask = "###,###,###-##";
             this.mtbCpf.Name = "mtbCpf";
             this.mtbCpf.Size = new System.Drawing.Size(325, 44);
@@ -289,7 +281,7 @@ namespace MaryKay
             // mtbCEP
             // 
             this.mtbCEP.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.mtbCEP.Location = new System.Drawing.Point(174, 731);
+            this.mtbCEP.Location = new System.Drawing.Point(188, 716);
             this.mtbCEP.Mask = "#####-###";
             this.mtbCEP.Name = "mtbCEP";
             this.mtbCEP.Size = new System.Drawing.Size(261, 44);
@@ -302,7 +294,7 @@ namespace MaryKay
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(23, 727);
+            this.label3.Location = new System.Drawing.Point(37, 712);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 48);
             this.label3.TabIndex = 59;
@@ -314,7 +306,7 @@ namespace MaryKay
             this.lTelefone.BackColor = System.Drawing.Color.Transparent;
             this.lTelefone.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
             this.lTelefone.ForeColor = System.Drawing.Color.Red;
-            this.lTelefone.Location = new System.Drawing.Point(247, 572);
+            this.lTelefone.Location = new System.Drawing.Point(261, 557);
             this.lTelefone.Name = "lTelefone";
             this.lTelefone.Size = new System.Drawing.Size(0, 38);
             this.lTelefone.TabIndex = 60;
@@ -335,7 +327,7 @@ namespace MaryKay
             // dtNascimento
             // 
             this.dtNascimento.Font = new System.Drawing.Font("Arial Black", 17F, System.Drawing.FontStyle.Bold);
-            this.dtNascimento.Location = new System.Drawing.Point(1253, 609);
+            this.dtNascimento.Location = new System.Drawing.Point(1267, 594);
             this.dtNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtNascimento.Name = "dtNascimento";
             this.dtNascimento.Size = new System.Drawing.Size(743, 47);
@@ -346,7 +338,7 @@ namespace MaryKay
             // 
             this.txtIdCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdCliente.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtIdCliente.Location = new System.Drawing.Point(183, 310);
+            this.txtIdCliente.Location = new System.Drawing.Point(197, 295);
             this.txtIdCliente.MaxLength = 50;
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(75, 44);
@@ -359,7 +351,7 @@ namespace MaryKay
             this.lbEmail.BackColor = System.Drawing.Color.Transparent;
             this.lbEmail.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
             this.lbEmail.ForeColor = System.Drawing.Color.Red;
-            this.lbEmail.Location = new System.Drawing.Point(327, 465);
+            this.lbEmail.Location = new System.Drawing.Point(341, 450);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(0, 38);
             this.lbEmail.TabIndex = 63;
@@ -370,10 +362,66 @@ namespace MaryKay
             this.lbCpf.BackColor = System.Drawing.Color.Transparent;
             this.lbCpf.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
             this.lbCpf.ForeColor = System.Drawing.Color.Red;
-            this.lbCpf.Location = new System.Drawing.Point(1374, 339);
+            this.lbCpf.Location = new System.Drawing.Point(1388, 324);
             this.lbCpf.Name = "lbCpf";
             this.lbCpf.Size = new System.Drawing.Size(0, 38);
             this.lbCpf.TabIndex = 64;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCidade.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtCidade.Location = new System.Drawing.Point(221, 809);
+            this.txtCidade.MaxLength = 50;
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(813, 44);
+            this.txtCidade.TabIndex = 65;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(474, 716);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(229, 48);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "ENDEREÇO";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(20, 805);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(161, 48);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "CIDADE";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(1052, 805);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(173, 48);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "ESTADO";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEstado.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtEstado.Location = new System.Drawing.Point(1271, 809);
+            this.txtEstado.MaxLength = 50;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(725, 44);
+            this.txtEstado.TabIndex = 68;
             // 
             // CadastroCliente
             // 
@@ -382,6 +430,11 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2034, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtCidade);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbCpf);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.txtIdCliente);
@@ -396,7 +449,6 @@ namespace MaryKay
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.lNumero);
             this.Controls.Add(this.txtRua);
-            this.Controls.Add(this.lRua);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.mtbTelefone);
             this.Controls.Add(this.lNome);
@@ -435,7 +487,6 @@ namespace MaryKay
         private System.Windows.Forms.Label nm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.Label lRua;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lNumero;
         private System.Windows.Forms.Label label5;
@@ -449,5 +500,10 @@ namespace MaryKay
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbCpf;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }

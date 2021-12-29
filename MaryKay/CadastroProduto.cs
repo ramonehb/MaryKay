@@ -21,11 +21,10 @@ namespace MaryKay
             nudVL_Venda.Controls.RemoveAt(0);
             nudPontos.Controls.RemoveAt(0);
             nudCodigoRapido.Controls.RemoveAt(0);
-            btnFinalizar.Text = idProduto == 0 ? "FINALIZAR CADASTRO" : "ATUALIZAR";
-
+            btFinalizar.Text = idProduto == 0 ? "FINALIZAR" : "ATUALIZAR";
+            
             if (idProduto != 0)
             {
-                MessageBox.Show("PARA ATUALIZAR A QUANTIDADE NAVEGUE ATÉ A ABA ESTOQUE NO MENU", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdProduto.Text = idProduto.ToString();
                 CarregaProduto(idProduto);
             }
@@ -37,7 +36,6 @@ namespace MaryKay
 
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'maryKayDataSet1.Tipo_Produto'. Você pode movê-la ou removê-la conforme necessário.
             this.tipo_ProdutoTableAdapter.Fill(this.maryKayDataSet1.Tipo_Produto);
         }
 

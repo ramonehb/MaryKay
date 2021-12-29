@@ -45,7 +45,6 @@ namespace MaryKay
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnFinalizar = new System.Windows.Forms.Button();
             this.bFechar = new System.Windows.Forms.Button();
             this.lbNomeProduto = new System.Windows.Forms.Label();
             this.lbCategoria = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@ namespace MaryKay
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtIdProduto = new System.Windows.Forms.TextBox();
+            this.btFinalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProdutoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet1)).BeginInit();
@@ -222,19 +222,6 @@ namespace MaryKay
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(899, 878);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(329, 104);
-            this.btnFinalizar.TabIndex = 8;
-            this.btnFinalizar.Text = "FINALIZAR CADASTRO";
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // bFechar
             // 
@@ -447,6 +434,18 @@ namespace MaryKay
             this.txtIdProduto.TabIndex = 79;
             this.txtIdProduto.Visible = false;
             // 
+            // btFinalizar
+            // 
+            this.btFinalizar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btFinalizar.Location = new System.Drawing.Point(878, 904);
+            this.btFinalizar.Name = "btFinalizar";
+            this.btFinalizar.Size = new System.Drawing.Size(255, 77);
+            this.btFinalizar.TabIndex = 81;
+            this.btFinalizar.Text = "FINALIZAR";
+            this.btFinalizar.UseVisualStyleBackColor = false;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -454,6 +453,7 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1924, 1006);
             this.ControlBox = false;
+            this.Controls.Add(this.btFinalizar);
             this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.lbCodigoRapido);
             this.Controls.Add(this.pictureBox3);
@@ -471,7 +471,6 @@ namespace MaryKay
             this.Controls.Add(this.lbCategoria);
             this.Controls.Add(this.lbNomeProduto);
             this.Controls.Add(this.bFechar);
-            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -518,7 +517,6 @@ namespace MaryKay
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.Label lbNomeProduto;
         private System.Windows.Forms.Label lbCategoria;
@@ -541,5 +539,6 @@ namespace MaryKay
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtIdProduto;
+        private System.Windows.Forms.Button btFinalizar;
     }
 }
