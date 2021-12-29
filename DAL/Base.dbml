@@ -76,11 +76,12 @@
   </Table>
   <Table Name="dbo.vw_Estoque" Member="vw_Estoques">
     <Type Name="vw_Estoque">
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NOME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="CATEGORIA" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="QUANTIDADE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COMPRA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="VENDA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[VALOR DE COMPRA]" Member="VALOR_DE_COMPRA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="[VALOR DE VENDA]" Member="VALOR_DE_VENDA" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
       <Column Name="LUCRO" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
       <Column Name="[TOTAL DE UNIDADES VENDIDAS]" Member="TOTAL_DE_UNIDADES_VENDIDAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>

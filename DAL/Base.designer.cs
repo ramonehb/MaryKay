@@ -1574,15 +1574,17 @@ namespace DAL
 	public partial class vw_Estoque
 	{
 		
+		private int _ID_Produto;
+		
 		private string _NOME;
 		
 		private string _CATEGORIA;
 		
 		private int _QUANTIDADE;
 		
-		private decimal _COMPRA;
+		private decimal _VALOR_DE_COMPRA;
 		
-		private decimal _VENDA;
+		private decimal _VALOR_DE_VENDA;
 		
 		private System.Nullable<decimal> _LUCRO;
 		
@@ -1590,6 +1592,22 @@ namespace DAL
 		
 		public vw_Estoque()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Produto", DbType="Int NOT NULL")]
+		public int ID_Produto
+		{
+			get
+			{
+				return this._ID_Produto;
+			}
+			set
+			{
+				if ((this._ID_Produto != value))
+				{
+					this._ID_Produto = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOME", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
@@ -1640,34 +1658,34 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPRA", DbType="Decimal(5,2) NOT NULL")]
-		public decimal COMPRA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VALOR DE COMPRA]", Storage="_VALOR_DE_COMPRA", DbType="Decimal(5,2) NOT NULL")]
+		public decimal VALOR_DE_COMPRA
 		{
 			get
 			{
-				return this._COMPRA;
+				return this._VALOR_DE_COMPRA;
 			}
 			set
 			{
-				if ((this._COMPRA != value))
+				if ((this._VALOR_DE_COMPRA != value))
 				{
-					this._COMPRA = value;
+					this._VALOR_DE_COMPRA = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VENDA", DbType="Decimal(5,2) NOT NULL")]
-		public decimal VENDA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[VALOR DE VENDA]", Storage="_VALOR_DE_VENDA", DbType="Decimal(5,2) NOT NULL")]
+		public decimal VALOR_DE_VENDA
 		{
 			get
 			{
-				return this._VENDA;
+				return this._VALOR_DE_VENDA;
 			}
 			set
 			{
-				if ((this._VENDA != value))
+				if ((this._VALOR_DE_VENDA != value))
 				{
-					this._VENDA = value;
+					this._VALOR_DE_VENDA = value;
 				}
 			}
 		}

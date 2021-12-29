@@ -48,22 +48,28 @@ namespace MaryKay
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.vwEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.dataSetViewEstoque = new MaryKay.DataSetViewEstoque();
             this.vwEstoqueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetViewEstoque = new MaryKay.DataSetViewEstoque();
             this.vw_EstoqueTableAdapter = new MaryKay.DataSetViewEstoqueTableAdapters.vw_EstoqueTableAdapter();
+            this.maryKayDataSet2 = new MaryKay.MaryKayDataSet2();
+            this.vwEstoqueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_EstoqueTableAdapter1 = new MaryKay.MaryKayDataSet2TableAdapters.vw_EstoqueTableAdapter();
+            this.iDProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cATEGORIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qUANTIDADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VALORDECOMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORDEVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lUCRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetViewEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetViewEstoque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -98,6 +104,7 @@ namespace MaryKay
             this.tsbAlterar.Name = "tsbAlterar";
             this.tsbAlterar.Size = new System.Drawing.Size(309, 49);
             this.tsbAlterar.Text = "AJUSTAR QUANTIDADE";
+            this.tsbAlterar.Click += new System.EventHandler(this.tsbAlterar_Click);
             // 
             // toolStripSeparator3
             // 
@@ -204,15 +211,16 @@ namespace MaryKay
             this.dgvEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDProdutoDataGridViewTextBoxColumn,
             this.nOMEDataGridViewTextBoxColumn,
             this.cATEGORIADataGridViewTextBoxColumn,
             this.qUANTIDADEDataGridViewTextBoxColumn,
-            this.cOMPRADataGridViewTextBoxColumn,
-            this.vENDADataGridViewTextBoxColumn,
+            this.VALORDECOMPRA,
+            this.vALORDEVENDADataGridViewTextBoxColumn,
             this.lUCRODataGridViewTextBoxColumn,
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn});
+            this.TOTAL});
             this.dgvEstoque.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dgvEstoque.DataSource = this.vwEstoqueBindingSource1;
+            this.dgvEstoque.DataSource = this.vwEstoqueBindingSource2;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,19 +249,42 @@ namespace MaryKay
             this.dgvEstoque.Size = new System.Drawing.Size(2010, 796);
             this.dgvEstoque.TabIndex = 38;
             // 
-            // dataSetViewEstoque
-            // 
-            this.dataSetViewEstoque.DataSetName = "DataSetViewEstoque";
-            this.dataSetViewEstoque.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vwEstoqueBindingSource1
             // 
             this.vwEstoqueBindingSource1.DataMember = "vw_Estoque";
             this.vwEstoqueBindingSource1.DataSource = this.dataSetViewEstoque;
             // 
+            // dataSetViewEstoque
+            // 
+            this.dataSetViewEstoque.DataSetName = "DataSetViewEstoque";
+            this.dataSetViewEstoque.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // vw_EstoqueTableAdapter
             // 
             this.vw_EstoqueTableAdapter.ClearBeforeFill = true;
+            // 
+            // maryKayDataSet2
+            // 
+            this.maryKayDataSet2.DataSetName = "MaryKayDataSet2";
+            this.maryKayDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwEstoqueBindingSource2
+            // 
+            this.vwEstoqueBindingSource2.DataMember = "vw_Estoque";
+            this.vwEstoqueBindingSource2.DataSource = this.maryKayDataSet2;
+            // 
+            // vw_EstoqueTableAdapter1
+            // 
+            this.vw_EstoqueTableAdapter1.ClearBeforeFill = true;
+            // 
+            // iDProdutoDataGridViewTextBoxColumn
+            // 
+            this.iDProdutoDataGridViewTextBoxColumn.DataPropertyName = "ID_Produto";
+            this.iDProdutoDataGridViewTextBoxColumn.HeaderText = "ID_Produto";
+            this.iDProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDProdutoDataGridViewTextBoxColumn.Name = "iDProdutoDataGridViewTextBoxColumn";
+            this.iDProdutoDataGridViewTextBoxColumn.Visible = false;
+            this.iDProdutoDataGridViewTextBoxColumn.Width = 125;
             // 
             // nOMEDataGridViewTextBoxColumn
             // 
@@ -262,7 +293,7 @@ namespace MaryKay
             this.nOMEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
             this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMEDataGridViewTextBoxColumn.Width = 380;
+            this.nOMEDataGridViewTextBoxColumn.Width = 400;
             // 
             // cATEGORIADataGridViewTextBoxColumn
             // 
@@ -271,34 +302,34 @@ namespace MaryKay
             this.cATEGORIADataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cATEGORIADataGridViewTextBoxColumn.Name = "cATEGORIADataGridViewTextBoxColumn";
             this.cATEGORIADataGridViewTextBoxColumn.ReadOnly = true;
-            this.cATEGORIADataGridViewTextBoxColumn.Width = 355;
+            this.cATEGORIADataGridViewTextBoxColumn.Width = 330;
             // 
             // qUANTIDADEDataGridViewTextBoxColumn
             // 
             this.qUANTIDADEDataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE";
-            this.qUANTIDADEDataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
+            this.qUANTIDADEDataGridViewTextBoxColumn.HeaderText = "QUANTIDADE ATUAL";
             this.qUANTIDADEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.qUANTIDADEDataGridViewTextBoxColumn.Name = "qUANTIDADEDataGridViewTextBoxColumn";
             this.qUANTIDADEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qUANTIDADEDataGridViewTextBoxColumn.Width = 150;
+            this.qUANTIDADEDataGridViewTextBoxColumn.Width = 260;
             // 
-            // cOMPRADataGridViewTextBoxColumn
+            // VALORDECOMPRA
             // 
-            this.cOMPRADataGridViewTextBoxColumn.DataPropertyName = "COMPRA";
-            this.cOMPRADataGridViewTextBoxColumn.HeaderText = "COMPRA";
-            this.cOMPRADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cOMPRADataGridViewTextBoxColumn.Name = "cOMPRADataGridViewTextBoxColumn";
-            this.cOMPRADataGridViewTextBoxColumn.ReadOnly = true;
-            this.cOMPRADataGridViewTextBoxColumn.Width = 160;
+            this.VALORDECOMPRA.DataPropertyName = "VALOR DE COMPRA";
+            this.VALORDECOMPRA.HeaderText = "COMPRA $$";
+            this.VALORDECOMPRA.MinimumWidth = 6;
+            this.VALORDECOMPRA.Name = "VALORDECOMPRA";
+            this.VALORDECOMPRA.ReadOnly = true;
+            this.VALORDECOMPRA.Width = 150;
             // 
-            // vENDADataGridViewTextBoxColumn
+            // vALORDEVENDADataGridViewTextBoxColumn
             // 
-            this.vENDADataGridViewTextBoxColumn.DataPropertyName = "VENDA";
-            this.vENDADataGridViewTextBoxColumn.HeaderText = "VENDA";
-            this.vENDADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vENDADataGridViewTextBoxColumn.Name = "vENDADataGridViewTextBoxColumn";
-            this.vENDADataGridViewTextBoxColumn.ReadOnly = true;
-            this.vENDADataGridViewTextBoxColumn.Width = 160;
+            this.vALORDEVENDADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VENDA $$";
+            this.vALORDEVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vALORDEVENDADataGridViewTextBoxColumn.Name = "vALORDEVENDADataGridViewTextBoxColumn";
+            this.vALORDEVENDADataGridViewTextBoxColumn.ReadOnly = true;
+            this.vALORDEVENDADataGridViewTextBoxColumn.Width = 140;
             // 
             // lUCRODataGridViewTextBoxColumn
             // 
@@ -307,16 +338,15 @@ namespace MaryKay
             this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
             this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
-            this.lUCRODataGridViewTextBoxColumn.Width = 150;
+            this.lUCRODataGridViewTextBoxColumn.Width = 125;
             // 
-            // tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn
+            // TOTAL
             // 
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.DataPropertyName = "TOTAL DE UNIDADES VENDIDAS";
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.HeaderText = "TOTAL";
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.Name = "tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn";
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn.Width = 150;
+            this.TOTAL.DataPropertyName = "TOTAL DE UNIDADES VENDIDAS";
+            this.TOTAL.HeaderText = "TOTAL";
+            this.TOTAL.MinimumWidth = 6;
+            this.TOTAL.Name = "TOTAL";
+            this.TOTAL.ReadOnly = true;
             // 
             // Estoque
             // 
@@ -339,8 +369,10 @@ namespace MaryKay
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetViewEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetViewEstoque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,12 +394,16 @@ namespace MaryKay
         private DataSetViewEstoque dataSetViewEstoque;
         private System.Windows.Forms.BindingSource vwEstoqueBindingSource1;
         private DataSetViewEstoqueTableAdapters.vw_EstoqueTableAdapter vw_EstoqueTableAdapter;
+        private MaryKayDataSet2 maryKayDataSet2;
+        private System.Windows.Forms.BindingSource vwEstoqueBindingSource2;
+        private MaryKayDataSet2TableAdapters.vw_EstoqueTableAdapter vw_EstoqueTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProdutoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cOMPRADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vENDADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VALORDECOMPRA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORDEVENDADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lUCRODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDEUNIDADESVENDIDASDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
     }
 }

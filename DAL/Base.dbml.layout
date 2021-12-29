@@ -66,10 +66,10 @@
         <elementListCompartment Id="0c414896-bc58-45b9-b828-91d688f04052" absoluteBounds="6.7650000000000006, 8.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="eaae7143-6c97-4871-a953-e236b2dc0b7d" absoluteBounds="8.75, 0.75, 2, 2.1554996744791666">
+    <classShape Id="ba4b6eb6-dc7f-4d8a-ab39-bcce7c22fcd9" absoluteBounds="8.75, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/BaseDataContext/vw_Estoque" />
       <nestedChildShapes>
-        <elementListCompartment Id="c0841730-975b-44fc-9f83-9ab6e514fec5" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="79010c09-4d8f-4e33-9fdd-fa097d17c4c1" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -1,6 +1,7 @@
 ﻿CREATE VIEW dbo.vw_Estoque 
 AS
-	SELECT	 P.Nome					AS NOME
+	SELECT	 E.ID_Produto	
+			,P.Nome					AS NOME
 			,TP.Categoria			AS CATEGORIA
 			,E.QTD_Item				AS QUANTIDADE
 			,P.VL_Pago				AS 'VALOR DE COMPRA'

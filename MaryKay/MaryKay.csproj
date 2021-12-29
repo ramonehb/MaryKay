@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarQuantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarQuantidade.Designer.cs">
+      <DependentUpon>AlterarQuantidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MaryKayDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlterarQuantidade.resx">
+      <DependentUpon>AlterarQuantidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +221,17 @@
     </None>
     <None Include="DataSetViewProdutos.xss">
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
+    </None>
+    <None Include="MaryKayDataSet2.xsc">
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MaryKayDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaryKayDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MaryKayDataSet2.xss">
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
