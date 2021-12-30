@@ -209,5 +209,12 @@ namespace MaryKay
             }
 
         }
+
+        private void tsbFechar_Click(object sender, EventArgs e)
+        {
+            var voltar = new Clientes();
+            voltar.ShowDialog();
+            this.Close();
+        }
     }
 }

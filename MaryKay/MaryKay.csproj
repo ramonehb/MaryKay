@@ -78,6 +78,11 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetEstoques.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetViewEstoque.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,10 +115,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MaryKayDataSet2.Designer.cs">
+    <Compile Include="DataSetEstoque.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
     </Compile>
     <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
@@ -178,6 +183,17 @@
     <None Include="DataSetCliente.xss">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
+    <None Include="DataSetEstoques.xsc">
+      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEstoques.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEstoques.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetEstoques.xss">
+      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
+    </None>
     <None Include="DataSetTipoProduto.xsc">
       <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
     </None>
@@ -222,16 +238,16 @@
     <None Include="DataSetViewProdutos.xss">
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
     </None>
-    <None Include="MaryKayDataSet2.xsc">
-      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+    <None Include="DataSetEstoque.xsc">
+      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
     </None>
-    <None Include="MaryKayDataSet2.xsd">
+    <None Include="DataSetEstoque.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MaryKayDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEstoque.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MaryKayDataSet2.xss">
-      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+    <None Include="DataSetEstoque.xss">
+      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

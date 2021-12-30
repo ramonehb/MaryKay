@@ -52,7 +52,6 @@ namespace MaryKay
             this.mtbCEP = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lTelefone = new System.Windows.Forms.Label();
-            this.bFechar = new System.Windows.Forms.Button();
             this.dtNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -62,7 +61,20 @@ namespace MaryKay
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbFechar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblData
@@ -311,19 +323,6 @@ namespace MaryKay
             this.lTelefone.Size = new System.Drawing.Size(0, 38);
             this.lTelefone.TabIndex = 60;
             // 
-            // bFechar
-            // 
-            this.bFechar.BackColor = System.Drawing.Color.Red;
-            this.bFechar.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bFechar.ForeColor = System.Drawing.Color.White;
-            this.bFechar.Location = new System.Drawing.Point(1972, 3);
-            this.bFechar.Name = "bFechar";
-            this.bFechar.Size = new System.Drawing.Size(59, 60);
-            this.bFechar.TabIndex = 61;
-            this.bFechar.Text = "X";
-            this.bFechar.UseVisualStyleBackColor = false;
-            this.bFechar.Click += new System.EventHandler(this.bFechar_Click);
-            // 
             // dtNascimento
             // 
             this.dtNascimento.Font = new System.Drawing.Font("Arial Black", 17F, System.Drawing.FontStyle.Bold);
@@ -423,6 +422,92 @@ namespace MaryKay
             this.txtEstado.Size = new System.Drawing.Size(725, 44);
             this.txtEstado.TabIndex = 68;
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.tsbFechar,
+            this.toolStripSeparator6,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip2.Location = new System.Drawing.Point(1888, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.TabIndex = 85;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbFechar
+            // 
+            this.tsbFechar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbFechar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.tsbFechar.ForeColor = System.Drawing.Color.Black;
+            this.tsbFechar.Image = ((System.Drawing.Image)(resources.GetObject("tsbFechar.Image")));
+            this.tsbFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFechar.Name = "tsbFechar";
+            this.tsbFechar.Size = new System.Drawing.Size(129, 49);
+            this.tsbFechar.Text = "FECHAR";
+            this.tsbFechar.Click += new System.EventHandler(this.tsbFechar_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator2,
+            this.toolStripSeparator3,
+            this.toolStripSeparator1,
+            this.toolStripSeparator4});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(2034, 23);
+            this.toolStrip1.TabIndex = 84;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -430,6 +515,8 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2034, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label8);
@@ -439,7 +526,6 @@ namespace MaryKay
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.dtNascimento);
-            this.Controls.Add(this.bFechar);
             this.Controls.Add(this.lTelefone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.mtbCEP);
@@ -466,6 +552,10 @@ namespace MaryKay
             this.Text = "Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,7 +585,6 @@ namespace MaryKay
         private System.Windows.Forms.MaskedTextBox mtbCEP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lTelefone;
-        private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.DateTimePicker dtNascimento;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label lbEmail;
@@ -505,5 +594,16 @@ namespace MaryKay
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsbFechar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

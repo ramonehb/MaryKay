@@ -34,10 +34,22 @@ namespace MaryKay
             this.bProdutos = new System.Windows.Forms.Button();
             this.bVendas = new System.Windows.Forms.Button();
             this.bEstoque = new System.Windows.Forms.Button();
-            this.bFechar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bUsuario = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbFecharSistema = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bClientes
@@ -99,20 +111,6 @@ namespace MaryKay
             this.bEstoque.UseVisualStyleBackColor = false;
             this.bEstoque.Click += new System.EventHandler(this.bEstoque_Click);
             // 
-            // bFechar
-            // 
-            this.bFechar.BackColor = System.Drawing.Color.Red;
-            this.bFechar.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bFechar.ForeColor = System.Drawing.Color.White;
-            this.bFechar.Location = new System.Drawing.Point(1986, 11);
-            this.bFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bFechar.Name = "bFechar";
-            this.bFechar.Size = new System.Drawing.Size(59, 60);
-            this.bFechar.TabIndex = 20;
-            this.bFechar.Text = "X";
-            this.bFechar.UseVisualStyleBackColor = false;
-            this.bFechar.Click += new System.EventHandler(this.bFechar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -139,6 +137,91 @@ namespace MaryKay
             this.bUsuario.UseVisualStyleBackColor = false;
             this.bUsuario.Click += new System.EventHandler(this.bUsuario_Click);
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.tsbFecharSistema,
+            this.toolStripSeparator6,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip2.Location = new System.Drawing.Point(1970, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip2.TabIndex = 85;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbFecharSistema
+            // 
+            this.tsbFecharSistema.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbFecharSistema.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.tsbFecharSistema.ForeColor = System.Drawing.Color.Black;
+            this.tsbFecharSistema.Image = ((System.Drawing.Image)(resources.GetObject("tsbFecharSistema.Image")));
+            this.tsbFecharSistema.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFecharSistema.Name = "tsbFecharSistema";
+            this.tsbFecharSistema.Size = new System.Drawing.Size(49, 49);
+            this.tsbFecharSistema.Click += new System.EventHandler(this.tsbFecharSistema_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator2,
+            this.toolStripSeparator3,
+            this.toolStripSeparator1,
+            this.toolStripSeparator4});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(2057, 23);
+            this.toolStrip1.TabIndex = 84;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -147,19 +230,25 @@ namespace MaryKay
             this.ClientSize = new System.Drawing.Size(2057, 1006);
             this.ControlBox = false;
             this.Controls.Add(this.bUsuario);
-            this.Controls.Add(this.bFechar);
             this.Controls.Add(this.bVendas);
             this.Controls.Add(this.bEstoque);
             this.Controls.Add(this.bProdutos);
             this.Controls.Add(this.bClientes);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,8 +258,18 @@ namespace MaryKay
         private System.Windows.Forms.Button bProdutos;
         private System.Windows.Forms.Button bVendas;
         private System.Windows.Forms.Button bEstoque;
-        private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bUsuario;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsbFecharSistema;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

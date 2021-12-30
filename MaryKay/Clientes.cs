@@ -85,5 +85,12 @@ namespace MaryKay
                 var msg = erro.Message;
             }
         }
+
+        private void tsbFechar_Click(object sender, EventArgs e)
+        {
+            var voltar = new TelaInicial();
+            voltar.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -17,16 +17,16 @@ namespace MaryKay
             InitializeComponent();
         }
 
-        private void bFechar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             TelaInicial telaInicial = new TelaInicial();
             telaInicial.ShowDialog();
             this.Close();
+        }
+
+        private void tsbFecharSistema_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

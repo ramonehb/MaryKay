@@ -25,17 +25,22 @@ namespace MaryKay
 
         private void Estoque_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'maryKayDataSet2.vw_Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.vw_EstoqueTableAdapter1.Fill(this.maryKayDataSet2.vw_Estoque);
-            //this.vw_EstoqueTableAdapter.Fill(this.dataSetViewEstoque.vw_Estoque);
+            this.vw_EstoqueTableAdapter2.Fill(this.dataSetEstoques.vw_Estoque);
         }
 
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
-            var idProduto = (int) dgvEstoque.CurrentRow.Cells["iDProdutoDataGridViewTextBoxColumn"].Value;
-            var nomeProduto = dgvEstoque.CurrentRow.Cells["nOMEDataGridViewTextBoxColumn"].Value.ToString();
+            var idProduto = (int) dgvEstoque.CurrentRow.Cells["dataGridViewTextBoxColumn1"].Value;
+            var nomeProduto = dgvEstoque.CurrentRow.Cells["dataGridViewTextBoxColumn2"].Value.ToString();
             var alterarQuantidade = new AlterarQuantidade(idProduto, nomeProduto);
             alterarQuantidade.ShowDialog();
+        }
+
+        private void tsbFechar_Click(object sender, EventArgs e)
+        {
+            var voltar = new TelaInicial();
+            voltar.ShowDialog();
+            this.Close();
         }
     }
 }

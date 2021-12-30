@@ -32,11 +32,17 @@ namespace MaryKay
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lBemVinda = new System.Windows.Forms.Label();
-            this.bFechar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tsbFecharSistema = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEntrar
@@ -63,20 +69,6 @@ namespace MaryKay
             this.lBemVinda.Text = "Bem-vinda Consultora Lana Borges";
             this.lBemVinda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bFechar
-            // 
-            this.bFechar.BackColor = System.Drawing.Color.Red;
-            this.bFechar.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bFechar.ForeColor = System.Drawing.Color.White;
-            this.bFechar.Location = new System.Drawing.Point(1138, 0);
-            this.bFechar.Name = "bFechar";
-            this.bFechar.Size = new System.Drawing.Size(48, 49);
-            this.bFechar.TabIndex = 5;
-            this.bFechar.Text = "X";
-            this.bFechar.UseVisualStyleBackColor = false;
-            this.bFechar.UseWaitCursor = true;
-            this.bFechar.Click += new System.EventHandler(this.bFechar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -97,6 +89,55 @@ namespace MaryKay
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // tsbFecharSistema
+            // 
+            this.tsbFecharSistema.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbFecharSistema.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.tsbFecharSistema.ForeColor = System.Drawing.Color.Black;
+            this.tsbFecharSistema.Image = ((System.Drawing.Image)(resources.GetObject("tsbFecharSistema.Image")));
+            this.tsbFecharSistema.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFecharSistema.Name = "tsbFecharSistema";
+            this.tsbFecharSistema.Size = new System.Drawing.Size(49, 49);
+            this.tsbFecharSistema.Click += new System.EventHandler(this.tsbFecharSistema_Click);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.tsbFecharSistema,
+            this.toolStripSeparator6,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip2.Location = new System.Drawing.Point(1103, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip2.TabIndex = 86;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -104,9 +145,9 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1189, 809);
             this.ControlBox = false;
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lBemVinda);
-            this.Controls.Add(this.bFechar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
@@ -114,6 +155,8 @@ namespace MaryKay
             this.Text = "Login Mary Kay";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,8 +165,13 @@ namespace MaryKay
         #endregion
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label lBemVinda;
-        private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripButton tsbFecharSistema;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     }
 }

@@ -39,13 +39,6 @@ namespace MaryKay
             this.tipo_ProdutoTableAdapter.Fill(this.maryKayDataSet1.Tipo_Produto);
         }
 
-        private void bFechar_Click(object sender, EventArgs e)
-        {
-            Produtos produtos = new Produtos();
-            produtos.ShowDialog();
-            this.Close();
-        }
-
         private bool ValidaProduto()
         {
             var erro = 0;
@@ -237,6 +230,13 @@ namespace MaryKay
             {
                 var msg = erro.Message;
             }
+        }
+
+        private void tsbFechar_Click(object sender, EventArgs e)
+        {
+            var voltar = new Produtos();
+            voltar.ShowDialog();
+            this.Close();
         }
     }
 }

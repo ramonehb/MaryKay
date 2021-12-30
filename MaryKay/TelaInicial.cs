@@ -48,5 +48,10 @@ namespace MaryKay
             var estoque = new Estoque();
             estoque.ShowDialog();
         }
+
+        private void tsbFecharSistema_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
