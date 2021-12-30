@@ -108,5 +108,12 @@ namespace MaryKay
             voltar.ShowDialog();
             this.Close();
         }
+
+        private void tsbCategoria_Click(object sender, EventArgs e)
+        {
+            var cadastroCategoria = new CadastroCategoria();
+            cadastroCategoria.ShowDialog();
+            this.Close();
+        }
     }
 }

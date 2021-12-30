@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Base.dbml</DependentUpon>
     </Compile>
+    <Compile Include="CategoriaDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="ProdutoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

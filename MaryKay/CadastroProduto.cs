@@ -143,55 +143,6 @@ namespace MaryKay
             return erro == 0;
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            if (ValidaProduto())
-            {
-                var novoProduto = string.IsNullOrEmpty(txtIdProduto.Text) ? true : false;
-                var produto = new Produto();
-
-                if (!novoProduto)
-                {
-                    produto.ID_Produto = int.Parse(txtIdProduto.Text);
-                }
-
-                produto.Nome = txtNomeProduto.Text;
-                produto.ID_TipoProduto = (int) cboTipoProduto.SelectedValue;
-                produto.Codigo = int.Parse(nudCodigoRapido.Text);
-                produto.Ponto = int.Parse(nudPontos.Text);
-                produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
-                produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
-                produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
-
-                var produtoDAL= new ProdutoDAL();
-
-                if (novoProduto)
-                {
-                    if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
-                    {
-                        MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    MessageBox.Show("PRODUTO CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    if (!produtoDAL.AlterarProduto(produto))
-                    {
-                        MessageBox.Show("ERRO AO ATUALIZAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    MessageBox.Show("PRODUTO ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
-                var voltar = new Produtos();
-                voltar.ShowDialog();
-                this.Close();
-            }
-        }
-
         private void NovoProduto()
         {
             labelQtd.Visible = true;
@@ -237,6 +188,55 @@ namespace MaryKay
             var voltar = new Produtos();
             voltar.ShowDialog();
             this.Close();
+        }
+
+        private void btFinalizar_Click(object sender, EventArgs e)
+        {
+            if (ValidaProduto())
+            {
+                var novoProduto = string.IsNullOrEmpty(txtIdProduto.Text) ? true : false;
+                var produto = new Produto();
+
+                if (!novoProduto)
+                {
+                    produto.ID_Produto = int.Parse(txtIdProduto.Text);
+                }
+
+                produto.Nome = txtNomeProduto.Text;
+                produto.ID_TipoProduto = (int)cboTipoProduto.SelectedValue;
+                produto.Codigo = int.Parse(nudCodigoRapido.Text);
+                produto.Ponto = int.Parse(nudPontos.Text);
+                produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
+                produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
+                produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
+
+                var produtoDAL = new ProdutoDAL();
+
+                if (novoProduto)
+                {
+                    if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
+                    {
+                        MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("PRODUTO CADASTRADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (!produtoDAL.AlterarProduto(produto))
+                    {
+                        MessageBox.Show("ERRO AO ATUALIZAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    MessageBox.Show("PRODUTO ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                var voltar = new Produtos();
+                voltar.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

@@ -119,6 +119,7 @@ namespace MaryKay
             this.nudAtual.ReadOnly = true;
             this.nudAtual.Size = new System.Drawing.Size(142, 44);
             this.nudAtual.TabIndex = 100;
+            this.nudAtual.TabStop = false;
             this.nudAtual.ThousandsSeparator = true;
             // 
             // nudNovo
@@ -183,7 +184,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(574, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(74, 52);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
