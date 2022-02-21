@@ -95,6 +95,7 @@ namespace MaryKay
             this.bVendas.TabIndex = 2;
             this.bVendas.Text = "Vendas";
             this.bVendas.UseVisualStyleBackColor = false;
+            this.bVendas.Click += new System.EventHandler(this.bVendas_Click);
             // 
             // bEstoque
             // 

@@ -53,5 +53,11 @@ namespace MaryKay
         {
             Application.Exit();
         }
+
+        private void bVendas_Click(object sender, EventArgs e)
+        {
+            var vendas = new Vendas();
+            vendas.ShowDialog();
+        }
     }
 }
