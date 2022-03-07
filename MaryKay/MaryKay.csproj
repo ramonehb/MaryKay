@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEstoques.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetProdutosVenda.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetViewEstoque.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +192,9 @@
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vendas.resx">
+      <DependentUpon>Vendas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
@@ -208,6 +216,17 @@
     </None>
     <None Include="DataSetEstoques.xss">
       <DependentUpon>DataSetEstoques.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProdutosVenda.xsc">
+      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProdutosVenda.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProdutosVenda.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProdutosVenda.xss">
+      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoProduto.xsc">
       <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
