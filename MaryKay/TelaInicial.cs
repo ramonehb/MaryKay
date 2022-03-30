@@ -57,8 +57,9 @@ namespace MaryKay
 
         private void bVendas_Click(object sender, EventArgs e)
         {
-            //var vendas = new Vendas();
-            //vendas.ShowDialog();
+            var pedido = new Pedido();
+            pedido.ShowDialog();
+            this.Close();
         }
     }
 }

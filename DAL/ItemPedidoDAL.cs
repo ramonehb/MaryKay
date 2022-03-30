@@ -11,6 +11,8 @@ namespace DAL
         public int Quantidade { get; set; }
         public double Preco { get; set; }
 
+        public ItemPedidoDAL() { }
+
         public ItemPedidoDAL(int quantidade, double preco)
         {
             Quantidade = quantidade;

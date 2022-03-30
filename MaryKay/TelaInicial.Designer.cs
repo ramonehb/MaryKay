@@ -62,7 +62,7 @@ namespace MaryKay
             this.bClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bClientes.Name = "bClientes";
             this.bClientes.Size = new System.Drawing.Size(318, 81);
-            this.bClientes.TabIndex = 1;
+            this.bClientes.TabIndex = 2;
             this.bClientes.Text = "Clientes";
             this.bClientes.UseVisualStyleBackColor = false;
             this.bClientes.Click += new System.EventHandler(this.bClientes_Click);
@@ -77,7 +77,7 @@ namespace MaryKay
             this.bProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bProdutos.Name = "bProdutos";
             this.bProdutos.Size = new System.Drawing.Size(318, 81);
-            this.bProdutos.TabIndex = 0;
+            this.bProdutos.TabIndex = 1;
             this.bProdutos.Text = "Produtos";
             this.bProdutos.UseVisualStyleBackColor = false;
             this.bProdutos.Click += new System.EventHandler(this.bProdutos_Click);
@@ -92,7 +92,7 @@ namespace MaryKay
             this.bVendas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVendas.Name = "bVendas";
             this.bVendas.Size = new System.Drawing.Size(318, 81);
-            this.bVendas.TabIndex = 2;
+            this.bVendas.TabIndex = 0;
             this.bVendas.Text = "Vendas";
             this.bVendas.UseVisualStyleBackColor = false;
             this.bVendas.Click += new System.EventHandler(this.bVendas_Click);
@@ -152,8 +152,8 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1970, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(74, 52);
-            this.toolStrip2.TabIndex = 85;
+            this.toolStrip2.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // toolStripSeparator5
@@ -199,7 +199,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1924, 23);
+            this.toolStrip1.Size = new System.Drawing.Size(2099, 23);
             this.toolStrip1.TabIndex = 84;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -228,7 +228,7 @@ namespace MaryKay
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(1924, 1006);
+            this.ClientSize = new System.Drawing.Size(2099, 1006);
             this.ControlBox = false;
             this.Controls.Add(this.bUsuario);
             this.Controls.Add(this.bVendas);

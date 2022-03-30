@@ -9,16 +9,17 @@ namespace DAL
     public class PedidoDAL
     {
         public Cliente Cliente { get; set; }
-        public Usuario Usuario { get; set; }
-        public DateTime  Data { get; set; }
-        public PedidoStatus Status { get; set; }
+        //public Usuario Usuario { get; set; }
+        public DateTime Data { get; set; }
+        public int Status { get; set; }
 
         public List<ItemPedidoDAL> Items = new List<ItemPedidoDAL>();
 
-        public PedidoDAL(Cliente cliente,Usuario usuario, DateTime data, PedidoStatus status)
+        public PedidoDAL() { }
+
+        public PedidoDAL(Cliente cliente, DateTime data, int status)
         {
             Cliente = cliente;
-            Usuario = usuario;
             Data = data;
             Status = status;
         }

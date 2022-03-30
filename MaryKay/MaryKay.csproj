@@ -84,6 +84,16 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="comboBoxClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comboBoxClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="comboBoxProduto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comboBoxProduto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetViewProdutos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +125,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido.Designer.cs">
+      <DependentUpon>Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidoNovo.Designer.cs">
+      <DependentUpon>PedidoNovo.cs</DependentUpon>
     </Compile>
     <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
@@ -163,6 +185,12 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedido.resx">
+      <DependentUpon>Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidoNovo.resx">
+      <DependentUpon>PedidoNovo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produtos.resx">
       <DependentUpon>Produtos.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +204,28 @@
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="comboBoxClientes.xsc">
+      <DependentUpon>comboBoxClientes.xsd</DependentUpon>
+    </None>
+    <None Include="comboBoxClientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comboBoxClientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comboBoxClientes.xss">
+      <DependentUpon>comboBoxClientes.xsd</DependentUpon>
+    </None>
+    <None Include="comboBoxProduto.xsc">
+      <DependentUpon>comboBoxProduto.xsd</DependentUpon>
+    </None>
+    <None Include="comboBoxProduto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comboBoxProduto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comboBoxProduto.xss">
+      <DependentUpon>comboBoxProduto.xsd</DependentUpon>
+    </None>
     <None Include="DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
