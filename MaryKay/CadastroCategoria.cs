@@ -32,9 +32,9 @@ namespace MaryKay
                 lbErro.Text = "DIGITE O NOME";
                 return;
             }
-            else if (txtCategoria.Text.Length < 6)
+            else if (txtCategoria.Text.Length < 3)
             {
-                lbErro.Text = "MINIMO 6 LETRAS";
+                lbErro.Text = "MINIMO 3 LETRAS";
                 return;
             }
             else

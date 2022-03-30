@@ -31,6 +31,9 @@ namespace MaryKay
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estoque));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAjustarEstoque = new System.Windows.Forms.ToolStripButton();
@@ -43,14 +46,6 @@ namespace MaryKay
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.nm = new System.Windows.Forms.Label();
-            this.dgvViewEstoque = new System.Windows.Forms.DataGridView();
-            this.iDProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cATEGORIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTIDADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORDECOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORDEVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lUCRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vwEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewEstoque = new MaryKay.ViewEstoque();
             this.vw_EstoqueTableAdapter = new MaryKay.ViewEstoqueTableAdapters.vw_EstoqueTableAdapter();
@@ -60,12 +55,20 @@ namespace MaryKay
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.dgvViewEstoque = new System.Windows.Forms.DataGridView();
+            this.iDProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cATEGORIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUANTIDADEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORDECOMPRADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORDEVENDADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lUCRODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.toolStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewEstoque)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEstoque)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -81,7 +84,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2034, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 52);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -128,7 +131,7 @@ namespace MaryKay
             this.toolStrip3.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip3.Location = new System.Drawing.Point(0, 52);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(2034, 23);
+            this.toolStrip3.Size = new System.Drawing.Size(1924, 23);
             this.toolStrip3.TabIndex = 85;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -165,94 +168,6 @@ namespace MaryKay
             this.nm.TabIndex = 86;
             this.nm.Text = "Estoque";
             // 
-            // dgvViewEstoque
-            // 
-            this.dgvViewEstoque.AllowUserToAddRows = false;
-            this.dgvViewEstoque.AllowUserToDeleteRows = false;
-            this.dgvViewEstoque.AutoGenerateColumns = false;
-            this.dgvViewEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDProdutoDataGridViewTextBoxColumn,
-            this.nOMEDataGridViewTextBoxColumn,
-            this.cATEGORIADataGridViewTextBoxColumn,
-            this.qUANTIDADEDataGridViewTextBoxColumn,
-            this.vALORDECOMPRADataGridViewTextBoxColumn,
-            this.vALORDEVENDADataGridViewTextBoxColumn,
-            this.lUCRODataGridViewTextBoxColumn});
-            this.dgvViewEstoque.DataSource = this.vwEstoqueBindingSource;
-            this.dgvViewEstoque.Location = new System.Drawing.Point(12, 176);
-            this.dgvViewEstoque.Name = "dgvViewEstoque";
-            this.dgvViewEstoque.ReadOnly = true;
-            this.dgvViewEstoque.RowHeadersWidth = 51;
-            this.dgvViewEstoque.RowTemplate.Height = 24;
-            this.dgvViewEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewEstoque.Size = new System.Drawing.Size(2010, 792);
-            this.dgvViewEstoque.TabIndex = 87;
-            // 
-            // iDProdutoDataGridViewTextBoxColumn
-            // 
-            this.iDProdutoDataGridViewTextBoxColumn.DataPropertyName = "ID_Produto";
-            this.iDProdutoDataGridViewTextBoxColumn.HeaderText = "ID_Produto";
-            this.iDProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDProdutoDataGridViewTextBoxColumn.Name = "iDProdutoDataGridViewTextBoxColumn";
-            this.iDProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDProdutoDataGridViewTextBoxColumn.Visible = false;
-            this.iDProdutoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nOMEDataGridViewTextBoxColumn
-            // 
-            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
-            this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cATEGORIADataGridViewTextBoxColumn
-            // 
-            this.cATEGORIADataGridViewTextBoxColumn.DataPropertyName = "CATEGORIA";
-            this.cATEGORIADataGridViewTextBoxColumn.HeaderText = "CATEGORIA";
-            this.cATEGORIADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cATEGORIADataGridViewTextBoxColumn.Name = "cATEGORIADataGridViewTextBoxColumn";
-            this.cATEGORIADataGridViewTextBoxColumn.ReadOnly = true;
-            this.cATEGORIADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // qUANTIDADEDataGridViewTextBoxColumn
-            // 
-            this.qUANTIDADEDataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE";
-            this.qUANTIDADEDataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
-            this.qUANTIDADEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.qUANTIDADEDataGridViewTextBoxColumn.Name = "qUANTIDADEDataGridViewTextBoxColumn";
-            this.qUANTIDADEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qUANTIDADEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vALORDECOMPRADataGridViewTextBoxColumn
-            // 
-            this.vALORDECOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE COMPRA";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR DE COMPRA";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vALORDECOMPRADataGridViewTextBoxColumn.Name = "vALORDECOMPRADataGridViewTextBoxColumn";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.ReadOnly = true;
-            this.vALORDECOMPRADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vALORDEVENDADataGridViewTextBoxColumn
-            // 
-            this.vALORDEVENDADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE VENDA";
-            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VALOR DE VENDA";
-            this.vALORDEVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vALORDEVENDADataGridViewTextBoxColumn.Name = "vALORDEVENDADataGridViewTextBoxColumn";
-            this.vALORDEVENDADataGridViewTextBoxColumn.ReadOnly = true;
-            this.vALORDEVENDADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lUCRODataGridViewTextBoxColumn
-            // 
-            this.lUCRODataGridViewTextBoxColumn.DataPropertyName = "LUCRO";
-            this.lUCRODataGridViewTextBoxColumn.HeaderText = "LUCRO";
-            this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
-            this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
-            this.lUCRODataGridViewTextBoxColumn.Width = 125;
-            // 
             // vwEstoqueBindingSource
             // 
             this.vwEstoqueBindingSource.DataMember = "vw_Estoque";
@@ -281,7 +196,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1880, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
             this.toolStrip2.TabIndex = 88;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -317,15 +232,134 @@ namespace MaryKay
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
+            // dgvViewEstoque
+            // 
+            this.dgvViewEstoque.AllowUserToAddRows = false;
+            this.dgvViewEstoque.AllowUserToDeleteRows = false;
+            this.dgvViewEstoque.AllowUserToResizeColumns = false;
+            this.dgvViewEstoque.AllowUserToResizeRows = false;
+            this.dgvViewEstoque.AutoGenerateColumns = false;
+            this.dgvViewEstoque.BackgroundColor = System.Drawing.Color.Pink;
+            this.dgvViewEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvViewEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvViewEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDProdutoDataGridViewTextBoxColumn,
+            this.nOMEDataGridViewTextBoxColumn1,
+            this.cATEGORIADataGridViewTextBoxColumn1,
+            this.qUANTIDADEDataGridViewTextBoxColumn1,
+            this.vALORDECOMPRADataGridViewTextBoxColumn1,
+            this.vALORDEVENDADataGridViewTextBoxColumn1,
+            this.lUCRODataGridViewTextBoxColumn1});
+            this.dgvViewEstoque.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dgvViewEstoque.DataSource = this.vwEstoqueBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewEstoque.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvViewEstoque.GridColor = System.Drawing.Color.Black;
+            this.dgvViewEstoque.Location = new System.Drawing.Point(12, 176);
+            this.dgvViewEstoque.MultiSelect = false;
+            this.dgvViewEstoque.Name = "dgvViewEstoque";
+            this.dgvViewEstoque.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvViewEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvViewEstoque.RowHeadersVisible = false;
+            this.dgvViewEstoque.RowHeadersWidth = 51;
+            this.dgvViewEstoque.RowTemplate.Height = 30;
+            this.dgvViewEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvViewEstoque.Size = new System.Drawing.Size(2010, 792);
+            this.dgvViewEstoque.TabIndex = 89;
+            // 
+            // iDProdutoDataGridViewTextBoxColumn
+            // 
+            this.iDProdutoDataGridViewTextBoxColumn.DataPropertyName = "ID_Produto";
+            this.iDProdutoDataGridViewTextBoxColumn.HeaderText = "ID_Produto";
+            this.iDProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDProdutoDataGridViewTextBoxColumn.Name = "iDProdutoDataGridViewTextBoxColumn";
+            this.iDProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDProdutoDataGridViewTextBoxColumn.Visible = false;
+            this.iDProdutoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nOMEDataGridViewTextBoxColumn1
+            // 
+            this.nOMEDataGridViewTextBoxColumn1.DataPropertyName = "NOME";
+            this.nOMEDataGridViewTextBoxColumn1.HeaderText = "NOME";
+            this.nOMEDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nOMEDataGridViewTextBoxColumn1.Name = "nOMEDataGridViewTextBoxColumn1";
+            this.nOMEDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nOMEDataGridViewTextBoxColumn1.Width = 400;
+            // 
+            // cATEGORIADataGridViewTextBoxColumn1
+            // 
+            this.cATEGORIADataGridViewTextBoxColumn1.DataPropertyName = "CATEGORIA";
+            this.cATEGORIADataGridViewTextBoxColumn1.HeaderText = "CATEGORIA";
+            this.cATEGORIADataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.cATEGORIADataGridViewTextBoxColumn1.Name = "cATEGORIADataGridViewTextBoxColumn1";
+            this.cATEGORIADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.cATEGORIADataGridViewTextBoxColumn1.Width = 350;
+            // 
+            // qUANTIDADEDataGridViewTextBoxColumn1
+            // 
+            this.qUANTIDADEDataGridViewTextBoxColumn1.DataPropertyName = "QUANTIDADE";
+            this.qUANTIDADEDataGridViewTextBoxColumn1.HeaderText = "QUANTIDADE";
+            this.qUANTIDADEDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.qUANTIDADEDataGridViewTextBoxColumn1.Name = "qUANTIDADEDataGridViewTextBoxColumn1";
+            this.qUANTIDADEDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.qUANTIDADEDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // vALORDECOMPRADataGridViewTextBoxColumn1
+            // 
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.DataPropertyName = "VALOR DE COMPRA";
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.HeaderText = "VALOR DE COMPRA";
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.Name = "vALORDECOMPRADataGridViewTextBoxColumn1";
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.vALORDECOMPRADataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // vALORDEVENDADataGridViewTextBoxColumn1
+            // 
+            this.vALORDEVENDADataGridViewTextBoxColumn1.DataPropertyName = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn1.HeaderText = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.vALORDEVENDADataGridViewTextBoxColumn1.Name = "vALORDEVENDADataGridViewTextBoxColumn1";
+            this.vALORDEVENDADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.vALORDEVENDADataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // lUCRODataGridViewTextBoxColumn1
+            // 
+            this.lUCRODataGridViewTextBoxColumn1.DataPropertyName = "LUCRO";
+            this.lUCRODataGridViewTextBoxColumn1.HeaderText = "LUCRO";
+            this.lUCRODataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lUCRODataGridViewTextBoxColumn1.Name = "lUCRODataGridViewTextBoxColumn1";
+            this.lUCRODataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2034, 980);
+            this.ClientSize = new System.Drawing.Size(1924, 980);
             this.ControlBox = false;
-            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.dgvViewEstoque);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.nm);
             this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.toolStrip1);
@@ -339,11 +373,11 @@ namespace MaryKay
             this.toolStrip1.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewEstoque)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,22 +397,22 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.Label nm;
-        private System.Windows.Forms.DataGridView dgvViewEstoque;
         private ViewEstoque viewEstoque;
         private System.Windows.Forms.BindingSource vwEstoqueBindingSource;
         private ViewEstoqueTableAdapters.vw_EstoqueTableAdapter vw_EstoqueTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDProdutoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORIADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vALORDECOMPRADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vALORDEVENDADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lUCRODataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton tsbFechar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.DataGridView dgvViewEstoque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProdutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORIADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORDECOMPRADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORDEVENDADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lUCRODataGridViewTextBoxColumn1;
     }
 }
