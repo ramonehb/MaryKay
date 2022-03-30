@@ -127,6 +127,7 @@ namespace MaryKay
             colunaSubTotal.ReadOnly = true;
 
             tsbExcluirItem.Visible = true;
+            btnFinalizar.Visible = true;
             nudQuantidade.Text = "1";
 
         }
