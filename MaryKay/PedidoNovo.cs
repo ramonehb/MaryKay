@@ -152,6 +152,16 @@ namespace MaryKay
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             var pedido = new PedidoDAL();
+            if (string.IsNullOrEmpty(lClienteSelecionado.Text))
+            {
+                MessageBox.Show("SELECIONE O CLIENTE PARA FINALIZAR A VENDA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (dgvCarinho.Rows.Count <= 0)
+            {
+                MessageBox.Show("O CARINHO ESTÁ VAZIO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             double sum = 0;
             foreach (var item in Items)
@@ -159,7 +169,7 @@ namespace MaryKay
                 sum += item.SubTotal();
             }
 
-            MessageBox.Show($"Total do pedido: {sum}");
+            MessageBox.Show($"TOTAL DA COMPRA: {sum}", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

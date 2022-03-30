@@ -16,7 +16,7 @@ namespace MaryKay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PedidoNovo());
+            Application.Run(new Login());
         }
     }
 }
