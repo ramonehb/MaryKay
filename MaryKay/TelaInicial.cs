@@ -45,8 +45,7 @@ namespace MaryKay
 
         private void bEstoque_Click(object sender, EventArgs e)
         {
-            var estoque = new Estoque();
-            estoque.ShowDialog();
+       
         }
 
         private void tsbFecharSistema_Click(object sender, EventArgs e)
@@ -56,8 +55,8 @@ namespace MaryKay
 
         private void bVendas_Click(object sender, EventArgs e)
         {
-            var vendas = new Vendas();
-            vendas.ShowDialog();
+            //var vendas = new Vendas();
+            //vendas.ShowDialog();
         }
     }
 }

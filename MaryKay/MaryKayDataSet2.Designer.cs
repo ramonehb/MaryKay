@@ -20,9 +20,9 @@ namespace MaryKay {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetEstoques")]
+    [global::System.Xml.Serialization.XmlRootAttribute("MaryKayDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetEstoques : global::System.Data.DataSet {
+    public partial class MaryKayDataSet2 : global::System.Data.DataSet {
         
         private vw_EstoqueDataTable tablevw_Estoque;
         
@@ -30,7 +30,7 @@ namespace MaryKay {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSetEstoques() {
+        public MaryKayDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace MaryKay {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSetEstoques(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MaryKayDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace MaryKay {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetEstoques cln = ((DataSetEstoques)(base.Clone()));
+            MaryKayDataSet2 cln = ((MaryKayDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace MaryKay {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetEstoques";
+            this.DataSetName = "MaryKayDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetEstoques.xsd";
+            this.Namespace = "http://tempuri.org/MaryKayDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablevw_Estoque = new vw_EstoqueDataTable();
@@ -225,7 +225,7 @@ namespace MaryKay {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetEstoques ds = new DataSetEstoques();
+            MaryKayDataSet2 ds = new MaryKayDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -292,8 +292,6 @@ namespace MaryKay {
             private global::System.Data.DataColumn columnVALOR_DE_VENDA;
             
             private global::System.Data.DataColumn columnLUCRO;
-            
-            private global::System.Data.DataColumn columnTOTAL_DE_UNIDADES_VENDIDAS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -386,14 +384,6 @@ namespace MaryKay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TOTAL_DE_UNIDADES_VENDIDASColumn {
-                get {
-                    return this.columnTOTAL_DE_UNIDADES_VENDIDAS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +419,7 @@ namespace MaryKay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public vw_EstoqueRow Addvw_EstoqueRow(int ID_Produto, string NOME, string CATEGORIA, int QUANTIDADE, decimal VALOR_DE_COMPRA, decimal VALOR_DE_VENDA, decimal LUCRO, int TOTAL_DE_UNIDADES_VENDIDAS) {
+            public vw_EstoqueRow Addvw_EstoqueRow(int ID_Produto, string NOME, string CATEGORIA, int QUANTIDADE, decimal VALOR_DE_COMPRA, decimal VALOR_DE_VENDA, decimal LUCRO) {
                 vw_EstoqueRow rowvw_EstoqueRow = ((vw_EstoqueRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Produto,
@@ -438,8 +428,7 @@ namespace MaryKay {
                         QUANTIDADE,
                         VALOR_DE_COMPRA,
                         VALOR_DE_VENDA,
-                        LUCRO,
-                        TOTAL_DE_UNIDADES_VENDIDAS};
+                        LUCRO};
                 rowvw_EstoqueRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_EstoqueRow);
                 return rowvw_EstoqueRow;
@@ -469,7 +458,6 @@ namespace MaryKay {
                 this.columnVALOR_DE_COMPRA = base.Columns["VALOR DE COMPRA"];
                 this.columnVALOR_DE_VENDA = base.Columns["VALOR DE VENDA"];
                 this.columnLUCRO = base.Columns["LUCRO"];
-                this.columnTOTAL_DE_UNIDADES_VENDIDAS = base.Columns["TOTAL DE UNIDADES VENDIDAS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -489,8 +477,6 @@ namespace MaryKay {
                 base.Columns.Add(this.columnVALOR_DE_VENDA);
                 this.columnLUCRO = new global::System.Data.DataColumn("LUCRO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLUCRO);
-                this.columnTOTAL_DE_UNIDADES_VENDIDAS = new global::System.Data.DataColumn("TOTAL DE UNIDADES VENDIDAS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTOTAL_DE_UNIDADES_VENDIDAS);
                 this.columnID_Produto.AllowDBNull = false;
                 this.columnNOME.AllowDBNull = false;
                 this.columnNOME.MaxLength = 100;
@@ -567,7 +553,7 @@ namespace MaryKay {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetEstoques ds = new DataSetEstoques();
+                MaryKayDataSet2 ds = new MaryKayDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -724,22 +710,6 @@ namespace MaryKay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TOTAL_DE_UNIDADES_VENDIDAS {
-                get {
-                    try {
-                        return ((int)(this[this.tablevw_Estoque.TOTAL_DE_UNIDADES_VENDIDASColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TOTAL DE UNIDADES VENDIDAS\' na tabela \'vw_Estoque\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_Estoque.TOTAL_DE_UNIDADES_VENDIDASColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLUCRONull() {
                 return this.IsNull(this.tablevw_Estoque.LUCROColumn);
             }
@@ -748,18 +718,6 @@ namespace MaryKay {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLUCRONull() {
                 this[this.tablevw_Estoque.LUCROColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTOTAL_DE_UNIDADES_VENDIDASNull() {
-                return this.IsNull(this.tablevw_Estoque.TOTAL_DE_UNIDADES_VENDIDASColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTOTAL_DE_UNIDADES_VENDIDASNull() {
-                this[this.tablevw_Estoque.TOTAL_DE_UNIDADES_VENDIDASColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -798,7 +756,7 @@ namespace MaryKay {
         }
     }
 }
-namespace MaryKay.DataSetEstoquesTableAdapters {
+namespace MaryKay.MaryKayDataSet2TableAdapters {
     
     
     /// <summary>
@@ -929,7 +887,6 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
             tableMapping.ColumnMappings.Add("VALOR DE COMPRA", "VALOR DE COMPRA");
             tableMapping.ColumnMappings.Add("VALOR DE VENDA", "VALOR DE VENDA");
             tableMapping.ColumnMappings.Add("LUCRO", "LUCRO");
-            tableMapping.ColumnMappings.Add("TOTAL DE UNIDADES VENDIDAS", "TOTAL DE UNIDADES VENDIDAS");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -947,7 +904,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Produto, NOME, CATEGORIA, QUANTIDADE, [VALOR DE COMPRA], [VALOR DE VEND" +
-                "A], LUCRO, [TOTAL DE UNIDADES VENDIDAS] FROM dbo.vw_Estoque";
+                "A], LUCRO FROM dbo.vw_Estoque";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -955,7 +912,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEstoques.vw_EstoqueDataTable dataTable) {
+        public virtual int Fill(MaryKayDataSet2.vw_EstoqueDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -968,9 +925,9 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEstoques.vw_EstoqueDataTable GetData() {
+        public virtual MaryKayDataSet2.vw_EstoqueDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEstoques.vw_EstoqueDataTable dataTable = new DataSetEstoques.vw_EstoqueDataTable();
+            MaryKayDataSet2.vw_EstoqueDataTable dataTable = new MaryKayDataSet2.vw_EstoqueDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1044,7 +1001,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSetEstoques dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MaryKayDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1054,7 +1011,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSetEstoques dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MaryKayDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1064,7 +1021,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSetEstoques dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MaryKayDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1098,7 +1055,7 @@ namespace MaryKay.DataSetEstoquesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSetEstoques dataSet) {
+        public virtual int UpdateAll(MaryKayDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

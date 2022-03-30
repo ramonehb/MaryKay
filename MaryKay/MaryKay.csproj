@@ -84,31 +84,10 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSetEstoques.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetProdutosVenda.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetViewEstoque.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSetViewProdutos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Estoque.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estoque.Designer.cs">
-      <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Funcoes.cs" />
     <Compile Include="DataSetCliente.Designer.cs">
@@ -126,10 +105,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetEstoque.Designer.cs">
+    <Compile Include="MaryKayDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
@@ -152,12 +131,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vendas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vendas.Designer.cs">
-      <DependentUpon>Vendas.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AlterarQuantidade.resx">
       <DependentUpon>AlterarQuantidade.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estoque.resx">
-      <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -192,9 +162,6 @@
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendas.resx">
-      <DependentUpon>Vendas.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
@@ -205,28 +172,6 @@
     </None>
     <None Include="DataSetCliente.xss">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetEstoques.xsc">
-      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetEstoques.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEstoques.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetEstoques.xss">
-      <DependentUpon>DataSetEstoques.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetProdutosVenda.xsc">
-      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetProdutosVenda.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetProdutosVenda.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetProdutosVenda.xss">
-      <DependentUpon>DataSetProdutosVenda.xsd</DependentUpon>
     </None>
     <None Include="DataSetTipoProduto.xsc">
       <DependentUpon>DataSetTipoProduto.xsd</DependentUpon>
@@ -250,17 +195,6 @@
     <None Include="DataSetProdutos.xss">
       <DependentUpon>DataSetProdutos.xsd</DependentUpon>
     </None>
-    <None Include="DataSetViewEstoque.xsc">
-      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetViewEstoque.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetViewEstoque.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetViewEstoque.xss">
-      <DependentUpon>DataSetViewEstoque.xsd</DependentUpon>
-    </None>
     <None Include="DataSetViewProdutos.xsc">
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
     </None>
@@ -272,16 +206,16 @@
     <None Include="DataSetViewProdutos.xss">
       <DependentUpon>DataSetViewProdutos.xsd</DependentUpon>
     </None>
-    <None Include="DataSetEstoque.xsc">
-      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
+    <None Include="MaryKayDataSet2.xsc">
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="DataSetEstoque.xsd">
+    <None Include="MaryKayDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEstoque.Designer.cs</LastGenOutput>
+      <LastGenOutput>MaryKayDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetEstoque.xss">
-      <DependentUpon>DataSetEstoque.xsd</DependentUpon>
+    <None Include="MaryKayDataSet2.xss">
+      <DependentUpon>MaryKayDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

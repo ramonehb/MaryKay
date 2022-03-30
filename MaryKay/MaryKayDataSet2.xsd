@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetViewEstoque" targetNamespace="http://tempuri.org/DataSetViewEstoque.xsd" xmlns:mstns="http://tempuri.org/DataSetViewEstoque.xsd" xmlns="http://tempuri.org/DataSetViewEstoque.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="MaryKayDataSet2" targetNamespace="http://tempuri.org/MaryKayDataSet2.xsd" xmlns:mstns="http://tempuri.org/MaryKayDataSet2.xsd" xmlns="http://tempuri.org/MaryKayDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -12,20 +12,20 @@
               <DbSource ConnectionRef="MaryKayConnectionString (Settings)" DbObjectName="MaryKay.dbo.vw_Estoque" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT NOME, CATEGORIA, QUANTIDADE, COMPRA, VENDA, LUCRO, [TOTAL DE UNIDADES VENDIDAS] FROM dbo.vw_Estoque</CommandText>
+                    <CommandText>SELECT ID_Produto, NOME, CATEGORIA, QUANTIDADE, [VALOR DE COMPRA], [VALOR DE VENDA], LUCRO FROM dbo.vw_Estoque</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ID_Produto" DataSetColumn="ID_Produto" />
               <Mapping SourceColumn="NOME" DataSetColumn="NOME" />
               <Mapping SourceColumn="CATEGORIA" DataSetColumn="CATEGORIA" />
               <Mapping SourceColumn="QUANTIDADE" DataSetColumn="QUANTIDADE" />
-              <Mapping SourceColumn="COMPRA" DataSetColumn="COMPRA" />
-              <Mapping SourceColumn="VENDA" DataSetColumn="VENDA" />
+              <Mapping SourceColumn="VALOR DE COMPRA" DataSetColumn="VALOR DE COMPRA" />
+              <Mapping SourceColumn="VALOR DE VENDA" DataSetColumn="VALOR DE VENDA" />
               <Mapping SourceColumn="LUCRO" DataSetColumn="LUCRO" />
-              <Mapping SourceColumn="TOTAL DE UNIDADES VENDIDAS" DataSetColumn="TOTAL DE UNIDADES VENDIDAS" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -34,12 +34,13 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetViewEstoque" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetViewEstoque" msprop:Generator_UserDSName="DataSetViewEstoque">
+  <xs:element name="MaryKayDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MaryKayDataSet2" msprop:Generator_UserDSName="MaryKayDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="vw_Estoque" msprop:Generator_TableClassName="vw_EstoqueDataTable" msprop:Generator_TableVarName="tablevw_Estoque" msprop:Generator_TablePropName="vw_Estoque" msprop:Generator_RowDeletingName="vw_EstoqueRowDeleting" msprop:Generator_RowChangingName="vw_EstoqueRowChanging" msprop:Generator_RowEvHandlerName="vw_EstoqueRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_EstoqueRowDeleted" msprop:Generator_UserTableName="vw_Estoque" msprop:Generator_RowChangedName="vw_EstoqueRowChanged" msprop:Generator_RowEvArgName="vw_EstoqueRowChangeEvent" msprop:Generator_RowClassName="vw_EstoqueRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="ID_Produto" msprop:Generator_ColumnVarNameInTable="columnID_Produto" msprop:Generator_ColumnPropNameInRow="ID_Produto" msprop:Generator_ColumnPropNameInTable="ID_ProdutoColumn" msprop:Generator_UserColumnName="ID_Produto" type="xs:int" />
               <xs:element name="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_UserColumnName="NOME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -55,10 +56,9 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="QUANTIDADE" msprop:Generator_ColumnVarNameInTable="columnQUANTIDADE" msprop:Generator_ColumnPropNameInRow="QUANTIDADE" msprop:Generator_ColumnPropNameInTable="QUANTIDADEColumn" msprop:Generator_UserColumnName="QUANTIDADE" type="xs:int" />
-              <xs:element name="COMPRA" msprop:Generator_ColumnVarNameInTable="columnCOMPRA" msprop:Generator_ColumnPropNameInRow="COMPRA" msprop:Generator_ColumnPropNameInTable="COMPRAColumn" msprop:Generator_UserColumnName="COMPRA" type="xs:decimal" />
-              <xs:element name="VENDA" msprop:Generator_ColumnVarNameInTable="columnVENDA" msprop:Generator_ColumnPropNameInRow="VENDA" msprop:Generator_ColumnPropNameInTable="VENDAColumn" msprop:Generator_UserColumnName="VENDA" type="xs:decimal" />
+              <xs:element name="VALOR_x0020_DE_x0020_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_DE_COMPRA" msprop:Generator_ColumnPropNameInRow="VALOR_DE_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_DE_COMPRAColumn" msprop:Generator_UserColumnName="VALOR DE COMPRA" type="xs:decimal" />
+              <xs:element name="VALOR_x0020_DE_x0020_VENDA" msprop:Generator_ColumnVarNameInTable="columnVALOR_DE_VENDA" msprop:Generator_ColumnPropNameInRow="VALOR_DE_VENDA" msprop:Generator_ColumnPropNameInTable="VALOR_DE_VENDAColumn" msprop:Generator_UserColumnName="VALOR DE VENDA" type="xs:decimal" />
               <xs:element name="LUCRO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLUCRO" msprop:Generator_ColumnPropNameInRow="LUCRO" msprop:Generator_ColumnPropNameInTable="LUCROColumn" msprop:Generator_UserColumnName="LUCRO" type="xs:decimal" minOccurs="0" />
-              <xs:element name="TOTAL_x0020_DE_x0020_UNIDADES_x0020_VENDIDAS" msprop:Generator_ColumnVarNameInTable="columnTOTAL_DE_UNIDADES_VENDIDAS" msprop:Generator_ColumnPropNameInRow="TOTAL_DE_UNIDADES_VENDIDAS" msprop:Generator_ColumnPropNameInTable="TOTAL_DE_UNIDADES_VENDIDASColumn" msprop:Generator_UserColumnName="TOTAL DE UNIDADES VENDIDAS" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

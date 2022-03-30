@@ -173,7 +173,7 @@ namespace MaryKay
                     nudVL_Pago.Text = produto.VL_Pago.ToString();
                     nudVL_Venda.Text = produto.VL_Venda.ToString();
                     nudCodigoRapido.Text = produto.Codigo.ToString();
-                    nudPontos.Text = produto.Ponto.ToString();
+                    nudPontos.Text = produto.Pontos.ToString();
                     cboSessao.SelectedItem = produto.Sessao.ToString();
                 }
             }
@@ -205,10 +205,11 @@ namespace MaryKay
                 produto.Nome = txtNomeProduto.Text;
                 produto.ID_TipoProduto = (int)cboTipoProduto.SelectedValue;
                 produto.Codigo = int.Parse(nudCodigoRapido.Text);
-                produto.Ponto = int.Parse(nudPontos.Text);
+                produto.Pontos = int.Parse(nudPontos.Text);
                 produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
                 produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
                 produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
+                produto.ID_Usuario = 1;
 
                 var produtoDAL = new ProdutoDAL();
 

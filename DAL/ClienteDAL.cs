@@ -25,6 +25,7 @@ namespace DAL
                 return false;
             }
         }
+
         public bool AtualizarCliente(Cliente cliente)
         {
             try

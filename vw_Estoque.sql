@@ -7,7 +7,6 @@ AS
 			,P.VL_Pago				AS 'VALOR DE COMPRA'
 			,P.VL_Venda				AS 'VALOR DE VENDA'
 			,P.Lucro				AS LUCRO
-			,P.QTD_ProdutoVendidos	AS 'TOTAL DE UNIDADES VENDIDAS'
 	FROM Estoque AS E
 	INNER JOIN Produto AS P
 	ON P.ID_Produto = E.ID_Produto

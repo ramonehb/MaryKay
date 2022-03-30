@@ -38,7 +38,7 @@ namespace DAL
                     produtoAtualizado.ID_TipoProduto = produto.ID_TipoProduto;
                     produtoAtualizado.Nome = produto.Nome;
                     produtoAtualizado.Codigo = produto.Codigo;
-                    produtoAtualizado.Ponto = produto.Ponto;
+                    produtoAtualizado.Pontos = produto.Pontos;
                     produtoAtualizado.VL_Pago = produto.VL_Pago;
                     produtoAtualizado.VL_Venda = produto.VL_Venda;
                     produtoAtualizado.Sessao = produto.Sessao;
