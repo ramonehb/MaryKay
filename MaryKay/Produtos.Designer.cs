@@ -43,6 +43,14 @@ namespace MaryKay
             this.vw_ProdutosTableAdapter = new MaryKay.MaryKayDataSet3TableAdapters.vw_ProdutosTableAdapter();
             this.dataSetTesteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pONTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORDECOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORDEVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lUCRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sESSÃODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vwProdutosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetViewProdutos = new MaryKay.DataSetViewProdutos();
             this.vwProdutosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -70,14 +78,6 @@ namespace MaryKay
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pONTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORDECOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORDEVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lUCRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sESSÃODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vwProdutosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maryKayDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
@@ -186,7 +186,7 @@ namespace MaryKay
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProdutos.GridColor = System.Drawing.Color.Black;
-            this.dgvProdutos.Location = new System.Drawing.Point(12, 172);
+            this.dgvProdutos.Location = new System.Drawing.Point(12, 176);
             this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -202,8 +202,73 @@ namespace MaryKay
             this.dgvProdutos.RowHeadersWidth = 51;
             this.dgvProdutos.RowTemplate.Height = 30;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(2010, 796);
+            this.dgvProdutos.Size = new System.Drawing.Size(2010, 792);
             this.dgvProdutos.TabIndex = 36;
+            // 
+            // nOMEDataGridViewTextBoxColumn
+            // 
+            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
+            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nOMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
+            this.nOMEDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cATEGORIADOPRODUTODataGridViewTextBoxColumn
+            // 
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.DataPropertyName = "CATEGORIA DO PRODUTO";
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.HeaderText = "CATEGORIA DO PRODUTO";
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Name = "cATEGORIADOPRODUTODataGridViewTextBoxColumn";
+            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cÓDIGORÁPIDODataGridViewTextBoxColumn
+            // 
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.DataPropertyName = "CÓDIGO RÁPIDO";
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.HeaderText = "CÓDIGO RÁPIDO";
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Name = "cÓDIGORÁPIDODataGridViewTextBoxColumn";
+            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pONTOSDataGridViewTextBoxColumn
+            // 
+            this.pONTOSDataGridViewTextBoxColumn.DataPropertyName = "PONTOS";
+            this.pONTOSDataGridViewTextBoxColumn.HeaderText = "PONTOS";
+            this.pONTOSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pONTOSDataGridViewTextBoxColumn.Name = "pONTOSDataGridViewTextBoxColumn";
+            this.pONTOSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vALORDECOMPRADataGridViewTextBoxColumn
+            // 
+            this.vALORDECOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE COMPRA";
+            this.vALORDECOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR DE COMPRA";
+            this.vALORDECOMPRADataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vALORDECOMPRADataGridViewTextBoxColumn.Name = "vALORDECOMPRADataGridViewTextBoxColumn";
+            this.vALORDECOMPRADataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vALORDEVENDADataGridViewTextBoxColumn
+            // 
+            this.vALORDEVENDADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VALOR DE VENDA";
+            this.vALORDEVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vALORDEVENDADataGridViewTextBoxColumn.Name = "vALORDEVENDADataGridViewTextBoxColumn";
+            this.vALORDEVENDADataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lUCRODataGridViewTextBoxColumn
+            // 
+            this.lUCRODataGridViewTextBoxColumn.DataPropertyName = "LUCRO";
+            this.lUCRODataGridViewTextBoxColumn.HeaderText = "LUCRO";
+            this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
+            this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
+            this.lUCRODataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sESSÃODataGridViewTextBoxColumn
+            // 
+            this.sESSÃODataGridViewTextBoxColumn.DataPropertyName = "SESSÃO";
+            this.sESSÃODataGridViewTextBoxColumn.HeaderText = "SESSÃO";
+            this.sESSÃODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sESSÃODataGridViewTextBoxColumn.Name = "sESSÃODataGridViewTextBoxColumn";
+            this.sESSÃODataGridViewTextBoxColumn.Width = 125;
             // 
             // vwProdutosBindingSource3
             // 
@@ -396,71 +461,6 @@ namespace MaryKay
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 23);
-            // 
-            // nOMEDataGridViewTextBoxColumn
-            // 
-            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
-            this.nOMEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cATEGORIADOPRODUTODataGridViewTextBoxColumn
-            // 
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.DataPropertyName = "CATEGORIA DO PRODUTO";
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.HeaderText = "CATEGORIA DO PRODUTO";
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Name = "cATEGORIADOPRODUTODataGridViewTextBoxColumn";
-            this.cATEGORIADOPRODUTODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cÓDIGORÁPIDODataGridViewTextBoxColumn
-            // 
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.DataPropertyName = "CÓDIGO RÁPIDO";
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.HeaderText = "CÓDIGO RÁPIDO";
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Name = "cÓDIGORÁPIDODataGridViewTextBoxColumn";
-            this.cÓDIGORÁPIDODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pONTOSDataGridViewTextBoxColumn
-            // 
-            this.pONTOSDataGridViewTextBoxColumn.DataPropertyName = "PONTOS";
-            this.pONTOSDataGridViewTextBoxColumn.HeaderText = "PONTOS";
-            this.pONTOSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pONTOSDataGridViewTextBoxColumn.Name = "pONTOSDataGridViewTextBoxColumn";
-            this.pONTOSDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vALORDECOMPRADataGridViewTextBoxColumn
-            // 
-            this.vALORDECOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE COMPRA";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR DE COMPRA";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vALORDECOMPRADataGridViewTextBoxColumn.Name = "vALORDECOMPRADataGridViewTextBoxColumn";
-            this.vALORDECOMPRADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vALORDEVENDADataGridViewTextBoxColumn
-            // 
-            this.vALORDEVENDADataGridViewTextBoxColumn.DataPropertyName = "VALOR DE VENDA";
-            this.vALORDEVENDADataGridViewTextBoxColumn.HeaderText = "VALOR DE VENDA";
-            this.vALORDEVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vALORDEVENDADataGridViewTextBoxColumn.Name = "vALORDEVENDADataGridViewTextBoxColumn";
-            this.vALORDEVENDADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lUCRODataGridViewTextBoxColumn
-            // 
-            this.lUCRODataGridViewTextBoxColumn.DataPropertyName = "LUCRO";
-            this.lUCRODataGridViewTextBoxColumn.HeaderText = "LUCRO";
-            this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
-            this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
-            this.lUCRODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sESSÃODataGridViewTextBoxColumn
-            // 
-            this.sESSÃODataGridViewTextBoxColumn.DataPropertyName = "SESSÃO";
-            this.sESSÃODataGridViewTextBoxColumn.HeaderText = "SESSÃO";
-            this.sESSÃODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sESSÃODataGridViewTextBoxColumn.Name = "sESSÃODataGridViewTextBoxColumn";
-            this.sESSÃODataGridViewTextBoxColumn.Width = 125;
             // 
             // Produtos
             // 

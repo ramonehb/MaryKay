@@ -48,8 +48,8 @@ namespace MaryKay
             }
 
             MessageBox.Show(nomeProduto +"  QUANTIDADE ATUALIZADA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //var estoque = new Estoque();
-            //estoque.ShowDialog();
+            var estoque = new Estoque();
+            estoque.ShowDialog();
         }
 
         private void CarregaAtual()
@@ -58,7 +58,7 @@ namespace MaryKay
             {
                 using (var db = new BaseDataContext())
                 {
-                    var produto = db.Estoques.Single(e => e.ID_Produto == idProduto);
+                    var produto = db.Estoques.SingleOrDefault(e => e.ID_Produto == idProduto);
                     nudAtual.Text = produto.QTD_Item.ToString();
                 }
             }
@@ -70,9 +70,9 @@ namespace MaryKay
 
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
-            //var estoque = new Estoque();
-            //estoque.ShowDialog();
-            //this.Close();
+            var estoque = new Estoque();
+            estoque.ShowDialog();
+            this.Close();
         }
     }
 }

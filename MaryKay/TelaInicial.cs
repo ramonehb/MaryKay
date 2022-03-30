@@ -45,7 +45,9 @@ namespace MaryKay
 
         private void bEstoque_Click(object sender, EventArgs e)
         {
-       
+            var estoque = new Estoque();
+            estoque.ShowDialog();
+            this.Close();
         }
 
         private void tsbFecharSistema_Click(object sender, EventArgs e)
