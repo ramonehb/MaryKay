@@ -87,6 +87,10 @@ namespace MaryKay
             this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.lAvisoCarrinho = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
+            this.itemPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -100,6 +104,7 @@ namespace MaryKay
             this.tsbExcluirCliente.SuspendLayout();
             this.tssAdicionarCliente.SuspendLayout();
             this.tsAdicionarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemPedidoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nm
@@ -111,9 +116,9 @@ namespace MaryKay
             this.nm.ForeColor = System.Drawing.Color.Black;
             this.nm.Location = new System.Drawing.Point(862, 78);
             this.nm.Name = "nm";
-            this.nm.Size = new System.Drawing.Size(232, 68);
+            this.nm.Size = new System.Drawing.Size(251, 68);
             this.nm.TabIndex = 87;
-            this.nm.Text = "Carinho";
+            this.nm.Text = "Carrinho";
             // 
             // toolStrip3
             // 
@@ -292,6 +297,7 @@ namespace MaryKay
             this.dgvCarinho.Location = new System.Drawing.Point(12, 279);
             this.dgvCarinho.MultiSelect = false;
             this.dgvCarinho.Name = "dgvCarinho";
+            this.dgvCarinho.ReadOnly = true;
             this.dgvCarinho.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -600,10 +606,44 @@ namespace MaryKay
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(255, 77);
             this.btnFinalizar.TabIndex = 105;
-            this.btnFinalizar.Text = "FINALIZAR";
+            this.btnFinalizar.Text = "AVANÇAR";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Visible = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // lAvisoCarrinho
+            // 
+            this.lAvisoCarrinho.AutoSize = true;
+            this.lAvisoCarrinho.BackColor = System.Drawing.Color.Transparent;
+            this.lAvisoCarrinho.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAvisoCarrinho.ForeColor = System.Drawing.Color.Black;
+            this.lAvisoCarrinho.Location = new System.Drawing.Point(71, 323);
+            this.lAvisoCarrinho.Name = "lAvisoCarrinho";
+            this.lAvisoCarrinho.Size = new System.Drawing.Size(495, 38);
+            this.lAvisoCarrinho.TabIndex = 106;
+            this.lAvisoCarrinho.Text = "NENHUM ITEM NO CARRINHO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(1622, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(189, 38);
+            this.label1.TabIndex = 107;
+            this.label1.Text = "Nº PEDIDO";
+            // 
+            // txtIdPedido
+            // 
+            this.txtIdPedido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdPedido.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtIdPedido.Location = new System.Drawing.Point(1834, 213);
+            this.txtIdPedido.MaxLength = 50;
+            this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.Size = new System.Drawing.Size(159, 44);
+            this.txtIdPedido.TabIndex = 108;
             // 
             // PedidoNovo
             // 
@@ -612,6 +652,9 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2034, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdPedido);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lAvisoCarrinho);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.tsAdicionarCliente);
             this.Controls.Add(this.tssAdicionarCliente);
@@ -654,6 +697,7 @@ namespace MaryKay
             this.tssAdicionarCliente.PerformLayout();
             this.tsAdicionarCliente.ResumeLayout(false);
             this.tsAdicionarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemPedidoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,5 +758,9 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Label lAvisoCarrinho;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIdPedido;
+        private System.Windows.Forms.BindingSource itemPedidoBindingSource;
     }
 }

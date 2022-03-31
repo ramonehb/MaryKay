@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>comboBoxClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="comboBoxForma.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>comboBoxForma.xsd</DependentUpon>
+    </Compile>
     <Compile Include="comboBoxProduto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,12 @@
     </Compile>
     <Compile Include="Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPagamento.Designer.cs">
+      <DependentUpon>FormaPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcoes\Funcoes.cs" />
     <Compile Include="DataSetCliente.Designer.cs">
@@ -182,6 +193,9 @@
     <EmbeddedResource Include="Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormaPagamento.resx">
+      <DependentUpon>FormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +228,17 @@
     </None>
     <None Include="comboBoxClientes.xss">
       <DependentUpon>comboBoxClientes.xsd</DependentUpon>
+    </None>
+    <None Include="comboBoxForma.xsc">
+      <DependentUpon>comboBoxForma.xsd</DependentUpon>
+    </None>
+    <None Include="comboBoxForma.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>comboBoxForma.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="comboBoxForma.xss">
+      <DependentUpon>comboBoxForma.xsd</DependentUpon>
     </None>
     <None Include="comboBoxProduto.xsc">
       <DependentUpon>comboBoxProduto.xsd</DependentUpon>

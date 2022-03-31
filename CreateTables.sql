@@ -75,6 +75,7 @@ CREATE TABLE Pedido
 (
 	ID_Pedido			INT IDENTITY,
 	ID_Cliente			INT NOT NULL,
+	ID_FormaPagamento	INT NOT NULL,
 	ID_PedidoStatus		INT NOT NULL,
 	ID_Usuario			INT NOT NULL,
 	DT_Venda			DATETIME NOT NULL,
@@ -82,13 +83,14 @@ CREATE TABLE Pedido
 
 	CONSTRAINT PK_ID_Pedido PRIMARY KEY (ID_Pedido),
 	CONSTRAINT FK_ID_PedidoStatus FOREIGN KEY (ID_PedidoStatus) REFERENCES PedidoStatus (ID_PedidoStatus),
-	CONSTRAINT FK_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)
+	CONSTRAINT FK_ID_Cliente FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
+	CONSTRAINT FK_ID_FormaPagamento FOREIGN KEY (ID_FormaPagamento) REFERENCES FormaPagamento (ID_FormaPagamento)
 )
 
 GO
 CREATE TABLE ItemPedido
 (
-	ID_ItemPedido		INT IDENTITY,
+	ID_ItemPedido		INT,
 	ID_Pedido			INT NOT NULL,
 	ID_Produto			INT NOT NULL,
 	Quantidade			INT NOT NULL,
@@ -117,4 +119,17 @@ CREATE TABLE Cliente
 
 	CONSTRAINT PK_ID_Cliente PRIMARY KEY (ID_Cliente)
 )
+
+CREATE TABLE FormaPagamento
+(
+	ID_FormaPagamento	INT,
+	NM_Descricao		VARCHAR(50) NOT NULL,
+
+	CONSTRAINT PK_ID_FormaPagamento PRIMARY KEY (ID_FormaPagamento)
+)
+
+GO
+
+INSERT FormaPagamento	
+	VALUES (1,'Dinheiro'),(2,'Cartão Debito'),(3,'Cartão Crédito'),(4,'Pix')
 

@@ -14,12 +14,19 @@ namespace MaryKay
     public partial class PedidoNovo : Form
     {
         DataTable carinho = new DataTable();
+        public int idPedido = 0;
         public ItemPedidoDAL itemPedido = new ItemPedidoDAL();
         public List<ItemPedidoDAL> Items = new List<ItemPedidoDAL>();
+
 
         public PedidoNovo()
         {
             InitializeComponent();
+        }
+        public PedidoNovo(int idPedido)
+        {
+            InitializeComponent();
+            txtIdPedido.Text = idPedido.ToString();
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)
@@ -94,12 +101,33 @@ namespace MaryKay
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
 
                     var quantidade = int.Parse(nudQuantidade.Text);
-                    var preco = (double) produto.VL_Venda;
 
-                    itemPedido = new ItemPedidoDAL(quantidade,preco);
+                    itemPedido = new ItemPedidoDAL(produto, quantidade);
+
+                    //if (dgvCarinho.RowCount > 0)
+                    //{
+                    //    foreach (var item in itemPedido.Items)
+                    //    {
+                    //        if (item.Produto.ID_Produto == produto.ID_Produto)
+                    //        {
+                    //            MessageBox.Show("Dois registros desse");
+
+                    //        }
+                    //    }
+                    //}
+
                     Items.Add(itemPedido);
 
-                    carinho.Rows.Add(produto.Nome, quantidade, preco, itemPedido.SubTotal());
+                    //var item = new ItemPedido();
+                    //item.ID_Produto = produto.ID_Produto;
+                    //item.ID_Pedido = 1;
+                    //item.Quantidade = quantidade;
+                    //item.SubTotal = (decimal) itemPedido.SubTotal();
+
+                    //itemPedido.AdicionarItem(item);
+
+
+                    carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"));
                     dgvCarinho.DataSource = carinho;
                     ConfiguraGridViewCarinho();
                 }
@@ -126,6 +154,7 @@ namespace MaryKay
             colunaPreco.ReadOnly = true;
             colunaSubTotal.ReadOnly = true;
 
+            lAvisoCarrinho.Visible = false;
             tsbExcluirItem.Visible = true;
             btnFinalizar.Visible = true;
             nudQuantidade.Text = "1";
@@ -164,13 +193,17 @@ namespace MaryKay
                 return;
             }
 
+           
+
             double sum = 0;
             foreach (var item in Items)
             {
                 sum += item.SubTotal();
             }
 
-            MessageBox.Show($"TOTAL DA COMPRA: {sum}", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var formaPagamento = new FormaPagamento(sum);
+            formaPagamento.ShowDialog();
+            
         }
     }
 }
