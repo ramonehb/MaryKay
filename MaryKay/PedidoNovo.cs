@@ -171,7 +171,16 @@ namespace MaryKay
         {
             if (dgvCarinho.SelectedRows.Count > 0)
             {
-                
+                if (dgvCarinho.Rows.Count == 1)
+                {
+                    tsbExcluirItem.Visible = false;
+                    lAvisoCarrinho.Visible = true;
+                }
+
+                foreach (DataGridViewRow item in dgvCarinho.SelectedRows)
+                {
+                    dgvCarinho.Rows.RemoveAt(item.Index);
+                }
             }
             else
             {
