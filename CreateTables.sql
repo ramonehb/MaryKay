@@ -39,8 +39,8 @@ CREATE TABLE Produto
 	Nome					VARCHAR(100) NOT NULL,
 	Codigo					INT NOT NULL,
 	Pontos					INT NULL,
-	VL_Pago					DECIMAL(5,2) NOT NULL,
-	VL_Venda				DECIMAL(5,2) NOT NULL,
+	VL_Pago					NUMERIC(10,5) NOT NULL,
+	VL_Venda				NUMERIC(10,5) NOT NULL,
 	Lucro					AS (IsNull(VL_Venda, 0) - IsNull(VL_Pago, 0 )),
 	Sessao					INT NOT NULL,
 
@@ -79,7 +79,7 @@ CREATE TABLE Pedido
 	ID_PedidoStatus		INT NOT NULL,
 	ID_Usuario			INT NOT NULL,
 	DT_Venda			DATETIME NULL,
-	VL_Total			DECIMAL(5,2) NULL,
+	VL_Total			NUMERIC(10,5) NULL,
 
 	CONSTRAINT PK_ID_Pedido PRIMARY KEY (ID_Pedido),
 	CONSTRAINT FK_ID_PedidoStatus FOREIGN KEY (ID_PedidoStatus) REFERENCES PedidoStatus (ID_PedidoStatus),
@@ -94,7 +94,7 @@ CREATE TABLE ItemPedido
 	ID_Pedido			INT NOT NULL,
 	ID_Produto			INT NOT NULL,
 	Quantidade			INT NOT NULL,
-	SubTotal			DECIMAL(5,2) NOT NULL,
+	SubTotal			NUMERIC(10,5) NOT NULL,
 
 	CONSTRAINT PK_ID_ItemPedido PRIMARY KEY (ID_ItemPedido),
 	CONSTRAINT FK_ID_Pedido FOREIGN KEY (ID_Pedido) REFERENCES Pedido (ID_Pedido),

@@ -25,10 +25,9 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
-            //var pedido = new Pedido();
-            //pedido.ShowDialog();
-            //this.Close();
-            Application.Exit();
+            var pedido = new Pedidos();
+            pedido.ShowDialog();
+            this.Close();
         }
 
         private void CarinhoNovo()

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ViewVendas" targetNamespace="http://tempuri.org/ViewVendas.xsd" xmlns:mstns="http://tempuri.org/ViewVendas.xsd" xmlns="http://tempuri.org/ViewVendas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MaryKayConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MaryKayConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaryKay.Properties.Settings.GlobalReference.Default.MaryKayConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_VisaoVendasTableAdapter" GeneratorDataComponentClassName="vw_VisaoVendasTableAdapter" Name="vw_VisaoVendas" UserDataComponentName="vw_VisaoVendasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaryKayConnectionString (Settings)" DbObjectName="MaryKay.dbo.vw_VisaoVendas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, [NOME CLIENTE], STATUS, USUARIO, [TIPO DE PAGAMENTO], [DATA DA VENDA], TOTAL FROM dbo.vw_VisaoVendas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NOME CLIENTE" DataSetColumn="NOME CLIENTE" />
+              <Mapping SourceColumn="STATUS" DataSetColumn="STATUS" />
+              <Mapping SourceColumn="USUARIO" DataSetColumn="USUARIO" />
+              <Mapping SourceColumn="TIPO DE PAGAMENTO" DataSetColumn="TIPO DE PAGAMENTO" />
+              <Mapping SourceColumn="DATA DA VENDA" DataSetColumn="DATA DA VENDA" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ViewVendas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ViewVendas" msprop:Generator_UserDSName="ViewVendas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_VisaoVendas" msprop:Generator_TableClassName="vw_VisaoVendasDataTable" msprop:Generator_TableVarName="tablevw_VisaoVendas" msprop:Generator_TablePropName="vw_VisaoVendas" msprop:Generator_RowDeletingName="vw_VisaoVendasRowDeleting" msprop:Generator_RowChangingName="vw_VisaoVendasRowChanging" msprop:Generator_RowEvHandlerName="vw_VisaoVendasRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_VisaoVendasRowDeleted" msprop:Generator_UserTableName="vw_VisaoVendas" msprop:Generator_RowChangedName="vw_VisaoVendasRowChanged" msprop:Generator_RowEvArgName="vw_VisaoVendasRowChangeEvent" msprop:Generator_RowClassName="vw_VisaoVendasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="NOME_x0020_CLIENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOME_CLIENTE" msprop:Generator_ColumnPropNameInRow="NOME_CLIENTE" msprop:Generator_ColumnPropNameInTable="NOME_CLIENTEColumn" msprop:Generator_UserColumnName="NOME CLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATUS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" msprop:Generator_UserColumnName="STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USUARIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUSUARIO" msprop:Generator_ColumnPropNameInRow="USUARIO" msprop:Generator_ColumnPropNameInTable="USUARIOColumn" msprop:Generator_UserColumnName="USUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO_x0020_DE_x0020_PAGAMENTO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_DE_PAGAMENTO" msprop:Generator_ColumnPropNameInRow="TIPO_DE_PAGAMENTO" msprop:Generator_ColumnPropNameInTable="TIPO_DE_PAGAMENTOColumn" msprop:Generator_UserColumnName="TIPO DE PAGAMENTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_x0020_DA_x0020_VENDA" msprop:Generator_ColumnVarNameInTable="columnDATA_DA_VENDA" msprop:Generator_ColumnPropNameInRow="DATA_DA_VENDA" msprop:Generator_ColumnPropNameInTable="DATA_DA_VENDAColumn" msprop:Generator_UserColumnName="DATA DA VENDA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:vw_VisaoVendas" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

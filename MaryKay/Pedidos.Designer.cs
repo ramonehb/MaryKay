@@ -29,7 +29,11 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
@@ -46,8 +50,26 @@ namespace MaryKay
             this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.vwVisaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewVendas = new MaryKay.ViewVendas();
+            this.visaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_VisaoVendasTableAdapter = new MaryKay.ViewVendasTableAdapters.vw_VisaoVendasTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSUARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATADAVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwVisaoVendasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visaoVendasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -149,7 +171,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2034, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 52);
             this.toolStrip1.TabIndex = 33;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -194,27 +216,172 @@ namespace MaryKay
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
-            // Pedido
+            // dgvVendas
+            // 
+            this.dgvVendas.AllowUserToAddRows = false;
+            this.dgvVendas.AllowUserToDeleteRows = false;
+            this.dgvVendas.AllowUserToResizeColumns = false;
+            this.dgvVendas.AllowUserToResizeRows = false;
+            this.dgvVendas.AutoGenerateColumns = false;
+            this.dgvVendas.BackgroundColor = System.Drawing.Color.Pink;
+            this.dgvVendas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nOMECLIENTEDataGridViewTextBoxColumn,
+            this.sTATUSDataGridViewTextBoxColumn,
+            this.uSUARIODataGridViewTextBoxColumn,
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn,
+            this.dATADAVENDADataGridViewTextBoxColumn,
+            this.tOTALDataGridViewTextBoxColumn});
+            this.dgvVendas.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dgvVendas.DataSource = this.vwVisaoVendasBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVendas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVendas.GridColor = System.Drawing.Color.Black;
+            this.dgvVendas.Location = new System.Drawing.Point(12, 176);
+            this.dgvVendas.MultiSelect = false;
+            this.dgvVendas.Name = "dgvVendas";
+            this.dgvVendas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVendas.RowHeadersVisible = false;
+            this.dgvVendas.RowHeadersWidth = 51;
+            this.dgvVendas.RowTemplate.Height = 30;
+            this.dgvVendas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVendas.Size = new System.Drawing.Size(2010, 792);
+            this.dgvVendas.TabIndex = 89;
+            // 
+            // vwVisaoVendasBindingSource
+            // 
+            this.vwVisaoVendasBindingSource.DataMember = "vw_VisaoVendas";
+            this.vwVisaoVendasBindingSource.DataSource = this.viewVendas;
+            // 
+            // viewVendas
+            // 
+            this.viewVendas.DataSetName = "ViewVendas";
+            this.viewVendas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataMember = "Pedido";
+            // 
+            // vw_VisaoVendasTableAdapter
+            // 
+            this.vw_VisaoVendasTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nOMECLIENTEDataGridViewTextBoxColumn
+            // 
+            this.nOMECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "NOME CLIENTE";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.HeaderText = "NOME CLIENTE";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nOMECLIENTEDataGridViewTextBoxColumn.Name = "nOMECLIENTEDataGridViewTextBoxColumn";
+            this.nOMECLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nOMECLIENTEDataGridViewTextBoxColumn.Width = 405;
+            // 
+            // sTATUSDataGridViewTextBoxColumn
+            // 
+            this.sTATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS";
+            this.sTATUSDataGridViewTextBoxColumn.HeaderText = "STATUS";
+            this.sTATUSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sTATUSDataGridViewTextBoxColumn.Name = "sTATUSDataGridViewTextBoxColumn";
+            this.sTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTATUSDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // uSUARIODataGridViewTextBoxColumn
+            // 
+            this.uSUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO";
+            this.uSUARIODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.uSUARIODataGridViewTextBoxColumn.Name = "uSUARIODataGridViewTextBoxColumn";
+            this.uSUARIODataGridViewTextBoxColumn.ReadOnly = true;
+            this.uSUARIODataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tIPODEPAGAMENTODataGridViewTextBoxColumn
+            // 
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.DataPropertyName = "TIPO DE PAGAMENTO";
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.HeaderText = "TIPO DE PAGAMENTO";
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.Name = "tIPODEPAGAMENTODataGridViewTextBoxColumn";
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.tIPODEPAGAMENTODataGridViewTextBoxColumn.Width = 250;
+            // 
+            // dATADAVENDADataGridViewTextBoxColumn
+            // 
+            this.dATADAVENDADataGridViewTextBoxColumn.DataPropertyName = "DATA DA VENDA";
+            this.dATADAVENDADataGridViewTextBoxColumn.HeaderText = "DATA DA VENDA";
+            this.dATADAVENDADataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dATADAVENDADataGridViewTextBoxColumn.Name = "dATADAVENDADataGridViewTextBoxColumn";
+            this.dATADAVENDADataGridViewTextBoxColumn.ReadOnly = true;
+            this.dATADAVENDADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tOTALDataGridViewTextBoxColumn
+            // 
+            this.tOTALDataGridViewTextBoxColumn.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tOTALDataGridViewTextBoxColumn.Name = "tOTALDataGridViewTextBoxColumn";
+            this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tOTALDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2034, 980);
+            this.ClientSize = new System.Drawing.Size(1924, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.dgvVendas);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscaCliente);
             this.Controls.Add(this.nm);
             this.Controls.Add(this.toolStrip1);
             this.MinimizeBox = false;
-            this.Name = "Pedido";
+            this.Name = "Pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Pedidos_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwVisaoVendasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visaoVendasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +405,18 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.DataGridView dgvVendas;
+        private System.Windows.Forms.BindingSource visaoVendasBindingSource;
+        private System.Windows.Forms.BindingSource pedidoBindingSource;
+        private ViewVendas viewVendas;
+        private System.Windows.Forms.BindingSource vwVisaoVendasBindingSource;
+        private ViewVendasTableAdapters.vw_VisaoVendasTableAdapter vw_VisaoVendasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMECLIENTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTATUSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSUARIODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIPODEPAGAMENTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATADAVENDADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn;
     }
 }

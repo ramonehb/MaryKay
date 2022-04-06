@@ -175,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ViewEstoque.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ViewVendas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewVendas.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AlterarQuantidade.resx">
       <DependentUpon>AlterarQuantidade.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +330,17 @@
     </None>
     <None Include="ViewEstoque.xss">
       <DependentUpon>ViewEstoque.xsd</DependentUpon>
+    </None>
+    <None Include="ViewVendas.xsc">
+      <DependentUpon>ViewVendas.xsd</DependentUpon>
+    </None>
+    <None Include="ViewVendas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewVendas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ViewVendas.xss">
+      <DependentUpon>ViewVendas.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

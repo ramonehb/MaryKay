@@ -33,5 +33,11 @@ namespace MaryKay
             telaInicial.ShowDialog();
             this.Close();
         }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+            this.vw_VisaoVendasTableAdapter.Fill(this.viewVendas.vw_VisaoVendas);
+
+        }
     }
 }

@@ -231,7 +231,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1880, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
             this.toolStrip2.TabIndex = 90;
             this.toolStrip2.Text = "toolStrip2";
             // 
