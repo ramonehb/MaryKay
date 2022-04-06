@@ -13,8 +13,8 @@ namespace MaryKay
 {
     public partial class PedidoNovo : Form
     {
+        public Pedido pedido = new Pedido();
         DataTable carinho = new DataTable();
-        public int idPedido = 0;
         public ItemPedidoDAL itemPedido = new ItemPedidoDAL();
         public List<ItemPedidoDAL> Items = new List<ItemPedidoDAL>();
 
@@ -22,11 +22,6 @@ namespace MaryKay
         public PedidoNovo()
         {
             InitializeComponent();
-        }
-        public PedidoNovo(int idPedido)
-        {
-            InitializeComponent();
-            txtIdPedido.Text = idPedido.ToString();
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)
@@ -76,6 +71,13 @@ namespace MaryKay
                 {
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
                     lClienteSelecionado.Text = $"CLIENTE: {cliente.Nome}";
+
+                    pedido.ID_Cliente = cliente.ID_Cliente;
+                    pedido.ID_PedidoStatus = 1;
+                    pedido.ID_Usuario = 1;
+                    db.Pedidos.InsertOnSubmit(pedido);
+                    db.SubmitChanges();
+                    txtIdPedido.Text = pedido.ID_Pedido.ToString();
                 }
 
                 lProduto.Visible = true;
@@ -99,33 +101,20 @@ namespace MaryKay
                 {
                     var produto = db.Produtos.SingleOrDefault(p => p.ID_Produto == (int)cbProdutos.SelectedValue);
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
-
                     var quantidade = int.Parse(nudQuantidade.Text);
-
                     itemPedido = new ItemPedidoDAL(produto, quantidade);
 
-                    //if (dgvCarinho.RowCount > 0)
-                    //{
-                    //    foreach (var item in itemPedido.Items)
-                    //    {
-                    //        if (item.Produto.ID_Produto == produto.ID_Produto)
-                    //        {
-                    //            MessageBox.Show("Dois registros desse");
+                    var novoItem = new ItemPedido();
+                    novoItem.ID_Pedido = pedido.ID_Pedido; 
+                    novoItem.ID_Produto = produto.ID_Produto;
+                    novoItem.Quantidade = quantidade;
+                    novoItem.SubTotal = (decimal) itemPedido.SubTotal();
+                    db.ItemPedidos.InsertOnSubmit(novoItem);
 
-                    //        }
-                    //    }
-                    //}
+                    db.SubmitChanges();
 
+                    
                     Items.Add(itemPedido);
-
-                    //var item = new ItemPedido();
-                    //item.ID_Produto = produto.ID_Produto;
-                    //item.ID_Pedido = 1;
-                    //item.Quantidade = quantidade;
-                    //item.SubTotal = (decimal) itemPedido.SubTotal();
-
-                    //itemPedido.AdicionarItem(item);
-
 
                     carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"));
                     dgvCarinho.DataSource = carinho;
@@ -169,50 +158,80 @@ namespace MaryKay
 
         private void tsbExcluirItem_Click(object sender, EventArgs e)
         {
-            if (dgvCarinho.SelectedRows.Count > 0)
+            try
             {
-                if (dgvCarinho.Rows.Count == 1)
+                using (var db = new BaseDataContext())
                 {
-                    tsbExcluirItem.Visible = false;
-                    lAvisoCarrinho.Visible = true;
-                }
+                    if (dgvCarinho.SelectedRows.Count > 0)
+                    {
+                        if (dgvCarinho.Rows.Count == 1)
+                        {
+                            tsbExcluirItem.Visible = false;
+                            lAvisoCarrinho.Visible = true;
+                        }
+                        //Verificar a quetão do data
+                        //var idCliente = (int)dgvCarinho.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+                        //var idItemPedido = (int)dgvCarinho.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+                        //var itemPedido = db.ItemPedidos.SingleOrDefault(i => i.ID_ItemPedido == idItemPedido && i.ID_Pedido == int.Parse(txtIdPedido.Text));
+                        //db.ItemPedidos.DeleteOnSubmit(itemPedido);
+                        //db.SubmitChanges();
 
-                foreach (DataGridViewRow item in dgvCarinho.SelectedRows)
-                {
-                    dgvCarinho.Rows.RemoveAt(item.Index);
+                        foreach (DataGridViewRow item in dgvCarinho.SelectedRows)
+                        {
+                            dgvCarinho.Rows.RemoveAt(item.Index);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("SELECIONE O ITEM PARA REMOVER", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Selecione o item do carinho para remover");
+                var msg = ex.Message;
             }
+            
+
+           
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            var pedido = new PedidoDAL();
-            if (string.IsNullOrEmpty(lClienteSelecionado.Text))
+            try
             {
-                MessageBox.Show("SELECIONE O CLIENTE PARA FINALIZAR A VENDA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (string.IsNullOrEmpty(lClienteSelecionado.Text))
+                {
+                    MessageBox.Show("SELECIONE O CLIENTE PARA FINALIZAR A VENDA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (dgvCarinho.Rows.Count <= 0)
+                {
+                    MessageBox.Show("O CARINHO ESTÁ VAZIO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (var db = new BaseDataContext())
+                {
+                    var pedido = db.Pedidos.SingleOrDefault(p => p.ID_Pedido == int.Parse(txtIdPedido.Text));
+                    pedido.ID_PedidoStatus = 2;
+
+                    decimal valorTotal = 0;
+                    foreach (var item in Items)
+                    {
+                        valorTotal += (decimal) item.SubTotal();
+                    }
+                    pedido.VL_Total = valorTotal;
+                    db.SubmitChanges();
+
+                    var formaPagamento = new FormaPagamento(pedido.ID_Pedido);
+                    formaPagamento.ShowDialog();
+                }
             }
-            else if (dgvCarinho.Rows.Count <= 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("O CARINHO ESTÁ VAZIO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                var msg = ex.Message;
             }
-
-           
-
-            double sum = 0;
-            foreach (var item in Items)
-            {
-                sum += item.SubTotal();
-            }
-
-            var formaPagamento = new FormaPagamento(sum);
-            formaPagamento.ShowDialog();
-            
         }
     }
 }

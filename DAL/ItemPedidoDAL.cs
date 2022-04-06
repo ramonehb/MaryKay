@@ -22,23 +22,6 @@ namespace DAL
             Preco = (double) produto.VL_Venda;
         }
 
-        public void AdicionarItem(ItemPedido itemPedido)
-        {
-            try
-            {
-                using (var db = new BaseDataContext())
-                {
-                    db.ItemPedidos.InsertOnSubmit(itemPedido);
-                    db.SubmitChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                var msg = ex.Message;
-                throw;
-            }
-        }
-
         public double SubTotal()
         {
             return (double) Preco * Quantidade;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,23 @@ namespace MaryKay
         {
             InitializeComponent();
         }
-        public FormaPagamento(double total)
+        public FormaPagamento(int idPedido)
         {
             InitializeComponent();
-            nudTotalAPagar.Text = total.ToString("N2");
+
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var pedido = db.Pedidos.SingleOrDefault(p => p.ID_Pedido == idPedido);
+                    nudTotalAPagar.Text = pedido.VL_Total.ToString();
+                    txtIdPedido.Text = pedido.ID_Pedido.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)
@@ -54,9 +68,41 @@ namespace MaryKay
 
         private void FormaPagamento_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'comboBoxForma.FormaPagamento'. Você pode movê-la ou removê-la conforme necessário.
             this.formaPagamentoTableAdapter.Fill(this.comboBoxForma.FormaPagamento);
 
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var total = double.Parse(nudTotalAPagar.Text);
+                var totalRecebido = double.Parse(nudTotalRecebido.Text);
+                if (totalRecebido < total)
+                {
+                    MessageBox.Show("VALOR RECEBIDO MENOR QUE O VALOR TOTAL", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (var db = new BaseDataContext())
+                {
+                    var pedido = db.Pedidos.SingleOrDefault(p => p.ID_Pedido == int.Parse(txtIdPedido.Text));
+                    pedido.ID_PedidoStatus = 3;
+                    pedido.ID_FormaPagamento = (int)cboFormaPagamento.SelectedValue;
+                    pedido.DT_Venda = DateTime.Now;
+                    db.SubmitChanges();
+
+                    MessageBox.Show("VENDA FINALIZADA COM SUCESSO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var voltar = new Pedidos();
+                    voltar.ShowDialog();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                throw;
+            }
         }
     }
 }

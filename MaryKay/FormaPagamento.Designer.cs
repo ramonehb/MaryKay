@@ -46,22 +46,23 @@ namespace MaryKay
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nudTroco = new System.Windows.Forms.NumericUpDown();
             this.cboFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.formaPagamentoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxForma = new MaryKay.comboBoxForma();
             this.formaPagamentoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxForma = new MaryKay.comboBoxForma();
-            this.formaPagamentoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.formaPagamentoTableAdapter = new MaryKay.comboBoxFormaTableAdapters.FormaPagamentoTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalAPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalRecebido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTroco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxForma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxForma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@ namespace MaryKay
             this.btnFinalizar.TabIndex = 78;
             this.btnFinalizar.Text = "FINALIZAR";
             this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // toolStrip1
             // 
@@ -104,7 +106,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(754, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(74, 52);
             this.toolStrip1.TabIndex = 79;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -231,6 +233,16 @@ namespace MaryKay
             this.cboFormaPagamento.TabIndex = 91;
             this.cboFormaPagamento.ValueMember = "ID_FormaPagamento";
             // 
+            // formaPagamentoBindingSource2
+            // 
+            this.formaPagamentoBindingSource2.DataMember = "FormaPagamento";
+            this.formaPagamentoBindingSource2.DataSource = this.comboBoxForma;
+            // 
+            // comboBoxForma
+            // 
+            this.comboBoxForma.DataSetName = "comboBoxForma";
+            this.comboBoxForma.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // formaPagamentoBindingSource
             // 
             this.formaPagamentoBindingSource.DataMember = "FormaPagamento";
@@ -247,16 +259,6 @@ namespace MaryKay
             this.label3.TabIndex = 92;
             this.label3.Text = "FORMA DE PAGAMENTO";
             // 
-            // comboBoxForma
-            // 
-            this.comboBoxForma.DataSetName = "comboBoxForma";
-            this.comboBoxForma.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // formaPagamentoBindingSource2
-            // 
-            this.formaPagamentoBindingSource2.DataMember = "FormaPagamento";
-            this.formaPagamentoBindingSource2.DataSource = this.comboBoxForma;
-            // 
             // formaPagamentoTableAdapter
             // 
             this.formaPagamentoTableAdapter.ClearBeforeFill = true;
@@ -271,6 +273,14 @@ namespace MaryKay
             this.pictureBox1.TabIndex = 93;
             this.pictureBox1.TabStop = false;
             // 
+            // txtIdPedido
+            // 
+            this.txtIdPedido.Location = new System.Drawing.Point(574, 163);
+            this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.Size = new System.Drawing.Size(100, 22);
+            this.txtIdPedido.TabIndex = 94;
+            this.txtIdPedido.Visible = false;
+            // 
             // FormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,6 +288,7 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(845, 609);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboFormaPagamento);
             this.Controls.Add(this.pictureBox2);
@@ -302,10 +313,10 @@ namespace MaryKay
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalRecebido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTroco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxForma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxForma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -336,5 +347,6 @@ namespace MaryKay
         private System.Windows.Forms.BindingSource formaPagamentoBindingSource2;
         private comboBoxFormaTableAdapters.FormaPagamentoTableAdapter formaPagamentoTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtIdPedido;
     }
 }

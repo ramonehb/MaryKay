@@ -68,18 +68,18 @@ CREATE TABLE PedidoStatus
 
 GO 
 INSERT PedidoStatus 
-	VALUES (1,'Pagamento Pendete'),(2,'Em Processamento'),(3,'Enviado'),(4,'Entregue')
+	VALUES (1,'Em Processamento'),(2,'Pagamento Pendente'),(3,'Finalizado')
 
 GO
 CREATE TABLE Pedido 
 (
 	ID_Pedido			INT IDENTITY,
 	ID_Cliente			INT NOT NULL,
-	ID_FormaPagamento	INT NOT NULL,
+	ID_FormaPagamento	INT NULL,
 	ID_PedidoStatus		INT NOT NULL,
 	ID_Usuario			INT NOT NULL,
-	DT_Venda			DATETIME NOT NULL,
-	VL_Total			DECIMAL(5,2) NOT NULL,
+	DT_Venda			DATETIME NULL,
+	VL_Total			DECIMAL(5,2) NULL,
 
 	CONSTRAINT PK_ID_Pedido PRIMARY KEY (ID_Pedido),
 	CONSTRAINT FK_ID_PedidoStatus FOREIGN KEY (ID_PedidoStatus) REFERENCES PedidoStatus (ID_PedidoStatus),
@@ -90,7 +90,7 @@ CREATE TABLE Pedido
 GO
 CREATE TABLE ItemPedido
 (
-	ID_ItemPedido		INT,
+	ID_ItemPedido		INT IDENTITY,
 	ID_Pedido			INT NOT NULL,
 	ID_Produto			INT NOT NULL,
 	Quantidade			INT NOT NULL,

@@ -1,7 +1,7 @@
 ﻿
 namespace MaryKay
 {
-    partial class Pedido
+    partial class Pedidos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
