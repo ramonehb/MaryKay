@@ -55,13 +55,19 @@ namespace MaryKay
                 lTrocoFalta.ForeColor = Color.Green;
                 nudTroco.Text = troco.ToString("N2");
             }
-            else
+            else if (totalRecebido < total)
             {
                 lTrocoFalta.Text = "FALTA";
                 lTrocoFalta.ForeColor = Color.Red;
                 troco = -troco;
                 nudTroco.Text = troco.ToString("N2");
                 return;
+            }
+            else
+            {
+                lTrocoFalta.Text = "TROCO";
+                lTrocoFalta.ForeColor = Color.Black;
+                nudTroco.Text = "0,00";
             }
             cboFormaPagamento.Focus();
         }

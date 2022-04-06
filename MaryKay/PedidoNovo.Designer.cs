@@ -132,7 +132,7 @@ namespace MaryKay
             this.toolStrip3.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip3.Location = new System.Drawing.Point(0, 52);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(2034, 23);
+            this.toolStrip3.Size = new System.Drawing.Size(1924, 23);
             this.toolStrip3.TabIndex = 89;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -170,7 +170,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2034, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 52);
             this.toolStrip1.TabIndex = 88;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -642,6 +642,7 @@ namespace MaryKay
             this.txtIdPedido.Location = new System.Drawing.Point(1834, 213);
             this.txtIdPedido.MaxLength = 50;
             this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.ReadOnly = true;
             this.txtIdPedido.Size = new System.Drawing.Size(159, 44);
             this.txtIdPedido.TabIndex = 108;
             // 
@@ -650,7 +651,7 @@ namespace MaryKay
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2034, 980);
+            this.ClientSize = new System.Drawing.Size(1924, 980);
             this.ControlBox = false;
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label1);

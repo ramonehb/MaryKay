@@ -13,7 +13,6 @@ namespace MaryKay
 {
     public partial class PedidoNovo : Form
     {
-        public Pedido pedido = new Pedido();
         DataTable carinho = new DataTable();
         public ItemPedidoDAL itemPedido = new ItemPedidoDAL();
         public List<ItemPedidoDAL> Items = new List<ItemPedidoDAL>();
@@ -32,31 +31,62 @@ namespace MaryKay
             Application.Exit();
         }
 
-        private void PedidoNovo_Load(object sender, EventArgs e)
+        private void CarinhoNovo()
         {
-            this.produtoTableAdapter.Fill(this.comboBoxProduto.Produto);
-            this.clienteTableAdapter.Fill(this.comboBoxClientes.Cliente);
             carinho.Columns.Add("Nome");
             carinho.Columns.Add("Quantidade");
             carinho.Columns.Add("Preço Unitario");
             carinho.Columns.Add("SubTotal");
         }
 
+        private void PedidoNovo_Load(object sender, EventArgs e)
+        {
+            this.produtoTableAdapter.Fill(this.comboBoxProduto.Produto);
+            this.clienteTableAdapter.Fill(this.comboBoxClientes.Cliente);
+            CarinhoNovo();
+        }
+
         private void tsbRemoverCliente_Click_1(object sender, EventArgs e)
         {
-            lCliente.Visible = true;
-            cboCliente.Visible = true;
-            tsbAdicionarCliente.Visible = true;
-            tsAdicionarCliente.Visible = true;
-            tssAdicionarCliente.Visible = true;
-            lClienteSelecionado.Text = string.Empty;
+            try
+            {
+                lCliente.Visible = true;
+                cboCliente.Visible = true;
+                tsbAdicionarCliente.Visible = true;
+                tsAdicionarCliente.Visible = true;
+                tssAdicionarCliente.Visible = true;
+                lClienteSelecionado.Text = string.Empty;
 
-            lProduto.Visible = false;
-            cbProdutos.Visible = false;
-            lQuantidade.Visible = false;
-            nudQuantidade.Visible = false;
-            tsAdicionarCliente.Visible = false;
-            tsbExcluirCliente.Visible = false;
+                lProduto.Visible = false;
+                cbProdutos.Visible = false;
+                lQuantidade.Visible = false;
+                nudQuantidade.Visible = false;
+                tsAdicionarCliente.Visible = false;
+                tsbExcluirCliente.Visible = false;
+
+                using (var db = new BaseDataContext())
+                {
+                    var pedido = db.Pedidos.SingleOrDefault(p => p.ID_Pedido == int.Parse(txtIdPedido.Text));
+
+                    if (pedido.ItemPedidos.Count > 0)
+                    {
+                        db.ItemPedidos.DeleteAllOnSubmit(pedido.ItemPedidos);
+                        db.SubmitChanges();
+                    }
+                        
+                    db.Pedidos.DeleteOnSubmit(pedido);
+                    db.SubmitChanges();
+                    txtIdPedido.Text = string.Empty;
+                    
+                    dgvCarinho.DataSource = null;
+                    lAvisoCarrinho.Visible = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
         }
 
         private void tsbAdicionarCliente_Click(object sender, EventArgs e)
@@ -66,12 +96,19 @@ namespace MaryKay
                 lCliente.Visible = false;
                 cboCliente.Visible = false;
                 tssAdicionarCliente.Visible = false;
+                lProduto.Visible = true;
+                cbProdutos.Visible = true;
+                lQuantidade.Visible = true;
+                nudQuantidade.Visible = true;
+                tsAdicionarCliente.Visible = true;
+                tsbExcluirCliente.Visible = true;
 
                 using (var db = new BaseDataContext())
                 {
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
                     lClienteSelecionado.Text = $"CLIENTE: {cliente.Nome}";
 
+                    var pedido = new Pedido();
                     pedido.ID_Cliente = cliente.ID_Cliente;
                     pedido.ID_PedidoStatus = 1;
                     pedido.ID_Usuario = 1;
@@ -79,13 +116,6 @@ namespace MaryKay
                     db.SubmitChanges();
                     txtIdPedido.Text = pedido.ID_Pedido.ToString();
                 }
-
-                lProduto.Visible = true;
-                cbProdutos.Visible = true;
-                lQuantidade.Visible = true;
-                nudQuantidade.Visible = true;
-                tsAdicionarCliente.Visible = true;
-                tsbExcluirCliente.Visible = true;
             }
             catch (Exception ex)
             {
@@ -105,7 +135,7 @@ namespace MaryKay
                     itemPedido = new ItemPedidoDAL(produto, quantidade);
 
                     var novoItem = new ItemPedido();
-                    novoItem.ID_Pedido = pedido.ID_Pedido; 
+                    novoItem.ID_Pedido = int.Parse(txtIdPedido.Text); 
                     novoItem.ID_Produto = produto.ID_Produto;
                     novoItem.Quantidade = quantidade;
                     novoItem.SubTotal = (decimal) itemPedido.SubTotal();
