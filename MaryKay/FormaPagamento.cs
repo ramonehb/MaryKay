@@ -38,9 +38,10 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var pedido = new PedidoNovo();
+            pedido.Closed += (s, args) => this.Close();
             pedido.ShowDialog();
-            this.Close();
         }
 
         private void nudTotalRecebido_ValueChanged(object sender, EventArgs e)
@@ -99,9 +100,11 @@ namespace MaryKay
                     db.SubmitChanges();
 
                     MessageBox.Show("VENDA FINALIZADA COM SUCESSO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    this.Hide();
                     var voltar = new Pedidos();
+                    voltar.Closed += (s, args) => this.Close();
                     voltar.ShowDialog();
-                    this.Close();
                 }
             }
             catch (Exception ex)

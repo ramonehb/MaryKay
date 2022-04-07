@@ -406,7 +406,7 @@ namespace MaryKay
             this.nOMEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
             this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMEDataGridViewTextBoxColumn.Width = 300;
+            this.nOMEDataGridViewTextBoxColumn.Width = 330;
             // 
             // iDProdutoDataGridViewTextBoxColumn
             // 
@@ -443,6 +443,7 @@ namespace MaryKay
             this.pONTOSDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pONTOSDataGridViewTextBoxColumn.Name = "pONTOSDataGridViewTextBoxColumn";
             this.pONTOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pONTOSDataGridViewTextBoxColumn.Width = 125;
             // 
             // vALORDECOMPRADataGridViewTextBoxColumn
             // 
@@ -469,7 +470,7 @@ namespace MaryKay
             this.lUCRODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lUCRODataGridViewTextBoxColumn.Name = "lUCRODataGridViewTextBoxColumn";
             this.lUCRODataGridViewTextBoxColumn.ReadOnly = true;
-            this.lUCRODataGridViewTextBoxColumn.Width = 80;
+            this.lUCRODataGridViewTextBoxColumn.Width = 110;
             // 
             // sESSÃODataGridViewTextBoxColumn
             // 
@@ -478,6 +479,7 @@ namespace MaryKay
             this.sESSÃODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sESSÃODataGridViewTextBoxColumn.Name = "sESSÃODataGridViewTextBoxColumn";
             this.sESSÃODataGridViewTextBoxColumn.ReadOnly = true;
+            this.sESSÃODataGridViewTextBoxColumn.Visible = false;
             this.sESSÃODataGridViewTextBoxColumn.Width = 85;
             // 
             // Produtos

@@ -11,9 +11,10 @@ SELECT	ID_Pedido AS ID,
 	FROM Pedido AS P
 	INNER JOIN Cliente AS C
 	ON P.ID_Cliente = C.ID_Cliente
-	FULL JOIN PedidoStatus AS PS
+	INNER JOIN PedidoStatus AS PS
 	ON P.ID_PedidoStatus = PS.ID_PedidoStatus
-	FULL JOIN Usuario AS U
+	INNER JOIN Usuario AS U
 	ON P.ID_Usuario = U.ID_Usuario
 	FULL JOIN FormaPagamento AS FP
 	ON P.ID_FormaPagamento = FP.ID_FormaPagamento
+	

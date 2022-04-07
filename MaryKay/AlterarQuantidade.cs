@@ -48,7 +48,10 @@ namespace MaryKay
             }
 
             MessageBox.Show(nomeProduto +"  QUANTIDADE ATUALIZADA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            this.Hide();
             var estoque = new Estoque();
+            estoque.Closed += (s, args) => this.Close();
             estoque.ShowDialog();
         }
 
@@ -70,9 +73,11 @@ namespace MaryKay
 
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var estoque = new Estoque();
+            estoque.Closed += (s, args) => this.Close();
             estoque.ShowDialog();
-            this.Close();
+            
         }
     }
 }

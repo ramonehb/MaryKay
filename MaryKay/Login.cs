@@ -19,9 +19,10 @@ namespace MaryKay
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Closed += (s, args) => this.Close();
             telaInicial.ShowDialog();
-            this.Close();
         }
 
         private void tsbFecharSistema_Click(object sender, EventArgs e)

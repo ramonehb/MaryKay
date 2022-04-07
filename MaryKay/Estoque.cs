@@ -16,27 +16,7 @@ namespace MaryKay
         public Estoque()
         {
             InitializeComponent();
-        }
-
-        private void tsbNovo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsbAtualizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsbExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsbCategoria_Click(object sender, EventArgs e)
-        {
-
-        }
+        } 
 
         private void Estoque_Load(object sender, EventArgs e)
         {
@@ -53,23 +33,27 @@ namespace MaryKay
                 using (var db = new BaseDataContext())
                 {
                     var produto = db.Produtos.Single(p => p.ID_Produto == idProduto);
+
+                    this.Hide();
                     var alterar = new AlterarQuantidade(produto.ID_Produto, produto.Nome);
+                    alterar.Closed += (s, args) => this.Close();
                     alterar.ShowDialog();
+                    
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                var msg = ex.Message;
                 throw;
-            }
-            
+            }   
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var tela = new TelaInicial();
+            tela.Closed += (s, args) => this.Close();
             tela.ShowDialog();
-            this.Close();
         }
     }
 }

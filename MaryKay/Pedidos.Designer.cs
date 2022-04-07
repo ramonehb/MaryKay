@@ -31,18 +31,12 @@ namespace MaryKay
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbFechar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNovo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,11 +45,6 @@ namespace MaryKay
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
-            this.vwVisaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewVendas = new MaryKay.ViewVendas();
-            this.visaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vw_VisaoVendasTableAdapter = new MaryKay.ViewVendasTableAdapters.vw_VisaoVendasTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,13 +52,24 @@ namespace MaryKay
             this.tIPODEPAGAMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATADAVENDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip2.SuspendLayout();
+            this.vwVisaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewVendas = new MaryKay.ViewVendas();
+            this.visaoVendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_VisaoVendasTableAdapter = new MaryKay.ViewVendasTableAdapters.vw_VisaoVendasTableAdapter();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbFechar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwVisaoVendasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visaoVendasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -106,56 +106,6 @@ namespace MaryKay
             this.nm.Size = new System.Drawing.Size(223, 68);
             this.nm.TabIndex = 32;
             this.nm.Text = "Vendas";
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator5,
-            this.tsbFechar,
-            this.toolStripSeparator6,
-            this.toolStripSeparator7,
-            this.toolStripSeparator8});
-            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStrip2.Location = new System.Drawing.Point(1880, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
-            this.toolStrip2.TabIndex = 88;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
-            // 
-            // tsbFechar
-            // 
-            this.tsbFechar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbFechar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.tsbFechar.ForeColor = System.Drawing.Color.Black;
-            this.tsbFechar.Image = ((System.Drawing.Image)(resources.GetObject("tsbFechar.Image")));
-            this.tsbFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbFechar.Name = "tsbFechar";
-            this.tsbFechar.Size = new System.Drawing.Size(129, 49);
-            this.tsbFechar.Text = "FECHAR";
-            this.tsbFechar.Click += new System.EventHandler(this.tsbFechar_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
             // toolStrip1
             // 
@@ -205,6 +155,7 @@ namespace MaryKay
             this.tsbExcluir.Name = "tsbExcluir";
             this.tsbExcluir.Size = new System.Drawing.Size(259, 49);
             this.tsbExcluir.Text = "CANCELAR VENDA";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 
             // toolStripSeparator1
             // 
@@ -225,14 +176,14 @@ namespace MaryKay
             this.dgvVendas.AutoGenerateColumns = false;
             this.dgvVendas.BackgroundColor = System.Drawing.Color.Pink;
             this.dgvVendas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -244,27 +195,27 @@ namespace MaryKay
             this.tOTALDataGridViewTextBoxColumn});
             this.dgvVendas.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvVendas.DataSource = this.vwVisaoVendasBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVendas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVendas.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvVendas.GridColor = System.Drawing.Color.Black;
             this.dgvVendas.Location = new System.Drawing.Point(12, 176);
             this.dgvVendas.MultiSelect = false;
             this.dgvVendas.Name = "dgvVendas";
             this.dgvVendas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVendas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVendas.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvVendas.RowHeadersVisible = false;
             this.dgvVendas.RowHeadersWidth = 51;
             this.dgvVendas.RowTemplate.Height = 30;
@@ -272,24 +223,6 @@ namespace MaryKay
             this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVendas.Size = new System.Drawing.Size(2010, 792);
             this.dgvVendas.TabIndex = 89;
-            // 
-            // vwVisaoVendasBindingSource
-            // 
-            this.vwVisaoVendasBindingSource.DataMember = "vw_VisaoVendas";
-            this.vwVisaoVendasBindingSource.DataSource = this.viewVendas;
-            // 
-            // viewVendas
-            // 
-            this.viewVendas.DataSetName = "ViewVendas";
-            this.viewVendas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataMember = "Pedido";
-            // 
-            // vw_VisaoVendasTableAdapter
-            // 
-            this.vw_VisaoVendasTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -354,6 +287,74 @@ namespace MaryKay
             this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
             this.tOTALDataGridViewTextBoxColumn.Width = 150;
             // 
+            // vwVisaoVendasBindingSource
+            // 
+            this.vwVisaoVendasBindingSource.DataMember = "vw_VisaoVendas";
+            this.vwVisaoVendasBindingSource.DataSource = this.viewVendas;
+            // 
+            // viewVendas
+            // 
+            this.viewVendas.DataSetName = "ViewVendas";
+            this.viewVendas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataMember = "Pedido";
+            // 
+            // vw_VisaoVendasTableAdapter
+            // 
+            this.vw_VisaoVendasTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.tsbFechar,
+            this.toolStripSeparator6,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip2.Location = new System.Drawing.Point(1874, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.TabIndex = 90;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbFechar
+            // 
+            this.tsbFechar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbFechar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.tsbFechar.ForeColor = System.Drawing.Color.Black;
+            this.tsbFechar.Image = ((System.Drawing.Image)(resources.GetObject("tsbFechar.Image")));
+            this.tsbFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFechar.Name = "tsbFechar";
+            this.tsbFechar.Size = new System.Drawing.Size(129, 49);
+            this.tsbFechar.Text = "FECHAR";
+            this.tsbFechar.Click += new System.EventHandler(this.tsbFechar_Click_1);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,8 +362,8 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1924, 980);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvVendas);
             this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.dgvVendas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscaCliente);
             this.Controls.Add(this.nm);
@@ -373,8 +374,6 @@ namespace MaryKay
             this.Text = "Pedido";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pedidos_Load);
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
@@ -382,6 +381,8 @@ namespace MaryKay
             ((System.ComponentModel.ISupportInitialize)(this.viewVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visaoVendasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,12 +400,6 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripButton tsbExcluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton tsbFechar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.DataGridView dgvVendas;
         private System.Windows.Forms.BindingSource visaoVendasBindingSource;
         private System.Windows.Forms.BindingSource pedidoBindingSource;
@@ -418,5 +413,11 @@ namespace MaryKay
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPODEPAGAMENTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATADAVENDADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsbFechar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     }
 }

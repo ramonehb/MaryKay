@@ -19,35 +19,42 @@ namespace MaryKay
 
         private void bFechar_Click(object sender, EventArgs e)
         {
+            //Confirmar o encerramento da aplicação
             Application.Exit();
         }
 
         private void bClientes_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var cliente = new Clientes();
+            cliente.Closed += (s, args) => this.Close();
             cliente.ShowDialog();
-            this.Close();
+            
         }
 
         private void bUsuario_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var cadastroUsuario = new CadastroUsuario();
+            cadastroUsuario.Closed += (s, args) => this.Close();
             cadastroUsuario.ShowDialog();
-            this.Close();
         }
 
         private void bProdutos_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var produtos = new Produtos();
+            produtos.Closed += (s, args) => this.Close();
             produtos.ShowDialog();
-            this.Close();
         }
 
         private void bEstoque_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var estoque = new Estoque();
+            estoque.Closed += (s, args) => this.Close();
             estoque.ShowDialog();
-            this.Close();
+            
         }
 
         private void tsbFecharSistema_Click(object sender, EventArgs e)
@@ -57,9 +64,11 @@ namespace MaryKay
 
         private void bVendas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var pedido = new Pedidos();
+            pedido.Closed += (s, args) => this.Close();
             pedido.ShowDialog();
-            this.Close();
+
         }
     }
 }

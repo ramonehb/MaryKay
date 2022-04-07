@@ -39,7 +39,6 @@ namespace MaryKay
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
-            this.bFechar = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbConfirmaSenha = new System.Windows.Forms.Label();
@@ -47,7 +46,14 @@ namespace MaryKay
             this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbFechar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -158,20 +164,6 @@ namespace MaryKay
             this.txtConfirmaSenha.TabIndex = 2;
             this.txtConfirmaSenha.UseSystemPasswordChar = true;
             // 
-            // bFechar
-            // 
-            this.bFechar.BackColor = System.Drawing.Color.Red;
-            this.bFechar.Font = new System.Drawing.Font("Arial Black", 20F);
-            this.bFechar.ForeColor = System.Drawing.Color.White;
-            this.bFechar.Location = new System.Drawing.Point(1984, -4);
-            this.bFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bFechar.Name = "bFechar";
-            this.bFechar.Size = new System.Drawing.Size(59, 60);
-            this.bFechar.TabIndex = 51;
-            this.bFechar.Text = "X";
-            this.bFechar.UseVisualStyleBackColor = false;
-            this.bFechar.Click += new System.EventHandler(this.bFechar_Click);
-            // 
             // lbNome
             // 
             this.lbNome.AutoSize = true;
@@ -247,6 +239,56 @@ namespace MaryKay
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(45, 45);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator5,
+            this.tsbFechar,
+            this.toolStripSeparator6,
+            this.toolStripSeparator7,
+            this.toolStripSeparator8});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip2.Location = new System.Drawing.Point(1910, 40);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.TabIndex = 88;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // tsbFechar
+            // 
+            this.tsbFechar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbFechar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.tsbFechar.ForeColor = System.Drawing.Color.Black;
+            this.tsbFechar.Image = ((System.Drawing.Image)(resources.GetObject("tsbFechar.Image")));
+            this.tsbFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFechar.Name = "tsbFechar";
+            this.tsbFechar.Size = new System.Drawing.Size(129, 49);
+            this.tsbFechar.Text = "FECHAR";
+            this.tsbFechar.Click += new System.EventHandler(this.tsbFechar_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,6 +296,7 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2057, 1006);
             this.ControlBox = false;
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbTipoUsuario);
@@ -261,7 +304,6 @@ namespace MaryKay
             this.Controls.Add(this.lbConfirmaSenha);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.lbNome);
-            this.Controls.Add(this.bFechar);
             this.Controls.Add(this.txtConfirmaSenha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSenha);
@@ -277,6 +319,8 @@ namespace MaryKay
             this.Text = "Cadastro de Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +337,6 @@ namespace MaryKay
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtConfirmaSenha;
-        private System.Windows.Forms.Button bFechar;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbConfirmaSenha;
@@ -301,5 +344,11 @@ namespace MaryKay
         private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsbFechar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     }
 }

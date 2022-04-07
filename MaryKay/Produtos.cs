@@ -20,16 +20,18 @@ namespace MaryKay
 
         private void tsbVoltar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var telaInicial = new TelaInicial();
+            telaInicial.Closed += (s, args) => this.Close();
             telaInicial.ShowDialog();
-            this.Close();
         }
 
         private void tsbNovo_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var cadastroProduto = new CadastroProduto(0);
+            cadastroProduto.Closed += (s, args) => this.Close();
             cadastroProduto.ShowDialog();
-            this.Close();
         }
 
         private void Produtos_Load(object sender, EventArgs e)
@@ -57,8 +59,11 @@ namespace MaryKay
         private void tsbAtualizar_Click(object sender, EventArgs e)
         {
             var idProduto = (int) dgvProdutos.CurrentRow.Cells["iDProdutoDataGridViewTextBoxColumn"].Value;
-            var cadastraProduto = new CadastroProduto(idProduto);
-            cadastraProduto.ShowDialog();
+            
+            this.Hide();
+            var cadastroProduto = new CadastroProduto(idProduto);
+            cadastroProduto.Closed += (s, args) => this.Close();
+            cadastroProduto.ShowDialog();
         }
 
         private void tsbExcluir_Click(object sender, EventArgs e)
@@ -80,7 +85,10 @@ namespace MaryKay
                     }
 
                     MessageBox.Show("PRODUTO DELETADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
                     var voltar = new Produtos();
+                    voltar.Closed += (s, args) => this.Close();
                     voltar.ShowDialog();
                 }
             }
@@ -104,16 +112,18 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var voltar = new TelaInicial();
+            voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
-            this.Close();
         }
 
         private void tsbCategoria_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var cadastroCategoria = new CadastroCategoria();
+            cadastroCategoria.Closed += (s, args) => this.Close();
             cadastroCategoria.ShowDialog();
-            this.Close();
         }
     }
 }

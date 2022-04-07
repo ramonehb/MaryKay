@@ -18,13 +18,6 @@ namespace MaryKay
             InitializeComponent();
         }
 
-        private void bFechar_Click(object sender, EventArgs e)
-        {
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.ShowDialog();
-            this.Close();
-        }
-
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             ValidaUsuario();
@@ -79,5 +72,12 @@ namespace MaryKay
             return erro == 0;
         }
 
+        private void tsbFechar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var voltar = new TelaInicial();
+            voltar.Closed += (s, args) => this.Close();
+            voltar.ShowDialog();
+        }
     }
 }

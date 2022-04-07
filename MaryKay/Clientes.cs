@@ -26,15 +26,19 @@ namespace MaryKay
 
         private void tsbNovo_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CadastroCliente cadastroCliente = new CadastroCliente(0);
+            cadastroCliente.Closed += (s, args) => this.Close();
             cadastroCliente.ShowDialog();
-            this.Close();
         }
 
         private void tsbAlterar_Click(object sender, EventArgs e)
         {
-            var idCliente = (int) dgvClientes.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+            var idCliente = (int)dgvClientes.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
+
+            this.Hide();
             CadastroCliente cadastroCliente = new CadastroCliente(idCliente);
+            cadastroCliente.Closed += (s, args) => this.Close();
             cadastroCliente.ShowDialog();
         }
 
@@ -57,7 +61,10 @@ namespace MaryKay
                     }
 
                     MessageBox.Show("CLIENTE DELETADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
                     var voltar = new Clientes();
+                    voltar.Closed += (s, args) => this.Close();
                     voltar.ShowDialog();
                 }
             }
@@ -88,9 +95,10 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var voltar = new TelaInicial();
+            voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
-            this.Close();
         }
     }
 }

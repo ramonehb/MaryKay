@@ -25,9 +25,10 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var pedido = new Pedidos();
+            pedido.Closed += (s, args) => this.Close();
             pedido.ShowDialog();
-            this.Close();
         }
 
         private void CarinhoNovo()
@@ -181,7 +182,9 @@ namespace MaryKay
 
         private void tsbPedidoNovo_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var pedido = new PedidoNovo();
+            pedido.Closed += (s, args) => this.Close();
             pedido.ShowDialog();
         }
 
@@ -253,7 +256,9 @@ namespace MaryKay
                     pedido.VL_Total = valorTotal;
                     db.SubmitChanges();
 
+                    this.Hide();
                     var formaPagamento = new FormaPagamento(pedido.ID_Pedido);
+                    formaPagamento.Closed += (s, args) => this.Close();
                     formaPagamento.ShowDialog();
                 }
             }

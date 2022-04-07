@@ -185,9 +185,10 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var voltar = new Produtos();
+            voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
-            this.Close();
         }
 
         private void btFinalizar_Click(object sender, EventArgs e)
@@ -234,9 +235,10 @@ namespace MaryKay
                     MessageBox.Show("PRODUTO ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+                this.Hide();
                 var voltar = new Produtos();
+                voltar.Closed += (s, args) => this.Close();
                 voltar.ShowDialog();
-                this.Close();
             }
         }
     }

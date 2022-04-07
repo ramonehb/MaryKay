@@ -79,9 +79,10 @@ namespace MaryKay
                     MessageBox.Show("CLIENTE ATUALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+                this.Hide();
                 var voltar = new Clientes();
+                voltar.Closed += (s, args) => this.Close();
                 voltar.ShowDialog();
-                this.Close();
             }
         }
 
@@ -212,9 +213,10 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var voltar = new Clientes();
+            voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
-            this.Close();
         }
     }
 }

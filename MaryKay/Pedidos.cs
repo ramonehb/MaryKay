@@ -20,24 +20,37 @@ namespace MaryKay
 
         private void tsbNovo_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
             var pedidoNovo = new PedidoNovo();
+            pedidoNovo.Closed += (s, args) => this.Close();
             pedidoNovo.ShowDialog();
-            this.Close();
               
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
             var telaInicial = new TelaInicial();
+            telaInicial.Closed += (s, args) => this.Close();
             telaInicial.ShowDialog();
-            this.Close();
         }
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
             this.vw_VisaoVendasTableAdapter.Fill(this.viewVendas.vw_VisaoVendas);
 
+        }
+
+        private void tsbExcluir_Click(object sender, EventArgs e)
+        {
+            //Cancelar a venda
+        }
+
+        private void tsbFechar_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            var voltar = new TelaInicial();
+            voltar.Closed += (s, args) => this.Close();
+            voltar.ShowDialog();
         }
     }
 }
