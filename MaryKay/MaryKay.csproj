@@ -161,6 +161,7 @@
       <DependentUpon>Produtos.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>

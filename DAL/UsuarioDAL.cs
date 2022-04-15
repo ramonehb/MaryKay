@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class UsuarioDAL
+    public class UsuarioDAL
     {
         public bool CadastraUsuario(Usuario usuario)
         {

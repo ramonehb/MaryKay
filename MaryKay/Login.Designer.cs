@@ -40,6 +40,12 @@ namespace MaryKay
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lLogin = new System.Windows.Forms.Label();
+            this.lSenha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -62,11 +68,11 @@ namespace MaryKay
             this.lBemVinda.AutoSize = true;
             this.lBemVinda.BackColor = System.Drawing.Color.Transparent;
             this.lBemVinda.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBemVinda.Location = new System.Drawing.Point(345, 496);
+            this.lBemVinda.Location = new System.Drawing.Point(429, 316);
             this.lBemVinda.Name = "lBemVinda";
-            this.lBemVinda.Size = new System.Drawing.Size(490, 33);
+            this.lBemVinda.Size = new System.Drawing.Size(406, 33);
             this.lBemVinda.TabIndex = 0;
-            this.lBemVinda.Text = "Bem-vinda Consultora Lana Borges";
+            this.lBemVinda.Text = "Acesse com suas credencias";
             this.lBemVinda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -114,7 +120,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1103, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(74, 52);
             this.toolStrip2.TabIndex = 86;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -138,6 +144,76 @@ namespace MaryKay
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
+            // txtLogin
+            // 
+            this.txtLogin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLogin.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtLogin.Location = new System.Drawing.Point(386, 420);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLogin.MaxLength = 50;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(449, 44);
+            this.txtLogin.TabIndex = 87;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSenha.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtSenha.Location = new System.Drawing.Point(386, 508);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSenha.MaxLength = 50;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(449, 44);
+            this.txtSenha.TabIndex = 88;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(255, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 33);
+            this.label1.TabIndex = 89;
+            this.label1.Text = "Login";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(246, 508);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 33);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "Senha";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lLogin
+            // 
+            this.lLogin.AutoSize = true;
+            this.lLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lLogin.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lLogin.ForeColor = System.Drawing.Color.Red;
+            this.lLogin.Location = new System.Drawing.Point(486, 382);
+            this.lLogin.Name = "lLogin";
+            this.lLogin.Size = new System.Drawing.Size(0, 33);
+            this.lLogin.TabIndex = 91;
+            this.lLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lSenha
+            // 
+            this.lSenha.AutoSize = true;
+            this.lSenha.BackColor = System.Drawing.Color.Transparent;
+            this.lSenha.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSenha.ForeColor = System.Drawing.Color.Red;
+            this.lSenha.Location = new System.Drawing.Point(496, 466);
+            this.lSenha.Name = "lSenha";
+            this.lSenha.Size = new System.Drawing.Size(0, 33);
+            this.lSenha.TabIndex = 92;
+            this.lSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -145,9 +221,15 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1189, 809);
             this.ControlBox = false;
+            this.Controls.Add(this.lSenha);
+            this.Controls.Add(this.lLogin);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lBemVinda);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lBemVinda);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
@@ -173,5 +255,11 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lLogin;
+        private System.Windows.Forms.Label lSenha;
     }
 }

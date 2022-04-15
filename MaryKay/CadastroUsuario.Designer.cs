@@ -31,7 +31,6 @@ namespace MaryKay
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nm = new System.Windows.Forms.Label();
@@ -59,22 +58,13 @@ namespace MaryKay
             this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
             this.lTipoUsuario = new System.Windows.Forms.Label();
             this.lEmail = new System.Windows.Forms.Label();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
+            this.tEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoUsuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxTipoUsuario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(374, 480);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(993, 44);
-            this.txtEmail.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -120,7 +110,7 @@ namespace MaryKay
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(329, 103);
-            this.btnFinalizar.TabIndex = 4;
+            this.btnFinalizar.TabIndex = 5;
             this.btnFinalizar.Text = "FINALIZAR CADASTRO";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
@@ -134,7 +124,7 @@ namespace MaryKay
             this.txtSenha.MaxLength = 50;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(541, 44);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label1
@@ -239,10 +229,10 @@ namespace MaryKay
             this.toolStripSeparator7,
             this.toolStripSeparator8});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStrip2.Location = new System.Drawing.Point(1910, 40);
+            this.toolStrip2.Location = new System.Drawing.Point(1889, 9);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(154, 52);
-            this.toolStrip2.TabIndex = 88;
+            this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // toolStripSeparator5
@@ -312,7 +302,7 @@ namespace MaryKay
             this.cbHabilitado.Location = new System.Drawing.Point(1469, 375);
             this.cbHabilitado.Name = "cbHabilitado";
             this.cbHabilitado.Size = new System.Drawing.Size(274, 52);
-            this.cbHabilitado.TabIndex = 91;
+            this.cbHabilitado.TabIndex = 4;
             this.cbHabilitado.Text = "HABILITADO";
             this.cbHabilitado.UseVisualStyleBackColor = true;
             // 
@@ -325,7 +315,7 @@ namespace MaryKay
             this.txtConfirmaSenha.MaxLength = 50;
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
             this.txtConfirmaSenha.Size = new System.Drawing.Size(541, 44);
-            this.txtConfirmaSenha.TabIndex = 92;
+            this.txtConfirmaSenha.TabIndex = 3;
             this.txtConfirmaSenha.UseSystemPasswordChar = true;
             // 
             // lTipoUsuario
@@ -350,6 +340,29 @@ namespace MaryKay
             this.lEmail.Size = new System.Drawing.Size(0, 48);
             this.lEmail.TabIndex = 94;
             // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdUsuario.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtIdUsuario.Location = new System.Drawing.Point(238, 165);
+            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdUsuario.MaxLength = 50;
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(71, 44);
+            this.txtIdUsuario.TabIndex = 95;
+            this.txtIdUsuario.Visible = false;
+            // 
+            // tEmail
+            // 
+            this.tEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tEmail.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.tEmail.Location = new System.Drawing.Point(374, 481);
+            this.tEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tEmail.MaxLength = 50;
+            this.tEmail.Name = "tEmail";
+            this.tEmail.Size = new System.Drawing.Size(993, 44);
+            this.tEmail.TabIndex = 1;
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,6 +370,8 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2057, 1055);
             this.ControlBox = false;
+            this.Controls.Add(this.tEmail);
+            this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.lEmail);
             this.Controls.Add(this.lTipoUsuario);
             this.Controls.Add(this.txtConfirmaSenha);
@@ -373,7 +388,6 @@ namespace MaryKay
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nm);
@@ -394,8 +408,6 @@ namespace MaryKay
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label nm;
@@ -423,5 +435,7 @@ namespace MaryKay
         private System.Windows.Forms.TextBox txtConfirmaSenha;
         private System.Windows.Forms.Label lTipoUsuario;
         private System.Windows.Forms.Label lEmail;
+        private System.Windows.Forms.TextBox txtIdUsuario;
+        private System.Windows.Forms.TextBox tEmail;
     }
 }

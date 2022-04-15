@@ -15,6 +15,8 @@ namespace MaryKay
         public TelaInicial()
         {
             InitializeComponent();
+            lSessao.Text = Session.Login.ToUpper();
+            lNumeroAcesso.Text = Session.QtdAcesso.ToString();
         }
 
         private void bFechar_Click(object sender, EventArgs e)
@@ -34,10 +36,17 @@ namespace MaryKay
 
         private void bUsuario_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var cadastroUsuario = new CadastroUsuario();
-            cadastroUsuario.Closed += (s, args) => this.Close();
-            cadastroUsuario.ShowDialog();
+            if (Session.ID_TipoUsuario == 1)
+            {
+                this.Hide();
+                var cadastroUsuario = new CadastroUsuario();
+                cadastroUsuario.Closed += (s, args) => this.Close();
+                cadastroUsuario.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("USUÁRIO NÃO TEM PERMISSÃO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bProdutos_Click(object sender, EventArgs e)
@@ -64,11 +73,17 @@ namespace MaryKay
 
         private void bVendas_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var pedido = new Pedidos();
-            pedido.Closed += (s, args) => this.Close();
-            pedido.ShowDialog();
-
+            if (new int[] { 1, 2 }.Contains(Session.ID_TipoUsuario))
+            {
+                this.Hide();
+                var pedido = new Pedidos();
+                pedido.Closed += (s, args) => this.Close();
+                pedido.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("USUÁRIO NÃO TEM PERMISSÃO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

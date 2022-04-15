@@ -16,6 +16,10 @@ namespace MaryKay
         public Estoque()
         {
             InitializeComponent();
+            if (!new int[] { 1, 2 }.Contains(Session.ID_TipoUsuario))
+            {
+                tsbAjustarEstoque.Visible = false;
+            }
         } 
 
         private void Estoque_Load(object sender, EventArgs e)

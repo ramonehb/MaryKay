@@ -2637,6 +2637,8 @@ namespace DAL
 		
 		private System.Nullable<bool> _FL_Habilitado;
 		
+		private System.Nullable<int> _QtdAcesso;
+		
 		private EntitySet<Produto> _Produtos;
 		
 		private EntityRef<TipoUsuario> _TipoUsuario;
@@ -2657,6 +2659,8 @@ namespace DAL
     partial void OnEmailChanged();
     partial void OnFL_HabilitadoChanging(System.Nullable<bool> value);
     partial void OnFL_HabilitadoChanged();
+    partial void OnQtdAcessoChanging(System.Nullable<int> value);
+    partial void OnQtdAcessoChanged();
     #endregion
 		
 		public Usuario()
@@ -2786,6 +2790,26 @@ namespace DAL
 					this._FL_Habilitado = value;
 					this.SendPropertyChanged("FL_Habilitado");
 					this.OnFL_HabilitadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QtdAcesso", DbType="Int")]
+		public System.Nullable<int> QtdAcesso
+		{
+			get
+			{
+				return this._QtdAcesso;
+			}
+			set
+			{
+				if ((this._QtdAcesso != value))
+				{
+					this.OnQtdAcessoChanging(value);
+					this.SendPropertyChanging();
+					this._QtdAcesso = value;
+					this.SendPropertyChanged("QtdAcesso");
+					this.OnQtdAcessoChanged();
 				}
 			}
 		}

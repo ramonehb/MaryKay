@@ -37,7 +37,7 @@ namespace MaryKay
             if (ValidaCamposObrigatorios())
             {
                 var cliente = new Cliente();
-                var novo = string.IsNullOrEmpty(txtIdCliente.Text) ? true : false;
+                var novo = string.IsNullOrEmpty(txtIdCliente.Text);
 
                 if (!novo)
                 {

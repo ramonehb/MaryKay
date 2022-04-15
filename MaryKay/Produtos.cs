@@ -16,6 +16,13 @@ namespace MaryKay
         public Produtos()
         {
             InitializeComponent();
+            if (!new int[] { 1, 2 }.Contains(Session.ID_TipoUsuario))
+            {
+                tsbNovo.Visible = false;
+                tsbAtualizar.Visible = false;
+                tsbExcluir.Visible = false;
+                tsbCategoria.Visible = false;
+            }
         }
 
         private void tsbVoltar_Click(object sender, EventArgs e)

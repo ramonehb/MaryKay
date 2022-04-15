@@ -195,7 +195,7 @@ namespace MaryKay
         {
             if (ValidaProduto())
             {
-                var novoProduto = string.IsNullOrEmpty(txtIdProduto.Text) ? true : false;
+                var novoProduto = string.IsNullOrEmpty(txtIdProduto.Text);
                 var produto = new Produto();
 
                 if (!novoProduto)

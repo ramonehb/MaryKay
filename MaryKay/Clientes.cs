@@ -16,6 +16,12 @@ namespace MaryKay
         public Clientes()
         {
             InitializeComponent();
+            if (!new int[] { 1, 2 }.Contains(Session.ID_TipoUsuario))
+            {
+                tsbNovo.Visible = false;
+                tsbAlterar.Visible = false;
+                tsbExcluir.Visible = false;
+            }
         }
 
         private void Clientes_Load(object sender, EventArgs e)

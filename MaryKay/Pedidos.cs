@@ -20,11 +20,18 @@ namespace MaryKay
 
         private void tsbNovo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var pedidoNovo = new PedidoNovo();
-            pedidoNovo.Closed += (s, args) => this.Close();
-            pedidoNovo.ShowDialog();
-              
+            if (Session.ID_TipoUsuario == 1)
+            {
+                this.Hide();
+                var pedido = new PedidoNovo();
+                pedido.Closed += (s, args) => this.Close();
+                pedido.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("USUÁRIO NÃO TEM PERMISSÃO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void tsbFechar_Click(object sender, EventArgs e)

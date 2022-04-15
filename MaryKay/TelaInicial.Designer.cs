@@ -47,6 +47,10 @@ namespace MaryKay
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.nm = new System.Windows.Forms.Label();
+            this.lSessao = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lNumeroAcesso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -152,7 +156,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1970, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(113, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(74, 52);
             this.toolStrip2.TabIndex = 5;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -223,6 +227,52 @@ namespace MaryKay
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
+            // nm
+            // 
+            this.nm.AutoSize = true;
+            this.nm.BackColor = System.Drawing.Color.Transparent;
+            this.nm.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.nm.ForeColor = System.Drawing.Color.Black;
+            this.nm.Location = new System.Drawing.Point(12, 925);
+            this.nm.Name = "nm";
+            this.nm.Size = new System.Drawing.Size(205, 48);
+            this.nm.TabIndex = 85;
+            this.nm.Text = "USUÁRIO:";
+            // 
+            // lSessao
+            // 
+            this.lSessao.AutoSize = true;
+            this.lSessao.BackColor = System.Drawing.Color.Transparent;
+            this.lSessao.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.lSessao.ForeColor = System.Drawing.Color.Black;
+            this.lSessao.Location = new System.Drawing.Point(231, 925);
+            this.lSessao.Name = "lSessao";
+            this.lSessao.Size = new System.Drawing.Size(0, 48);
+            this.lSessao.TabIndex = 86;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(749, 925);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 48);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "Nº ACESSO";
+            // 
+            // lNumeroAcesso
+            // 
+            this.lNumeroAcesso.AutoSize = true;
+            this.lNumeroAcesso.BackColor = System.Drawing.Color.Transparent;
+            this.lNumeroAcesso.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.lNumeroAcesso.ForeColor = System.Drawing.Color.Black;
+            this.lNumeroAcesso.Location = new System.Drawing.Point(1001, 925);
+            this.lNumeroAcesso.Name = "lNumeroAcesso";
+            this.lNumeroAcesso.Size = new System.Drawing.Size(0, 48);
+            this.lNumeroAcesso.TabIndex = 89;
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,6 +280,10 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(2099, 1006);
             this.ControlBox = false;
+            this.Controls.Add(this.lNumeroAcesso);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lSessao);
+            this.Controls.Add(this.nm);
             this.Controls.Add(this.bUsuario);
             this.Controls.Add(this.bVendas);
             this.Controls.Add(this.bEstoque);
@@ -272,5 +326,9 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Label nm;
+        private System.Windows.Forms.Label lSessao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lNumeroAcesso;
     }
 }
