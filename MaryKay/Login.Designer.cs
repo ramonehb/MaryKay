@@ -165,6 +165,7 @@ namespace MaryKay
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(449, 44);
             this.txtSenha.TabIndex = 88;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label1
             // 

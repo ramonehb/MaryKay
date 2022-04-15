@@ -68,7 +68,19 @@ namespace MaryKay
 
         private void tsbFecharSistema_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var pergunta = MessageBox.Show("DESEJA SAIR DO SISTEMA ?", "MARY MAY", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (pergunta == DialogResult.Yes)
+            {
+                Session.ID_Usuario = 0;
+                Session.ID_TipoUsuario = 0;
+                Session.Login = null;
+                Session.QtdAcesso = 0;
+
+                this.Hide();
+                var login = new Login();
+                login.Closed += (s, args) => this.Close();
+                login.ShowDialog();
+            }
         }
 
         private void bVendas_Click(object sender, EventArgs e)
