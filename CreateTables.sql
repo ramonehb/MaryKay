@@ -25,6 +25,7 @@ CREATE TABLE Usuario
 	Usuario			VARCHAR(50) NOT NULL,
 	Senha			VARCHAR(20) NOT NULL,
 	Email			VARCHAR(100) NOT NULL,
+	FL_Habilitado	BIT NULL
 
 	CONSTRAINT PK_ID_Usuario PRIMARY KEY (ID_Usuario),
 	CONSTRAINT FK_ID_TipoUsuario FOREIGN KEY (ID_TipoUsuario) REFERENCES TipoUsuario (ID_TipoUsuario)

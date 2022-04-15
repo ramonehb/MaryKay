@@ -28,7 +28,7 @@ namespace MaryKay
         {
             var erro = 0;
 
-            if (string.IsNullOrEmpty(txtNome.Text))
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrWhiteSpace(txtNome.Text))
             {
                 lbNome.Text = "DIGITE O NOME";
                 erro++;
@@ -38,7 +38,17 @@ namespace MaryKay
                 lbNome.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtSenha.Text))
+            if(string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                lEmail.Text = "DIGITE O E-MAIL";
+                erro++;
+            }
+            else
+            {
+                txtEmail.Text = string.Empty;
+            }
+
+            if (string.IsNullOrEmpty(txtSenha.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
             {
                 lbSenha.Text = "DIGITE A SENHA";
                 erro++;
@@ -48,7 +58,7 @@ namespace MaryKay
                 lbSenha.Text = string.Empty;
             }
 
-            if (string.IsNullOrEmpty(txtConfirmaSenha.Text))
+            if (string.IsNullOrEmpty(txtConfirmaSenha.Text) || string.IsNullOrWhiteSpace(txtConfirmaSenha.Text))
             {
                 lbConfirmaSenha.Text = "CONFIRME A SENHA";
                 erro++;
@@ -61,12 +71,23 @@ namespace MaryKay
                     lbConfirmaSenha.Text = "AS SENHAS DEVEM SER IGUAIS!";
                     txtSenha.Text = string.Empty;
                     txtConfirmaSenha.Text = string.Empty;
+                    erro++;
                 }
                 else
                 {
                     lbSenha.Text = string.Empty;
                     lbConfirmaSenha.Text = string.Empty;
                 }
+            }
+
+            if (string.IsNullOrEmpty(cboTipoUsuario.SelectedValue.ToString()))
+            {
+                lTipoUsuario.Text = "SELECIONE O TIPO DO USUÁRIO";
+                erro++;
+            }
+            else
+            {
+                lTipoUsuario.Text = string.Empty;
             }
 
             return erro == 0;
@@ -78,6 +99,12 @@ namespace MaryKay
             var voltar = new TelaInicial();
             voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
+        }
+
+        private void CadastroUsuario_Load(object sender, EventArgs e)
+        {
+            this.tipoUsuarioTableAdapter.Fill(this.comboBoxTipoUsuario.TipoUsuario);
+
         }
     }
 }

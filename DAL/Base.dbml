@@ -39,17 +39,6 @@
       <Association Name="TipoUsuario_Usuario" Member="Usuarios" ThisKey="ID_TipoUsuario" OtherKey="ID_TipoUsuario" Type="Usuario" />
     </Type>
   </Table>
-  <Table Name="dbo.Usuario" Member="Usuarios">
-    <Type Name="Usuario">
-      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_TipoUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Senha" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="Usuario_Produto" Member="Produtos" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="Produto" />
-      <Association Name="TipoUsuario_Usuario" Member="TipoUsuario" ThisKey="ID_TipoUsuario" OtherKey="ID_TipoUsuario" Type="TipoUsuario" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.vw_Produtos" Member="vw_Produtos">
     <Type Name="vw_Produto">
       <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -141,6 +130,18 @@
       <Association Name="Produto_ItemPedido" Member="ItemPedidos" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="ItemPedido" />
       <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
       <Association Name="Usuario_Produto" Member="Usuario" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TipoUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FL_Habilitado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Usuario_Produto" Member="Produtos" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="Produto" />
+      <Association Name="TipoUsuario_Usuario" Member="TipoUsuario" ThisKey="ID_TipoUsuario" OtherKey="ID_TipoUsuario" Type="TipoUsuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.usp_AlterarEstoque" Method="usp_AlterarEstoque">

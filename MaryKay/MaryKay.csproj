@@ -99,6 +99,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>comboBoxProduto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxTipoUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComboBoxTipoUsuario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetViewProdutos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,6 +260,17 @@
     </None>
     <None Include="comboBoxProduto.xss">
       <DependentUpon>comboBoxProduto.xsd</DependentUpon>
+    </None>
+    <None Include="ComboBoxTipoUsuario.xsc">
+      <DependentUpon>ComboBoxTipoUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="ComboBoxTipoUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComboBoxTipoUsuario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComboBoxTipoUsuario.xss">
+      <DependentUpon>ComboBoxTipoUsuario.xsd</DependentUpon>
     </None>
     <None Include="DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>

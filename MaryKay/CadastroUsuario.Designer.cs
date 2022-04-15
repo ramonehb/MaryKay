@@ -29,6 +29,7 @@ namespace MaryKay
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -38,12 +39,10 @@ namespace MaryKay
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbConfirmaSenha = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
-            this.cbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -52,26 +51,36 @@ namespace MaryKay
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.tipoUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxTipoUsuario = new MaryKay.ComboBoxTipoUsuario();
+            this.tipoUsuarioTableAdapter = new MaryKay.ComboBoxTipoUsuarioTableAdapters.TipoUsuarioTableAdapter();
+            this.cbHabilitado = new System.Windows.Forms.CheckBox();
+            this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
+            this.lTipoUsuario = new System.Windows.Forms.Label();
+            this.lEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoUsuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTipoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(212, 638);
+            this.txtEmail.Location = new System.Drawing.Point(374, 480);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(677, 44);
+            this.txtEmail.Size = new System.Drawing.Size(993, 44);
             this.txtEmail.TabIndex = 3;
             // 
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtNome.Location = new System.Drawing.Point(209, 383);
+            this.txtNome.Location = new System.Drawing.Point(374, 383);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
@@ -84,7 +93,7 @@ namespace MaryKay
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(47, 634);
+            this.label2.Location = new System.Drawing.Point(39, 477);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 48);
             this.label2.TabIndex = 34;
@@ -120,11 +129,11 @@ namespace MaryKay
             // 
             this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSenha.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtSenha.Location = new System.Drawing.Point(212, 508);
+            this.txtSenha.Location = new System.Drawing.Point(374, 584);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenha.MaxLength = 50;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(677, 44);
+            this.txtSenha.Size = new System.Drawing.Size(541, 44);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -134,7 +143,7 @@ namespace MaryKay
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(47, 505);
+            this.label1.Location = new System.Drawing.Point(39, 584);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 48);
             this.label1.TabIndex = 47;
@@ -146,23 +155,11 @@ namespace MaryKay
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(931, 505);
+            this.label3.Location = new System.Drawing.Point(1028, 584);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(391, 48);
             this.label3.TabIndex = 49;
             this.label3.Text = "CONFIRMAR SENHA";
-            // 
-            // txtConfirmaSenha
-            // 
-            this.txtConfirmaSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtConfirmaSenha.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
-            this.txtConfirmaSenha.Location = new System.Drawing.Point(1351, 505);
-            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConfirmaSenha.MaxLength = 50;
-            this.txtConfirmaSenha.Name = "txtConfirmaSenha";
-            this.txtConfirmaSenha.Size = new System.Drawing.Size(677, 44);
-            this.txtConfirmaSenha.TabIndex = 2;
-            this.txtConfirmaSenha.UseSystemPasswordChar = true;
             // 
             // lbNome
             // 
@@ -170,7 +167,7 @@ namespace MaryKay
             this.lbNome.BackColor = System.Drawing.Color.Transparent;
             this.lbNome.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbNome.ForeColor = System.Drawing.Color.Red;
-            this.lbNome.Location = new System.Drawing.Point(271, 322);
+            this.lbNome.Location = new System.Drawing.Point(499, 323);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(0, 48);
             this.lbNome.TabIndex = 52;
@@ -181,7 +178,7 @@ namespace MaryKay
             this.lbSenha.BackColor = System.Drawing.Color.Transparent;
             this.lbSenha.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbSenha.Location = new System.Drawing.Point(265, 444);
+            this.lbSenha.Location = new System.Drawing.Point(499, 526);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(0, 48);
             this.lbSenha.TabIndex = 53;
@@ -192,7 +189,7 @@ namespace MaryKay
             this.lbConfirmaSenha.BackColor = System.Drawing.Color.Transparent;
             this.lbConfirmaSenha.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.lbConfirmaSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbConfirmaSenha.Location = new System.Drawing.Point(1385, 444);
+            this.lbConfirmaSenha.Location = new System.Drawing.Point(1556, 526);
             this.lbConfirmaSenha.Name = "lbConfirmaSenha";
             this.lbConfirmaSenha.Size = new System.Drawing.Size(0, 48);
             this.lbConfirmaSenha.TabIndex = 54;
@@ -208,22 +205,13 @@ namespace MaryKay
             this.lbEmail.Size = new System.Drawing.Size(0, 48);
             this.lbEmail.TabIndex = 55;
             // 
-            // cbTipoUsuario
-            // 
-            this.cbTipoUsuario.FormattingEnabled = true;
-            this.cbTipoUsuario.Location = new System.Drawing.Point(1269, 645);
-            this.cbTipoUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.cbTipoUsuario.Name = "cbTipoUsuario";
-            this.cbTipoUsuario.Size = new System.Drawing.Size(269, 24);
-            this.cbTipoUsuario.TabIndex = 56;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(945, 633);
+            this.label4.Location = new System.Drawing.Point(44, 687);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(296, 48);
             this.label4.TabIndex = 57;
@@ -253,7 +241,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1910, 40);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
             this.toolStrip2.TabIndex = 88;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -289,22 +277,98 @@ namespace MaryKay
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
+            // cboTipoUsuario
+            // 
+            this.cboTipoUsuario.DataSource = this.tipoUsuarioBindingSource;
+            this.cboTipoUsuario.DisplayMember = "NM_Tipo";
+            this.cboTipoUsuario.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold);
+            this.cboTipoUsuario.FormattingEnabled = true;
+            this.cboTipoUsuario.Location = new System.Drawing.Point(374, 685);
+            this.cboTipoUsuario.Name = "cboTipoUsuario";
+            this.cboTipoUsuario.Size = new System.Drawing.Size(541, 50);
+            this.cboTipoUsuario.TabIndex = 89;
+            this.cboTipoUsuario.ValueMember = "ID_TipoUsuario";
+            // 
+            // tipoUsuarioBindingSource
+            // 
+            this.tipoUsuarioBindingSource.DataMember = "TipoUsuario";
+            this.tipoUsuarioBindingSource.DataSource = this.comboBoxTipoUsuario;
+            // 
+            // comboBoxTipoUsuario
+            // 
+            this.comboBoxTipoUsuario.DataSetName = "ComboBoxTipoUsuario";
+            this.comboBoxTipoUsuario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoUsuarioTableAdapter
+            // 
+            this.tipoUsuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbHabilitado
+            // 
+            this.cbHabilitado.AutoSize = true;
+            this.cbHabilitado.Checked = true;
+            this.cbHabilitado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHabilitado.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.cbHabilitado.Location = new System.Drawing.Point(1469, 375);
+            this.cbHabilitado.Name = "cbHabilitado";
+            this.cbHabilitado.Size = new System.Drawing.Size(274, 52);
+            this.cbHabilitado.TabIndex = 91;
+            this.cbHabilitado.Text = "HABILITADO";
+            this.cbHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // txtConfirmaSenha
+            // 
+            this.txtConfirmaSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtConfirmaSenha.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold);
+            this.txtConfirmaSenha.Location = new System.Drawing.Point(1469, 587);
+            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfirmaSenha.MaxLength = 50;
+            this.txtConfirmaSenha.Name = "txtConfirmaSenha";
+            this.txtConfirmaSenha.Size = new System.Drawing.Size(541, 44);
+            this.txtConfirmaSenha.TabIndex = 92;
+            this.txtConfirmaSenha.UseSystemPasswordChar = true;
+            // 
+            // lTipoUsuario
+            // 
+            this.lTipoUsuario.AutoSize = true;
+            this.lTipoUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lTipoUsuario.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.lTipoUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lTipoUsuario.Location = new System.Drawing.Point(331, 634);
+            this.lTipoUsuario.Name = "lTipoUsuario";
+            this.lTipoUsuario.Size = new System.Drawing.Size(0, 48);
+            this.lTipoUsuario.TabIndex = 93;
+            // 
+            // lEmail
+            // 
+            this.lEmail.AutoSize = true;
+            this.lEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lEmail.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
+            this.lEmail.ForeColor = System.Drawing.Color.Red;
+            this.lEmail.Location = new System.Drawing.Point(499, 429);
+            this.lEmail.Name = "lEmail";
+            this.lEmail.Size = new System.Drawing.Size(0, 48);
+            this.lEmail.TabIndex = 94;
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2057, 1006);
+            this.ClientSize = new System.Drawing.Size(2057, 1055);
             this.ControlBox = false;
+            this.Controls.Add(this.lEmail);
+            this.Controls.Add(this.lTipoUsuario);
+            this.Controls.Add(this.txtConfirmaSenha);
+            this.Controls.Add(this.cbHabilitado);
+            this.Controls.Add(this.cboTipoUsuario);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbTipoUsuario);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbConfirmaSenha);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.lbNome);
-            this.Controls.Add(this.txtConfirmaSenha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
@@ -318,9 +382,12 @@ namespace MaryKay
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cadastro de Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoUsuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTipoUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,12 +403,10 @@ namespace MaryKay
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtConfirmaSenha;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbConfirmaSenha;
         private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip2;
@@ -350,5 +415,13 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ComboBox cboTipoUsuario;
+        private ComboBoxTipoUsuario comboBoxTipoUsuario;
+        private System.Windows.Forms.BindingSource tipoUsuarioBindingSource;
+        private ComboBoxTipoUsuarioTableAdapters.TipoUsuarioTableAdapter tipoUsuarioTableAdapter;
+        private System.Windows.Forms.CheckBox cbHabilitado;
+        private System.Windows.Forms.TextBox txtConfirmaSenha;
+        private System.Windows.Forms.Label lTipoUsuario;
+        private System.Windows.Forms.Label lEmail;
     }
 }
