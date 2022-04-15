@@ -106,12 +106,12 @@ namespace MaryKay
             this.btnFinalizar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(810, 868);
+            this.btnFinalizar.Location = new System.Drawing.Point(960, 871);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(329, 103);
+            this.btnFinalizar.Size = new System.Drawing.Size(238, 81);
             this.btnFinalizar.TabIndex = 5;
-            this.btnFinalizar.Text = "FINALIZAR CADASTRO";
+            this.btnFinalizar.Text = "FINALIZAR";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -231,7 +231,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1889, 9);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
             this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -393,7 +393,7 @@ namespace MaryKay
             this.Controls.Add(this.nm);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastroUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CadastroUsuario_Load);

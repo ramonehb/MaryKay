@@ -196,6 +196,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<vw_Usuario> vw_Usuarios
+		{
+			get
+			{
+				return this.GetTable<vw_Usuario>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_AlterarEstoque")]
 		public int usp_AlterarEstoque([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_Produto", DbType="Int")] System.Nullable<int> iD_Produto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantidade", DbType="Int")] System.Nullable<int> quantidade)
 		{
@@ -2639,6 +2647,8 @@ namespace DAL
 		
 		private System.Nullable<int> _QtdAcesso;
 		
+		private System.Nullable<System.DateTime> _DT_Cadastro;
+		
 		private EntitySet<Produto> _Produtos;
 		
 		private EntityRef<TipoUsuario> _TipoUsuario;
@@ -2661,6 +2671,8 @@ namespace DAL
     partial void OnFL_HabilitadoChanged();
     partial void OnQtdAcessoChanging(System.Nullable<int> value);
     partial void OnQtdAcessoChanged();
+    partial void OnDT_CadastroChanging(System.Nullable<System.DateTime> value);
+    partial void OnDT_CadastroChanged();
     #endregion
 		
 		public Usuario()
@@ -2814,6 +2826,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DT_Cadastro", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DT_Cadastro
+		{
+			get
+			{
+				return this._DT_Cadastro;
+			}
+			set
+			{
+				if ((this._DT_Cadastro != value))
+				{
+					this.OnDT_CadastroChanging(value);
+					this.SendPropertyChanging();
+					this._DT_Cadastro = value;
+					this.SendPropertyChanged("DT_Cadastro");
+					this.OnDT_CadastroChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Produto", Storage="_Produtos", ThisKey="ID_Usuario", OtherKey="ID_Usuario")]
 		public EntitySet<Produto> Produtos
 		{
@@ -2891,6 +2923,105 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Usuarios")]
+	public partial class vw_Usuario
+	{
+		
+		private int _ID_Usuario;
+		
+		private string _USUÁRIO;
+		
+		private string _TIPO_DO_USUÁRIO;
+		
+		private string _HABILITADO;
+		
+		private string _DATA_DE_CADASTRO;
+		
+		public vw_Usuario()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Usuario", DbType="Int NOT NULL")]
+		public int ID_Usuario
+		{
+			get
+			{
+				return this._ID_Usuario;
+			}
+			set
+			{
+				if ((this._ID_Usuario != value))
+				{
+					this._ID_Usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USUÁRIO", DbType="VarChar(50)")]
+		public string USUÁRIO
+		{
+			get
+			{
+				return this._USUÁRIO;
+			}
+			set
+			{
+				if ((this._USUÁRIO != value))
+				{
+					this._USUÁRIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[TIPO DO USUÁRIO]", Storage="_TIPO_DO_USUÁRIO", DbType="VarChar(100)")]
+		public string TIPO_DO_USUÁRIO
+		{
+			get
+			{
+				return this._TIPO_DO_USUÁRIO;
+			}
+			set
+			{
+				if ((this._TIPO_DO_USUÁRIO != value))
+				{
+					this._TIPO_DO_USUÁRIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HABILITADO", DbType="VarChar(1)")]
+		public string HABILITADO
+		{
+			get
+			{
+				return this._HABILITADO;
+			}
+			set
+			{
+				if ((this._HABILITADO != value))
+				{
+					this._HABILITADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DATA DE CADASTRO]", Storage="_DATA_DE_CADASTRO", DbType="NVarChar(4000)")]
+		public string DATA_DE_CADASTRO
+		{
+			get
+			{
+				return this._DATA_DE_CADASTRO;
+			}
+			set
+			{
+				if ((this._DATA_DE_CADASTRO != value))
+				{
+					this._DATA_DE_CADASTRO = value;
+				}
+			}
 		}
 	}
 }

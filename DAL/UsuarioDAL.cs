@@ -37,7 +37,7 @@ namespace DAL
                     usuarioDB.Usuario1 = usuario.Usuario1;
                     usuarioDB.Senha = usuario.Senha;
                     usuarioDB.Email = usuario.Email;
-                    usuario.FL_Habilitado = usuario.FL_Habilitado;
+                    usuarioDB.FL_Habilitado = usuario.FL_Habilitado;
                     db.SubmitChanges();
                     return true;
                 }

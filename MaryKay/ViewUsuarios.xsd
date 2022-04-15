@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ViewUsuarios" targetNamespace="http://tempuri.org/ViewUsuarios.xsd" xmlns:mstns="http://tempuri.org/ViewUsuarios.xsd" xmlns="http://tempuri.org/ViewUsuarios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MaryKayConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MaryKayConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MaryKay.Properties.Settings.GlobalReference.Default.MaryKayConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_UsuariosTableAdapter" GeneratorDataComponentClassName="vw_UsuariosTableAdapter" Name="vw_Usuarios" UserDataComponentName="vw_UsuariosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MaryKayConnectionString (Settings)" DbObjectName="MaryKay.dbo.vw_Usuarios" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Usuario, USUÁRIO, [TIPO DO USUÁRIO], HABILITADO, [DATA DE CADASTRO] FROM dbo.vw_Usuarios</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Usuario" DataSetColumn="ID_Usuario" />
+              <Mapping SourceColumn="USUÁRIO" DataSetColumn="USUÁRIO" />
+              <Mapping SourceColumn="TIPO DO USUÁRIO" DataSetColumn="TIPO DO USUÁRIO" />
+              <Mapping SourceColumn="HABILITADO" DataSetColumn="HABILITADO" />
+              <Mapping SourceColumn="DATA DE CADASTRO" DataSetColumn="DATA DE CADASTRO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ViewUsuarios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ViewUsuarios" msprop:Generator_UserDSName="ViewUsuarios">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_Usuarios" msprop:Generator_TableClassName="vw_UsuariosDataTable" msprop:Generator_TableVarName="tablevw_Usuarios" msprop:Generator_TablePropName="vw_Usuarios" msprop:Generator_RowDeletingName="vw_UsuariosRowDeleting" msprop:Generator_RowChangingName="vw_UsuariosRowChanging" msprop:Generator_RowEvHandlerName="vw_UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_UsuariosRowDeleted" msprop:Generator_UserTableName="vw_Usuarios" msprop:Generator_RowChangedName="vw_UsuariosRowChanged" msprop:Generator_RowEvArgName="vw_UsuariosRowChangeEvent" msprop:Generator_RowClassName="vw_UsuariosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Usuario" msprop:Generator_ColumnVarNameInTable="columnID_Usuario" msprop:Generator_ColumnPropNameInRow="ID_Usuario" msprop:Generator_ColumnPropNameInTable="ID_UsuarioColumn" msprop:Generator_UserColumnName="ID_Usuario" type="xs:int" />
+              <xs:element name="USUÁRIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUSUÁRIO" msprop:Generator_ColumnPropNameInRow="USUÁRIO" msprop:Generator_ColumnPropNameInTable="USUÁRIOColumn" msprop:Generator_UserColumnName="USUÁRIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO_x0020_DO_x0020_USUÁRIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_DO_USUÁRIO" msprop:Generator_ColumnPropNameInRow="TIPO_DO_USUÁRIO" msprop:Generator_ColumnPropNameInTable="TIPO_DO_USUÁRIOColumn" msprop:Generator_UserColumnName="TIPO DO USUÁRIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HABILITADO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHABILITADO" msprop:Generator_ColumnPropNameInRow="HABILITADO" msprop:Generator_ColumnPropNameInTable="HABILITADOColumn" msprop:Generator_UserColumnName="HABILITADO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_x0020_DE_x0020_CADASTRO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDATA_DE_CADASTRO" msprop:Generator_ColumnPropNameInRow="DATA_DE_CADASTRO" msprop:Generator_ColumnPropNameInTable="DATA_DE_CADASTROColumn" msprop:Generator_UserColumnName="DATA DE CADASTRO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_Usuarios" />
+      <xs:field xpath="mstns:ID_Usuario" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

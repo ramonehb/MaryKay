@@ -22,6 +22,9 @@ namespace MaryKay
         public CadastroUsuario(int idUsuario)
         {
             InitializeComponent();
+            txtIdUsuario.Text = idUsuario == 0 ? string.Empty : idUsuario.ToString();
+            CarregaUsuario(idUsuario);
+            btnFinalizar.Text = "ATUALIZAR";
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace MaryKay
                         usuario.Email = tEmail.Text;
                         usuario.FL_Habilitado = cbHabilitado.Checked;
                         usuario.QtdAcesso = 0;
+                        usuario.DT_Cadastro = DateTime.Now;
 
                         if (novo)
                         {
@@ -72,10 +76,31 @@ namespace MaryKay
 
                         LimparFormulario();
                         this.Hide();
-                        var voltar = new TelaInicial();
+                        var voltar = new UsuarioGerenciamento();
                         voltar.Closed += (s, args) => this.Close();
                         voltar.ShowDialog();
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+        }
+
+        private void CarregaUsuario(int idUsuario)
+        {
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var usuario = db.Usuarios.SingleOrDefault(u => u.ID_Usuario == idUsuario);
+                    txtNome.Text = usuario.Usuario1;
+                    txtSenha.Text = usuario.Senha;
+                    txtConfirmaSenha.Text = usuario.Senha;
+                    tEmail.Text = usuario.Email;
+                    cbHabilitado.Checked = (bool)usuario.FL_Habilitado;
+                    cboTipoUsuario.SelectedValue = usuario.ID_TipoUsuario.ToString();
                 }
             }
             catch (Exception ex)
@@ -156,7 +181,7 @@ namespace MaryKay
         private void tsbFechar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var voltar = new TelaInicial();
+            var voltar = new UsuarioGerenciamento();
             voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
         }

@@ -36,10 +36,10 @@ namespace MaryKay
 
         private void bUsuario_Click(object sender, EventArgs e)
         {
-            if (Session.ID_TipoUsuario == 1)
+            if (new int[] { 1, 2}.Contains(Session.ID_TipoUsuario))
             {
                 this.Hide();
-                var cadastroUsuario = new CadastroUsuario();
+                var cadastroUsuario = new UsuarioGerenciamento();
                 cadastroUsuario.Closed += (s, args) => this.Close();
                 cadastroUsuario.ShowDialog();
             }
