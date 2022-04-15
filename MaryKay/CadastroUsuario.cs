@@ -90,7 +90,7 @@ namespace MaryKay
 
             if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                lbNome.Text = "DIGITE O NOME";
+                lbNome.Text = "DIGITE O LOGIN";
                 erro++;
             }
             else

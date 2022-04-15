@@ -97,9 +97,9 @@ namespace MaryKay
             this.nm.ForeColor = System.Drawing.Color.Black;
             this.nm.Location = new System.Drawing.Point(44, 379);
             this.nm.Name = "nm";
-            this.nm.Size = new System.Drawing.Size(133, 48);
+            this.nm.Size = new System.Drawing.Size(139, 48);
             this.nm.TabIndex = 31;
-            this.nm.Text = "NOME";
+            this.nm.Text = "LOGIN";
             // 
             // btnFinalizar
             // 
