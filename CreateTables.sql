@@ -23,7 +23,7 @@ CREATE TABLE Usuario
 	ID_Usuario		INT IDENTITY,
 	ID_TipoUsuario  INT NOT NULL,
 	Usuario			VARCHAR(50) NOT NULL,
-	Senha			VARCHAR(20) NOT NULL,
+	Senha			VARCHAR(64) NOT NULL,
 	Email			VARCHAR(100) NOT NULL,
 	FL_Habilitado	BIT NULL,
 	QtdAcesso		INT NULL,

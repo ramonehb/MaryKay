@@ -1,4 +1,5 @@
 ﻿using DAL;
+using MaryKay.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace MaryKay
                 {
                     using (var db = new BaseDataContext())
                     {
-                        var usuario = db.Usuarios.SingleOrDefault(u => u.Usuario1.ToLower() == txtLogin.Text.ToLower() && u.Senha.ToLower() == txtSenha.Text.ToLower());
+                        var usuario = db.Usuarios.SingleOrDefault(u => u.Usuario1.ToUpper() == txtLogin.Text.ToUpper() && u.Senha == Criptografia.Hash(txtSenha.Text));
 
                         if (usuario == null)
                         {

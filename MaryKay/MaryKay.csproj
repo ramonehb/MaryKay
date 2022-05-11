@@ -78,6 +78,7 @@
     <Compile Include="CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Criptografia.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,7 +162,7 @@
       <DependentUpon>Produtos.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Session.cs" />
+    <Compile Include="Classes\Session.cs" />
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
