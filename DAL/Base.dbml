@@ -114,24 +114,6 @@
       <Association Name="Produto_ItemPedido" Member="Produto" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Produto" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Produto" Member="Produtos">
-    <Type Name="Produto">
-      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Pontos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VL_Pago" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="VL_Venda" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Lucro" Type="System.Decimal" DbType="Decimal(6,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Sessao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Produto_Estoque" Member="Estoques" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Estoque" />
-      <Association Name="Produto_ItemPedido" Member="ItemPedidos" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="ItemPedido" />
-      <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
-      <Association Name="Usuario_Produto" Member="Usuario" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Usuario" Member="Usuarios">
     <Type Name="Usuario">
       <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -155,9 +137,23 @@
       <Column Name="[DATA DE CADASTRO]" Member="DATA_DE_CADASTRO" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.usp_AlterarEstoque" Method="usp_AlterarEstoque">
-    <Parameter Name="ID_Produto" Parameter="iD_Produto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Quantidade" Parameter="quantidade" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
+  <Table Name="dbo.Produto" Member="Produtos">
+    <Type Name="Produto">
+      <Column Name="ID_Produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TipoProduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pontos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VL_Pago" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VL_Venda" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Lucro" Type="System.Decimal" DbType="Decimal(6,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sessao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantidade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Produto_Estoque" Member="Estoques" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="Estoque" />
+      <Association Name="Produto_ItemPedido" Member="ItemPedidos" ThisKey="ID_Produto" OtherKey="ID_Produto" Type="ItemPedido" />
+      <Association Name="Tipo_Produto_Produto" Member="Tipo_Produto" ThisKey="ID_TipoProduto" OtherKey="ID_TipoProduto" Type="Tipo_Produto" IsForeignKey="true" />
+      <Association Name="Usuario_Produto" Member="Usuario" ThisKey="ID_Usuario" OtherKey="ID_Usuario" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>

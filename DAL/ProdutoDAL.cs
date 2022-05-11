@@ -8,16 +8,14 @@ namespace DAL
 {
     public class ProdutoDAL
     {
-        public bool CadastrarProduto(Produto produto, int quantidade)
+        public bool CadastrarProduto(Produto produto)
         {
             try
             {
-                
                 using (var db = new BaseDataContext())
                 {
                     db.Produtos.InsertOnSubmit(produto);
                     db.SubmitChanges();
-                    db.usp_AlterarEstoque(produto.ID_Produto, quantidade);
                     return true;
                 }
             }

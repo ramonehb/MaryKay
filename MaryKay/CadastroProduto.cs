@@ -210,13 +210,14 @@ namespace MaryKay
                 produto.VL_Pago = decimal.Parse(nudVL_Pago.Text);
                 produto.VL_Venda = decimal.Parse(nudVL_Venda.Text);
                 produto.Sessao = int.Parse((string)cboSessao.SelectedItem);
+                produto.Quantidade = int.Parse(nudQuantidade.Text);
                 produto.ID_Usuario = 1;
 
                 var produtoDAL = new ProdutoDAL();
 
                 if (novoProduto)
                 {
-                    if (!produtoDAL.CadastrarProduto(produto, int.Parse(nudQuantidade.Text)))
+                    if (!produtoDAL.CadastrarProduto(produto))
                     {
                         MessageBox.Show("ERRO AO CADASTRAR O PRODUTO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;

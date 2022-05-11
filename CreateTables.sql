@@ -46,6 +46,7 @@ CREATE TABLE Produto
 	VL_Venda				NUMERIC(10,5) NOT NULL,
 	Lucro					AS (IsNull(VL_Venda, 0) - IsNull(VL_Pago, 0 )),
 	Sessao					INT NOT NULL,
+	Quantidade				INT NULL,
 
 	CONSTRAINT PK_ID_Produto PRIMARY KEY (ID_Produto),
 	CONSTRAINT FK_ID_TipoProduto FOREIGN KEY (ID_TipoProduto) REFERENCES Tipo_Produto(ID_TipoProduto),
