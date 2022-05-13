@@ -37,10 +37,10 @@ namespace MaryKay
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.nm = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbErro = new System.Windows.Forms.Label();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -108,27 +108,6 @@ namespace MaryKay
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(241, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(187, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 74;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCategoria.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.txtCategoria.Location = new System.Drawing.Point(46, 232);
-            this.txtCategoria.MaxLength = 50;
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(590, 42);
-            this.txtCategoria.TabIndex = 0;
-            // 
             // nm
             // 
             this.nm.AutoSize = true;
@@ -141,6 +120,17 @@ namespace MaryKay
             this.nm.TabIndex = 76;
             this.nm.Text = "NOME DA CATEGORIA";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(241, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(187, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 74;
+            this.pictureBox2.TabStop = false;
+            // 
             // lbErro
             // 
             this.lbErro.AutoSize = true;
@@ -151,6 +141,16 @@ namespace MaryKay
             this.lbErro.Name = "lbErro";
             this.lbErro.Size = new System.Drawing.Size(0, 36);
             this.lbErro.TabIndex = 77;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCategoria.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.txtCategoria.Location = new System.Drawing.Point(46, 232);
+            this.txtCategoria.MaxLength = 50;
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(590, 42);
+            this.txtCategoria.TabIndex = 0;
             // 
             // CadastroCategoria
             // 
@@ -185,9 +185,9 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label nm;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbErro;
+        private System.Windows.Forms.TextBox txtCategoria;
     }
 }

@@ -59,5 +59,13 @@ namespace MaryKay
             voltar.Closed += (s, args) => this.Close();
             voltar.ShowDialog();
         }
+
+        private void tsbAdicionarEstimativa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var cadastro = new CadastroEstimativa();
+            cadastro.Closed += (s, args) => this.Close();
+            cadastro.ShowDialog();
+        }
     }
 }

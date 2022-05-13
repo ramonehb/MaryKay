@@ -156,4 +156,12 @@
       <Association Name="TipoUsuario_Usuario" Member="TipoUsuario" ThisKey="ID_TipoUsuario" OtherKey="ID_TipoUsuario" Type="TipoUsuario" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Estimativa" Member="Estimativas">
+    <Type Name="Estimativa">
+      <Column Name="ID_Estimativa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VL_Estimativa" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+      <Column Name="VL_TotalVendido" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+      <Column Name="DT_Mes" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

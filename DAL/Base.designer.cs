@@ -60,6 +60,9 @@ namespace DAL
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
+    partial void InsertEstimativa(Estimativa instance);
+    partial void UpdateEstimativa(Estimativa instance);
+    partial void DeleteEstimativa(Estimativa instance);
     #endregion
 		
 		public BaseDataContext() : 
@@ -201,6 +204,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Usuario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Estimativa> Estimativas
+		{
+			get
+			{
+				return this.GetTable<Estimativa>();
 			}
 		}
 	}
@@ -3039,6 +3050,140 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Estimativa")]
+	public partial class Estimativa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_Estimativa;
+		
+		private System.Nullable<decimal> _VL_Estimativa;
+		
+		private System.Nullable<decimal> _VL_TotalVendido;
+		
+		private System.Nullable<System.DateTime> _DT_Mes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_EstimativaChanging(int value);
+    partial void OnID_EstimativaChanged();
+    partial void OnVL_EstimativaChanging(System.Nullable<decimal> value);
+    partial void OnVL_EstimativaChanged();
+    partial void OnVL_TotalVendidoChanging(System.Nullable<decimal> value);
+    partial void OnVL_TotalVendidoChanged();
+    partial void OnDT_MesChanging(System.Nullable<System.DateTime> value);
+    partial void OnDT_MesChanged();
+    #endregion
+		
+		public Estimativa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Estimativa", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_Estimativa
+		{
+			get
+			{
+				return this._ID_Estimativa;
+			}
+			set
+			{
+				if ((this._ID_Estimativa != value))
+				{
+					this.OnID_EstimativaChanging(value);
+					this.SendPropertyChanging();
+					this._ID_Estimativa = value;
+					this.SendPropertyChanged("ID_Estimativa");
+					this.OnID_EstimativaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VL_Estimativa", DbType="Decimal(10,5)")]
+		public System.Nullable<decimal> VL_Estimativa
+		{
+			get
+			{
+				return this._VL_Estimativa;
+			}
+			set
+			{
+				if ((this._VL_Estimativa != value))
+				{
+					this.OnVL_EstimativaChanging(value);
+					this.SendPropertyChanging();
+					this._VL_Estimativa = value;
+					this.SendPropertyChanged("VL_Estimativa");
+					this.OnVL_EstimativaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VL_TotalVendido", DbType="Decimal(10,5)")]
+		public System.Nullable<decimal> VL_TotalVendido
+		{
+			get
+			{
+				return this._VL_TotalVendido;
+			}
+			set
+			{
+				if ((this._VL_TotalVendido != value))
+				{
+					this.OnVL_TotalVendidoChanging(value);
+					this.SendPropertyChanging();
+					this._VL_TotalVendido = value;
+					this.SendPropertyChanged("VL_TotalVendido");
+					this.OnVL_TotalVendidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DT_Mes", DbType="Date")]
+		public System.Nullable<System.DateTime> DT_Mes
+		{
+			get
+			{
+				return this._DT_Mes;
+			}
+			set
+			{
+				if ((this._DT_Mes != value))
+				{
+					this.OnDT_MesChanging(value);
+					this.SendPropertyChanging();
+					this._DT_Mes = value;
+					this.SendPropertyChanged("DT_Mes");
+					this.OnDT_MesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

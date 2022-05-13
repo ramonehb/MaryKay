@@ -137,3 +137,11 @@ GO
 INSERT FormaPagamento	
 	VALUES (1,'Dinheiro'),(2,'Cartão Debito'),(3,'Cartão Crédito'),(4,'Pix')
 
+GO
+
+CREATE TABLE ESTIMATIVA(
+	 ID_Estimativa	INT IDENTITY
+	,VL_Estimativa	NUMERIC(10,5)
+	,DT_Mes			DATE NOT NULL
+)
+
