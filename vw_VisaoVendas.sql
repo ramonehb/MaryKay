@@ -1,7 +1,9 @@
 
+DROP VIEW IF EXISTS vw_VisaoVendas
+
 CREATE VIEW vw_VisaoVendas
 As
-SELECT	ID_Pedido AS ID,
+SELECT	TOP 1000 ID_Pedido AS ID,
 		UPPER(C.Nome) AS 'NOME CLIENTE',
 		UPPER(PS.NM_Descricao) AS 'STATUS',
 		UPPER(U.Usuario) AS USUARIO,
@@ -17,4 +19,4 @@ SELECT	ID_Pedido AS ID,
 	ON P.ID_Usuario = U.ID_Usuario
 	FULL JOIN FormaPagamento AS FP
 	ON P.ID_FormaPagamento = FP.ID_FormaPagamento
-	
+	ORDER BY DT_Venda DESC

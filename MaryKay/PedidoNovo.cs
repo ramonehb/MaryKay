@@ -37,6 +37,8 @@ namespace MaryKay
             carinho.Columns.Add("Quantidade");
             carinho.Columns.Add("Preço Unitario");
             carinho.Columns.Add("SubTotal");
+            carinho.Columns.Add("IdItemPedido").ColumnName = "idItemPedido";
+            carinho.Columns.Add("idProduto").ColumnName = "idProduto";
         }
 
         private void PedidoNovo_Load(object sender, EventArgs e)
@@ -63,6 +65,9 @@ namespace MaryKay
                 nudQuantidade.Visible = false;
                 tsAdicionarCliente.Visible = false;
                 tsbExcluirCliente.Visible = false;
+                lPrecoProd.Visible = false;
+                nudPreco.Visible = false;
+                pictureBox1.Visible = false;
 
                 using (var db = new BaseDataContext())
                 {
@@ -102,6 +107,9 @@ namespace MaryKay
                 nudQuantidade.Visible = true;
                 tsAdicionarCliente.Visible = true;
                 tsbExcluirCliente.Visible = true;
+                lPrecoProd.Visible = true;
+                nudPreco.Visible = true;
+                pictureBox1.Visible = true;
 
                 using (var db = new BaseDataContext())
                 {
@@ -143,10 +151,9 @@ namespace MaryKay
 
                     db.SubmitChanges();
 
-                    
                     Items.Add(itemPedido);
 
-                    carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"));
+                    carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"), novoItem.ID_ItemPedido, produto.ID_Produto);
                     dgvCarinho.DataSource = carinho;
                     ConfiguraGridViewCarinho();
                 }
@@ -163,6 +170,8 @@ namespace MaryKay
             DataGridViewColumn colunaQuantidade = dgvCarinho.Columns[1];
             DataGridViewColumn colunaPreco = dgvCarinho.Columns[2];
             DataGridViewColumn colunaSubTotal = dgvCarinho.Columns[3];
+            DataGridViewColumn colunaidItemPedido = dgvCarinho.Columns[4];
+            DataGridViewColumn colunaidProduto = dgvCarinho.Columns[5];
 
             colunaNome.Width = 400;
             colunaQuantidade.Width = 400;
@@ -172,6 +181,8 @@ namespace MaryKay
             colunaQuantidade.ReadOnly = true;
             colunaPreco.ReadOnly = true;
             colunaSubTotal.ReadOnly = true;
+            colunaidItemPedido.Visible = false;
+            colunaidProduto.Visible = false;
 
             lAvisoCarrinho.Visible = false;
             tsbExcluirItem.Visible = true;
@@ -201,16 +212,23 @@ namespace MaryKay
                             tsbExcluirItem.Visible = false;
                             lAvisoCarrinho.Visible = true;
                         }
-                        //Verificar a quetão do data
-                        //var idCliente = (int)dgvCarinho.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
-                        //var idItemPedido = (int)dgvCarinho.CurrentRow.Cells["iDClienteDataGridViewTextBoxColumn"].Value;
-                        //var itemPedido = db.ItemPedidos.SingleOrDefault(i => i.ID_ItemPedido == idItemPedido && i.ID_Pedido == int.Parse(txtIdPedido.Text));
-                        //db.ItemPedidos.DeleteOnSubmit(itemPedido);
-                        //db.SubmitChanges();
+                        
+                        var idItemPedido = int.Parse(dgvCarinho.CurrentRow.Cells["idItemPedido"].Value.ToString());
+                        var idProduto = int.Parse(dgvCarinho.CurrentRow.Cells["idProduto"].Value.ToString());
+                        var itemPedido = db.ItemPedidos.SingleOrDefault(i => i.ID_ItemPedido == idItemPedido && i.ID_Pedido == int.Parse(txtIdPedido.Text));
+                        db.ItemPedidos.DeleteOnSubmit(itemPedido);
+                        db.SubmitChanges();
 
                         foreach (DataGridViewRow item in dgvCarinho.SelectedRows)
                         {
                             dgvCarinho.Rows.RemoveAt(item.Index);
+                        }
+                        foreach (var item in Items)
+                        {
+                            if (item.Produto.ID_Produto == idProduto)
+                            {
+                                Items.Remove(item);
+                            }
                         }
                     }
                     else
@@ -265,6 +283,22 @@ namespace MaryKay
             catch (Exception ex)
             {
                 var msg = ex.Message;
+            }
+        }
+
+        private void cbProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var idProduto = int.Parse(cbProdutos.SelectedValue.ToString());
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    nudPreco.Text = db.Produtos.SingleOrDefault(p => p.ID_Produto == idProduto).VL_Venda.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"CONTATE O ADMINISTRADOR\nERRO: {ex.Message.ToUpper()}", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

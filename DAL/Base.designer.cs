@@ -159,14 +159,6 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_VisaoVenda> vw_VisaoVendas
-		{
-			get
-			{
-				return this.GetTable<vw_VisaoVenda>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Pedido> Pedidos
 		{
 			get
@@ -212,6 +204,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Estimativa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vw_VisaoVenda> vw_VisaoVendas
+		{
+			get
+			{
+				return this.GetTable<vw_VisaoVenda>();
 			}
 		}
 	}
@@ -1480,141 +1480,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.PedidoStatus = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_VisaoVendas")]
-	public partial class vw_VisaoVenda
-	{
-		
-		private System.Nullable<int> _ID;
-		
-		private string _NOME_CLIENTE;
-		
-		private string _STATUS;
-		
-		private string _USUARIO;
-		
-		private string _TIPO_DE_PAGAMENTO;
-		
-		private System.Nullable<System.DateTime> _DATA_DA_VENDA;
-		
-		private System.Nullable<decimal> _TOTAL;
-		
-		public vw_VisaoVenda()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[NOME CLIENTE]", Storage="_NOME_CLIENTE", DbType="VarChar(100)")]
-		public string NOME_CLIENTE
-		{
-			get
-			{
-				return this._NOME_CLIENTE;
-			}
-			set
-			{
-				if ((this._NOME_CLIENTE != value))
-				{
-					this._NOME_CLIENTE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="VarChar(50)")]
-		public string STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this._STATUS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USUARIO", DbType="VarChar(50)")]
-		public string USUARIO
-		{
-			get
-			{
-				return this._USUARIO;
-			}
-			set
-			{
-				if ((this._USUARIO != value))
-				{
-					this._USUARIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[TIPO DE PAGAMENTO]", Storage="_TIPO_DE_PAGAMENTO", DbType="VarChar(50)")]
-		public string TIPO_DE_PAGAMENTO
-		{
-			get
-			{
-				return this._TIPO_DE_PAGAMENTO;
-			}
-			set
-			{
-				if ((this._TIPO_DE_PAGAMENTO != value))
-				{
-					this._TIPO_DE_PAGAMENTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DATA DA VENDA]", Storage="_DATA_DA_VENDA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DATA_DA_VENDA
-		{
-			get
-			{
-				return this._DATA_DA_VENDA;
-			}
-			set
-			{
-				if ((this._DATA_DA_VENDA != value))
-				{
-					this._DATA_DA_VENDA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> TOTAL
-		{
-			get
-			{
-				return this._TOTAL;
-			}
-			set
-			{
-				if ((this._TOTAL != value))
-				{
-					this._TOTAL = value;
-				}
-			}
 		}
 	}
 	
@@ -3183,6 +3048,141 @@ namespace DAL
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_VisaoVendas")]
+	public partial class vw_VisaoVenda
+	{
+		
+		private System.Nullable<int> _ID;
+		
+		private string _NOME_CLIENTE;
+		
+		private string _STATUS;
+		
+		private string _USUARIO;
+		
+		private string _TIPO_DE_PAGAMENTO;
+		
+		private System.Nullable<System.DateTime> _DATA_DA_VENDA;
+		
+		private System.Nullable<decimal> _TOTAL;
+		
+		public vw_VisaoVenda()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
+		public System.Nullable<int> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[NOME CLIENTE]", Storage="_NOME_CLIENTE", DbType="VarChar(100)")]
+		public string NOME_CLIENTE
+		{
+			get
+			{
+				return this._NOME_CLIENTE;
+			}
+			set
+			{
+				if ((this._NOME_CLIENTE != value))
+				{
+					this._NOME_CLIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="VarChar(50)")]
+		public string STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this._STATUS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USUARIO", DbType="VarChar(50)")]
+		public string USUARIO
+		{
+			get
+			{
+				return this._USUARIO;
+			}
+			set
+			{
+				if ((this._USUARIO != value))
+				{
+					this._USUARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[TIPO DE PAGAMENTO]", Storage="_TIPO_DE_PAGAMENTO", DbType="VarChar(50)")]
+		public string TIPO_DE_PAGAMENTO
+		{
+			get
+			{
+				return this._TIPO_DE_PAGAMENTO;
+			}
+			set
+			{
+				if ((this._TIPO_DE_PAGAMENTO != value))
+				{
+					this._TIPO_DE_PAGAMENTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[DATA DA VENDA]", Storage="_DATA_DA_VENDA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DATA_DA_VENDA
+		{
+			get
+			{
+				return this._DATA_DA_VENDA;
+			}
+			set
+			{
+				if ((this._DATA_DA_VENDA != value))
+				{
+					this._DATA_DA_VENDA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Decimal(10,5)")]
+		public System.Nullable<decimal> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this._TOTAL = value;
+				}
 			}
 		}
 	}

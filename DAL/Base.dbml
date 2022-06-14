@@ -77,17 +77,6 @@
       <Association Name="PedidoStatus_Pedido" Member="Pedidos" ThisKey="ID_PedidoStatus" OtherKey="ID_PedidoStatus" Type="Pedido" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_VisaoVendas" Member="vw_VisaoVendas">
-    <Type Name="vw_VisaoVenda">
-      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[NOME CLIENTE]" Member="NOME_CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="USUARIO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[TIPO DE PAGAMENTO]" Member="TIPO_DE_PAGAMENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="[DATA DA VENDA]" Member="DATA_DA_VENDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TOTAL" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Pedido" Member="Pedidos">
     <Type Name="Pedido">
       <Column Name="ID_Pedido" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -162,6 +151,17 @@
       <Column Name="VL_Estimativa" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
       <Column Name="VL_TotalVendido" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
       <Column Name="DT_Mes" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_VisaoVendas" Member="vw_VisaoVendas">
+    <Type Name="vw_VisaoVenda">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[NOME CLIENTE]" Member="NOME_CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[TIPO DE PAGAMENTO]" Member="TIPO_DE_PAGAMENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[DATA DA VENDA]" Member="DATA_DA_VENDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
