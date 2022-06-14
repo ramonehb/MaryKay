@@ -21,6 +21,7 @@ namespace MaryKay
 
         private void tsbFechar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var pedido = new Pedidos();
             pedido.Closed += (s, args) => this.Close();
             pedido.ShowDialog();
@@ -30,6 +31,12 @@ namespace MaryKay
         {
             try
             {
+                if (string.IsNullOrEmpty(nudVL_Estimativa.Text) || string.IsNullOrWhiteSpace(nudVL_Estimativa.Text) || nudVL_Estimativa.Text == "0,00")
+                {
+                    MessageBox.Show("PREENCHA A ESTIMATIVA", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 using (var db = new BaseDataContext())
                 {
                     var newEstimativa = new Estimativa();
@@ -37,7 +44,8 @@ namespace MaryKay
                     newEstimativa.DT_Mes = DateTime.Now;
                     db.Estimativas.InsertOnSubmit(newEstimativa);
                     db.SubmitChanges();
-
+                    
+                    this.Hide();
                     var pedido = new Pedidos();
                     pedido.Closed += (s, args) => this.Close();
                     pedido.ShowDialog();

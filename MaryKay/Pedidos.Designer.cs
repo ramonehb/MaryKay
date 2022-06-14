@@ -64,6 +64,12 @@ namespace MaryKay
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lEstimativa = new System.Windows.Forms.Label();
+            this.lTotal = new System.Windows.Forms.Label();
+            this.lFalta = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwVisaoVendasBindingSource)).BeginInit();
@@ -217,7 +223,7 @@ namespace MaryKay
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvVendas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVendas.GridColor = System.Drawing.Color.Black;
-            this.dgvVendas.Location = new System.Drawing.Point(12, 176);
+            this.dgvVendas.Location = new System.Drawing.Point(12, 219);
             this.dgvVendas.MultiSelect = false;
             this.dgvVendas.Name = "dgvVendas";
             this.dgvVendas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -234,7 +240,7 @@ namespace MaryKay
             this.dgvVendas.RowTemplate.Height = 30;
             this.dgvVendas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendas.Size = new System.Drawing.Size(2010, 792);
+            this.dgvVendas.Size = new System.Drawing.Size(2010, 749);
             this.dgvVendas.TabIndex = 89;
             // 
             // iDDataGridViewTextBoxColumn
@@ -332,7 +338,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1874, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
             this.toolStrip2.TabIndex = 90;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -368,6 +374,81 @@ namespace MaryKay
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(1423, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(251, 37);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "Estimatva mensal";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(1423, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 37);
+            this.label3.TabIndex = 92;
+            this.label3.Text = "Total de vendas";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Arial", 18F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(1423, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 37);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Falta";
+            // 
+            // lEstimativa
+            // 
+            this.lEstimativa.AutoSize = true;
+            this.lEstimativa.BackColor = System.Drawing.Color.Transparent;
+            this.lEstimativa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lEstimativa.Font = new System.Drawing.Font("Arial", 18F);
+            this.lEstimativa.ForeColor = System.Drawing.Color.Black;
+            this.lEstimativa.Location = new System.Drawing.Point(1706, 62);
+            this.lEstimativa.Name = "lEstimativa";
+            this.lEstimativa.Size = new System.Drawing.Size(2, 37);
+            this.lEstimativa.TabIndex = 95;
+            // 
+            // lTotal
+            // 
+            this.lTotal.AutoSize = true;
+            this.lTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lTotal.Font = new System.Drawing.Font("Arial", 18F);
+            this.lTotal.ForeColor = System.Drawing.Color.Black;
+            this.lTotal.Location = new System.Drawing.Point(1706, 112);
+            this.lTotal.Name = "lTotal";
+            this.lTotal.Size = new System.Drawing.Size(2, 37);
+            this.lTotal.TabIndex = 96;
+            // 
+            // lFalta
+            // 
+            this.lFalta.AutoSize = true;
+            this.lFalta.BackColor = System.Drawing.Color.Transparent;
+            this.lFalta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lFalta.Font = new System.Drawing.Font("Arial", 18F);
+            this.lFalta.ForeColor = System.Drawing.Color.Black;
+            this.lFalta.Location = new System.Drawing.Point(1706, 170);
+            this.lFalta.Name = "lFalta";
+            this.lFalta.Size = new System.Drawing.Size(2, 37);
+            this.lFalta.TabIndex = 97;
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -375,6 +456,12 @@ namespace MaryKay
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1924, 980);
             this.ControlBox = false;
+            this.Controls.Add(this.lFalta);
+            this.Controls.Add(this.lTotal);
+            this.Controls.Add(this.lEstimativa);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.dgvVendas);
             this.Controls.Add(this.label1);
@@ -433,5 +520,11 @@ namespace MaryKay
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton tsbAdicionarEstimativa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lEstimativa;
+        private System.Windows.Forms.Label lTotal;
+        private System.Windows.Forms.Label lFalta;
     }
 }

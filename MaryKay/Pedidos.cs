@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,24 @@ namespace MaryKay
         public Pedidos()
         {
             InitializeComponent();
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var estimativa = db.Estimativas.SingleOrDefault(e => e.DT_Mes.Value.Month == DateTime.Now.Month);
+                    if (estimativa == null)
+                        return;
+
+                    decimal falta = (decimal)(estimativa.VL_Estimativa - estimativa.VL_TotalVendido);
+                    lEstimativa.Text = estimativa.VL_Estimativa.ToString();
+                    lTotal.Text = estimativa.VL_TotalVendido.ToString();
+                    lFalta.Text = falta < 0 ? "Meta batida." : falta.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"CONTATE O ADMINISTRADOR \nERRO: {ex.Message.ToUpper()}.", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tsbNovo_Click(object sender, EventArgs e)
@@ -29,7 +48,7 @@ namespace MaryKay
             }
             else
             {
-                MessageBox.Show("USUÁRIO NÃO TEM PERMISSÃO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("USUÁRIO NÃO TEM PERMISSÃO.", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -49,7 +68,25 @@ namespace MaryKay
 
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
-            //Cancelar a venda
+            var idPedido = (int)dgvVendas.CurrentRow.Cells["iDDataGridViewTextBoxColumn"].Value;
+            try
+            {
+                using (var db = new BaseDataContext())
+                {
+                    var pedido = db.Pedidos.Single(p => p.ID_Pedido == idPedido);
+                    pedido.ID_PedidoStatus = 4;
+                    db.SubmitChanges();
+                    MessageBox.Show("VENDA CANCELADA COM SUCESSO.", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    var refesh = new Pedidos();
+                    refesh.Closed += (s, args) => this.Close();
+                    refesh.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("CONTATE O ADMINISTRADOR.", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tsbFechar_Click_1(object sender, EventArgs e)
