@@ -39,7 +39,7 @@ namespace DAL
             double sum = 0;
             foreach (var item in Items)
             {
-                sum += item.SubTotal();
+                sum += item.SubTotal;
             }
 
             return sum;

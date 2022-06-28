@@ -11,7 +11,8 @@ namespace DAL
         public Produto Produto { get; set; }
         public int Quantidade { get; set; }
         public double Preco { get; set; }
-        
+        public double SubTotal { get; set; }
+
 
         public ItemPedidoDAL() { }
 
@@ -20,11 +21,7 @@ namespace DAL
             Produto = produto;
             Quantidade = quantidade;
             Preco = (double) produto.VL_Venda;
-        }
-
-        public double SubTotal()
-        {
-            return (double) Preco * Quantidade;
+            SubTotal = (double) Preco * Quantidade;
         }
     }
 }

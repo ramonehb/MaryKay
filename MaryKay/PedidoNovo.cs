@@ -14,7 +14,6 @@ namespace MaryKay
     public partial class PedidoNovo : Form
     {
         DataTable carinho = new DataTable();
-        public ItemPedidoDAL itemPedido = new ItemPedidoDAL();
         public List<ItemPedidoDAL> Items = new List<ItemPedidoDAL>();
 
 
@@ -119,7 +118,7 @@ namespace MaryKay
                     var pedido = new Pedido();
                     pedido.ID_Cliente = cliente.ID_Cliente;
                     pedido.ID_PedidoStatus = 1;
-                    pedido.ID_Usuario = 1;
+                    pedido.ID_Usuario = Session.ID_Usuario;
                     db.Pedidos.InsertOnSubmit(pedido);
                     db.SubmitChanges();
                     txtIdPedido.Text = pedido.ID_Pedido.ToString();
@@ -137,43 +136,43 @@ namespace MaryKay
             {
                 using (var db = new BaseDataContext())
                 {
+                   
                     var produto = db.Produtos.SingleOrDefault(p => p.ID_Produto == (int)cbProdutos.SelectedValue);
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
                     var quantidade = int.Parse(nudQuantidade.Text);
                     var idPedido = int.Parse(txtIdPedido.Text);
-                    var novoItem = new ItemPedido();
+                    var itemPedido = new ItemPedidoDAL(produto, quantidade);
 
+                    #region Inserindo ou atualizando DB
+
+                    var novoItem = new ItemPedido();
                     var itemPedidos = db.ItemPedidos.Where(i => i.ID_Pedido == idPedido && produto.ID_Produto == i.ID_Produto);
-                    //Inserindo item do pedido no banco ou atualizando
+
                     if (itemPedidos.Count() > 0)
                     {
                         var itemP = itemPedidos.Single();
                         itemP.Quantidade += quantidade;
-                        itemP.SubTotal +=(decimal) itemPedido.SubTotal();
+                        itemP.SubTotal += (decimal)itemPedido.SubTotal;
                     }
                     else
                     {
                         novoItem.ID_Pedido = idPedido;
                         novoItem.ID_Produto = produto.ID_Produto;
                         novoItem.Quantidade = quantidade;
-                        novoItem.SubTotal = (decimal)itemPedido.SubTotal();
+                        novoItem.SubTotal = (decimal)itemPedido.SubTotal;
                         db.ItemPedidos.InsertOnSubmit(novoItem);
                     }
 
                     db.SubmitChanges();
-                    //Inserindo ou atualizando item do pedido na Lista
-                    
+                    #endregion
+
+                    #region Inserindo ou atualizando item do pedido na Lista
                     if (Items.Count > 0)
                     {
                         foreach (var item in Items)
                         {
                             if (item.Produto.ID_Produto == produto.ID_Produto)
                             {
-                                var i = new ItemPedidoDAL();
-                                quantidade += item.Quantidade;
-                                i.Quantidade = quantidade;
-                                i.Produto = produto;
-
                                 Items.Remove(item);
                                 Items.Add(new ItemPedidoDAL(produto, item.Quantidade + quantidade));
                             }
@@ -181,7 +180,6 @@ namespace MaryKay
                             {
                                 Items.Add(new ItemPedidoDAL(produto, quantidade));
                             }
-
                             break;
                         }
                     }
@@ -190,9 +188,9 @@ namespace MaryKay
                     {
                         Items.Add(new ItemPedidoDAL(produto, quantidade));
                     }
+                    #endregion
 
-                    //Inserindo ou atualizando item do pedido no Carrinho
-                    carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"), novoItem.ID_ItemPedido, produto.ID_Produto);
+                    carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal.ToString("N2"), novoItem.ID_ItemPedido, produto.ID_Produto);                   
                     dgvCarinho.DataSource = carinho;
                     ConfiguraGridViewCarinho();
                 }
@@ -308,7 +306,7 @@ namespace MaryKay
                     decimal valorTotal = 0;
                     foreach (var item in Items)
                     {
-                        valorTotal += (decimal) item.SubTotal();
+                        valorTotal += (decimal) item.SubTotal;
                     }
                     pedido.VL_Total = valorTotal;
                     db.SubmitChanges();
