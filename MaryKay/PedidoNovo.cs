@@ -140,19 +140,58 @@ namespace MaryKay
                     var produto = db.Produtos.SingleOrDefault(p => p.ID_Produto == (int)cbProdutos.SelectedValue);
                     var cliente = db.Clientes.SingleOrDefault(c => c.ID_Cliente == (int)cboCliente.SelectedValue);
                     var quantidade = int.Parse(nudQuantidade.Text);
-                    itemPedido = new ItemPedidoDAL(produto, quantidade);
-
+                    var idPedido = int.Parse(txtIdPedido.Text);
                     var novoItem = new ItemPedido();
-                    novoItem.ID_Pedido = int.Parse(txtIdPedido.Text); 
-                    novoItem.ID_Produto = produto.ID_Produto;
-                    novoItem.Quantidade = quantidade;
-                    novoItem.SubTotal = (decimal) itemPedido.SubTotal();
-                    db.ItemPedidos.InsertOnSubmit(novoItem);
+
+                    var itemPedidos = db.ItemPedidos.Where(i => i.ID_Pedido == idPedido && produto.ID_Produto == i.ID_Produto);
+                    //Inserindo item do pedido no banco ou atualizando
+                    if (itemPedidos.Count() > 0)
+                    {
+                        var itemP = itemPedidos.Single();
+                        itemP.Quantidade += quantidade;
+                        itemP.SubTotal +=(decimal) itemPedido.SubTotal();
+                    }
+                    else
+                    {
+                        novoItem.ID_Pedido = idPedido;
+                        novoItem.ID_Produto = produto.ID_Produto;
+                        novoItem.Quantidade = quantidade;
+                        novoItem.SubTotal = (decimal)itemPedido.SubTotal();
+                        db.ItemPedidos.InsertOnSubmit(novoItem);
+                    }
 
                     db.SubmitChanges();
+                    //Inserindo ou atualizando item do pedido na Lista
+                    
+                    if (Items.Count > 0)
+                    {
+                        foreach (var item in Items)
+                        {
+                            if (item.Produto.ID_Produto == produto.ID_Produto)
+                            {
+                                var i = new ItemPedidoDAL();
+                                quantidade += item.Quantidade;
+                                i.Quantidade = quantidade;
+                                i.Produto = produto;
 
-                    Items.Add(itemPedido);
+                                Items.Remove(item);
+                                Items.Add(new ItemPedidoDAL(produto, item.Quantidade + quantidade));
+                            }
+                            else
+                            {
+                                Items.Add(new ItemPedidoDAL(produto, quantidade));
+                            }
 
+                            break;
+                        }
+                    }
+
+                    if (Items.Count == 0)
+                    {
+                        Items.Add(new ItemPedidoDAL(produto, quantidade));
+                    }
+
+                    //Inserindo ou atualizando item do pedido no Carrinho
                     carinho.Rows.Add(produto.Nome, quantidade, produto.VL_Venda, itemPedido.SubTotal().ToString("N2"), novoItem.ID_ItemPedido, produto.ID_Produto);
                     dgvCarinho.DataSource = carinho;
                     ConfiguraGridViewCarinho();
