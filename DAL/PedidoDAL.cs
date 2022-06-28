@@ -34,7 +34,7 @@ namespace DAL
             Items.Remove(item);
         }
 
-        public Double ValorTotal()
+        public double ValorTotal()
         {
             double sum = 0;
             foreach (var item in Items)
