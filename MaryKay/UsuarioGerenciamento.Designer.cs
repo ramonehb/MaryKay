@@ -31,9 +31,9 @@ namespace MaryKay
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioGerenciamento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNovo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -43,14 +43,14 @@ namespace MaryKay
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.viewUsuarios = new MaryKay.ViewUsuarios();
-            this.vwUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vw_UsuariosTableAdapter = new MaryKay.ViewUsuariosTableAdapters.vw_UsuariosTableAdapter();
             this.iDUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uSUÁRIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPODOUSUÁRIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hABILITADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATADECADASTRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewUsuarios = new MaryKay.ViewUsuarios();
+            this.vw_UsuariosTableAdapter = new MaryKay.ViewUsuariosTableAdapters.vw_UsuariosTableAdapter();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbFechar = new System.Windows.Forms.ToolStripButton();
@@ -59,8 +59,8 @@ namespace MaryKay
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwUsuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewUsuarios)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@ namespace MaryKay
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2057, 52);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 52);
             this.toolStrip1.TabIndex = 29;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -124,6 +124,7 @@ namespace MaryKay
             this.tsbExcluir.Name = "tsbExcluir";
             this.tsbExcluir.Size = new System.Drawing.Size(286, 49);
             this.tsbExcluir.Text = "BLOQUEAR USUÁRIO";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 
             // toolStripSeparator1
             // 
@@ -144,14 +145,14 @@ namespace MaryKay
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.Pink;
             this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDUsuarioDataGridViewTextBoxColumn,
@@ -161,27 +162,27 @@ namespace MaryKay
             this.dATADECADASTRODataGridViewTextBoxColumn});
             this.dgvUsuarios.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvUsuarios.DataSource = this.vwUsuariosBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsuarios.GridColor = System.Drawing.Color.Black;
             this.dgvUsuarios.Location = new System.Drawing.Point(23, 131);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 30;
@@ -189,20 +190,6 @@ namespace MaryKay
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(2010, 792);
             this.dgvUsuarios.TabIndex = 90;
-            // 
-            // viewUsuarios
-            // 
-            this.viewUsuarios.DataSetName = "ViewUsuarios";
-            this.viewUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwUsuariosBindingSource
-            // 
-            this.vwUsuariosBindingSource.DataMember = "vw_Usuarios";
-            this.vwUsuariosBindingSource.DataSource = this.viewUsuarios;
-            // 
-            // vw_UsuariosTableAdapter
-            // 
-            this.vw_UsuariosTableAdapter.ClearBeforeFill = true;
             // 
             // iDUsuarioDataGridViewTextBoxColumn
             // 
@@ -249,6 +236,20 @@ namespace MaryKay
             this.dATADECADASTRODataGridViewTextBoxColumn.ReadOnly = true;
             this.dATADECADASTRODataGridViewTextBoxColumn.Width = 400;
             // 
+            // vwUsuariosBindingSource
+            // 
+            this.vwUsuariosBindingSource.DataMember = "vw_Usuarios";
+            this.vwUsuariosBindingSource.DataSource = this.viewUsuarios;
+            // 
+            // viewUsuarios
+            // 
+            this.viewUsuarios.DataSetName = "ViewUsuarios";
+            this.viewUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_UsuariosTableAdapter
+            // 
+            this.vw_UsuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // toolStrip2
             // 
             this.toolStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip2.BackgroundImage")));
@@ -263,7 +264,7 @@ namespace MaryKay
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(1889, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(193, 52);
+            this.toolStrip2.Size = new System.Drawing.Size(154, 52);
             this.toolStrip2.TabIndex = 91;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -304,7 +305,7 @@ namespace MaryKay
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(2057, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.ControlBox = false;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.dgvUsuarios);
@@ -318,8 +319,8 @@ namespace MaryKay
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwUsuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewUsuarios)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);

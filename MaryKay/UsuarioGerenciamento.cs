@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,6 +57,43 @@ namespace MaryKay
                 var cadastro = new CadastroUsuario();
                 cadastro.Closed += (s, args) => this.Close();
                 cadastro.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("USUÁRIO SEM PERMISSÃO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsbExcluir_Click(object sender, EventArgs e)
+        {
+            if (Session.ID_TipoUsuario == 1)
+            {
+                var idUsuario = (int)dgvUsuarios.CurrentRow.Cells["iDUsuarioDataGridViewTextBoxColumn"].Value;
+
+                using (var db = new BaseDataContext())
+                {
+                    var usuario = db.Usuarios.SingleOrDefault(u => u.ID_Usuario == idUsuario);
+
+                    if (usuario is null)
+                    {
+                        MessageBox.Show("USUÁRIO NÂO LOCALIZADO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    if (Session.ID_Usuario == idUsuario)
+                    {
+                        MessageBox.Show("VOCÊ NÃO PODE BLOQUEAR SEU USUÁRIO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    usuario.FL_Habilitado = false;
+                    db.SubmitChanges();
+                    MessageBox.Show($"USUÁRIO {usuario.Usuario1} BLOQUEADO COM SUCESSO", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    var us = new UsuarioGerenciamento();
+                    us.Closed += (s, args) => this.Close();
+                    us.ShowDialog();
+                }
             }
             else
             {

@@ -31,9 +31,8 @@ namespace MaryKay
                     lFalta.Text = falta < 0 ? "Meta batida." : falta.ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"CONTATE O ADMINISTRADOR \nERRO: {ex.Message.ToUpper()}.", "MARY KAY", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
